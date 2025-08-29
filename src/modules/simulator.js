@@ -1,6 +1,6 @@
 const CurveAMM = require('../utils/curve_amm');
 const { simulateLongStopLoss,simulateSellStopLoss } = require('./simulator/long_shrot_stop');
-const { simulateBuy } = require('./simulator/buy');
+const { simulateBuy, simulateTokenBuy } = require('./simulator/buy');
 const { simulateSell } = require('./simulator/sell');
 
 
@@ -37,6 +37,18 @@ class SimulatorModule {
      */
     async simulateSell(mint, sellTokenAmount) {
         return simulateSell.call(this, mint, sellTokenAmount);
+    }
+
+    /**
+     * Simulate token buy transaction - calculate if target token amount can be purchased
+     * 模拟以 Token 数量为目标的买入交易 - 计算是否能买到指定数量的 Token
+     * @param {string} mint - Token address 代币地址
+     * @param {bigint|string|number} buyTokenAmount - Target token amount to buy 目标购买的 Token 数量
+     * @param {string} passOrder - Optional order address to skip (won't be liquidated) 可选的跳过订单地址
+     * @returns {Promise<Object>} Token buy simulation result 模拟结果
+     */
+    async simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
+        return simulateTokenBuy.call(this, mint, buyTokenAmount, passOrder);
     }
 
     /**
