@@ -19,12 +19,12 @@ async function simulateLongStopLoss(mint, buyTokenAmount, stopLossPrice, mintInf
             throw new Error('Missing required parameters');
         }
 
-        // Get mintInfo
+        // Get current price
         if (!mintInfo) {
-            console.log('Getting token info...');
+            console.log('Getting current price...');
             mintInfo = await this.sdk.data.price(mint);
-            if (!mintInfo || !mintInfo.success) {
-                throw new Error('Failed to get token info');
+            if (!mintInfo) {
+                throw new Error('Failed to get current price');
             }
         }
 
@@ -39,11 +39,11 @@ async function simulateLongStopLoss(mint, buyTokenAmount, stopLossPrice, mintInf
 
         // Calculate current price
         let currentPrice;
-        if (mintInfo.data.details[0].latest_price === null || mintInfo.data.details[0].latest_price === undefined) {
+        if (mintInfo === null || mintInfo === undefined || mintInfo === '0') {
             console.log('Current price is empty, using initial price');
             currentPrice = CurveAMM.getInitialPrice();
         } else {
-            currentPrice = BigInt(mintInfo.data.details[0].latest_price);
+            currentPrice = BigInt(mintInfo);
             if (!currentPrice || currentPrice === 0n) {
                 console.log('Current price is 0, using initial price');
                 currentPrice = CurveAMM.getInitialPrice();
@@ -164,12 +164,12 @@ async function simulateSellStopLoss(mint, sellTokenAmount, stopLossPrice, mintIn
             throw new Error('Missing required parameters');
         }
 
-        // Get mintInfo
+        // Get current price
         if (!mintInfo) {
-            console.log('Getting token info...');
+            console.log('Getting current price...');
             mintInfo = await this.sdk.data.price(mint);
-            if (!mintInfo || !mintInfo.success) {
-                throw new Error('Failed to get token info');
+            if (!mintInfo) {
+                throw new Error('Failed to get current price');
             }
         }
 
@@ -183,10 +183,16 @@ async function simulateSellStopLoss(mint, sellTokenAmount, stopLossPrice, mintIn
         }
 
         // Calculate current price
-        let currentPrice = BigInt(mintInfo.data.details[0].latest_price);
-        if (!currentPrice || currentPrice === 0n) {
+        let currentPrice;
+        if (mintInfo === null || mintInfo === undefined || mintInfo === '0') {
             console.log('Current price is empty, using initial price');
             currentPrice = CurveAMM.getInitialPrice();
+        } else {
+            currentPrice = BigInt(mintInfo);
+            if (!currentPrice || currentPrice === 0n) {
+                console.log('Current price is 0, using initial price');
+                currentPrice = CurveAMM.getInitialPrice();
+            }
         }
 
         // Transform orders data
