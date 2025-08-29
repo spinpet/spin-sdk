@@ -47,18 +47,11 @@ async function simulateSell(mint, sellTokenAmount) {
             };
         }
 
-        // 2. Get current price
-        let currentPriceData;
+
+        let currentPriceU64;
         try {
-            currentPriceData = await this.sdk.fast.mint_info(mint);
-            if (!currentPriceData.success || !currentPriceData.data || currentPriceData.data.length === 0) {
-                return {
-                    success: false,
-                    errorCode: 'API_ERROR',
-                    errorMessage: 'Cannot get token price information',
-                    data: null
-                };
-            }
+            const priceString = await this.sdk.data.price(mint);
+            currentPriceU64 = BigInt(priceString);
         } catch (error) {
             return {
                 success: false,
@@ -68,15 +61,6 @@ async function simulateSell(mint, sellTokenAmount) {
             };
         }
 
-        const tokenInfo = currentPriceData.data.details[0];
-
-        let currentPriceU64;
-
-        if (!tokenInfo.latest_price) {
-            currentPriceU64 = CurveAMM.getInitialPrice();
-        }else{
-            currentPriceU64 = BigInt(tokenInfo.latest_price);
-        }
 
 
         // 3. 获取做多订单列表 / Get long order list (down_orders)

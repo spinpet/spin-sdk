@@ -38,19 +38,8 @@ async function simulateBuy(mint, buySolAmount) {
         // Get current price
         let currentPrice;
         try {
-            const mintInfo = await this.sdk.fast.mint_info(mint);
-            if (!mintInfo.success || !mintInfo.data || !mintInfo.data.details || mintInfo.data.details.length === 0) {
-                result.errorCode = 'API_ERROR';
-                result.errorMessage = 'Unable to get token info';
-                return result;
-            }
-
-            console.log("mintInfo.data.details[0].latest_price ",mintInfo.data.details[0].latest_price)
-            if (!mintInfo.data.details[0].latest_price) {
-                currentPrice = CurveAMM.getInitialPrice();
-            }else{
-                currentPrice = BigInt(mintInfo.data.details[0].latest_price);
-            }
+            const priceString = await this.sdk.data.price(mint);
+            currentPrice = BigInt(priceString);
             
         } catch (error) {
             result.errorCode = 'API_ERROR';
@@ -285,6 +274,13 @@ async function simulateBuy(mint, buySolAmount) {
 
     return result;
 }
+
+
+async function simulateTokenBuy(mint, buyTokenAmount) {
+
+
+}
+
 
 module.exports = {
     simulateBuy
