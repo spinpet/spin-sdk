@@ -1,5 +1,5 @@
 {
-  "address": "8j79sfEAgHjRmJS38TvXoRzqb4hhdzspmsR8sNNKX3ve",
+  "address": "JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ",
   "metadata": {
     "name": "spinpet",
     "version": "0.1.0",
@@ -2348,6 +2348,11 @@
       "code": 6050,
       "name": "InvalidLpPairsCount",
       "msg": "LP配对数组长度必须等于MAX_ORDERS_COUNT"
+    },
+    {
+      "code": 6051,
+      "name": "InvalidStopLossPrice",
+      "msg": "止损价格不满足最小间隔要求"
     }
   ],
   "types": [
