@@ -22,7 +22,7 @@ async function simulateLongStopLoss(mint, buyTokenAmount, stopLossPrice, mintInf
         // Get mintInfo
         if (!mintInfo) {
             console.log('Getting token info...');
-            mintInfo = await this.sdk.fast.mint_info(mint);
+            mintInfo = await this.sdk.data.price(mint);
             if (!mintInfo || !mintInfo.success) {
                 throw new Error('Failed to get token info');
             }
@@ -167,7 +167,7 @@ async function simulateSellStopLoss(mint, sellTokenAmount, stopLossPrice, mintIn
         // Get mintInfo
         if (!mintInfo) {
             console.log('Getting token info...');
-            mintInfo = await this.sdk.fast.mint_info(mint);
+            mintInfo = await this.sdk.data.price(mint);
             if (!mintInfo || !mintInfo.success) {
                 throw new Error('Failed to get token info');
             }
