@@ -96,7 +96,7 @@ class CurveAMM {
      * u128 的最低价格
      * @type {bigint}
      */
-    static MIN_U128_PRICE = 119589934762348555452n;
+    static MIN_U128_PRICE = 11958993476234855500n;
 
 
     
