@@ -24,6 +24,11 @@ const CurveAMM = require('../../utils/curve_amm');
  * @param {number} onceMaxOrder - 一次处理的最大订单数 Maximum orders to process at once
  * @param {Object|null} passOrder - 传递的订单对象 Pass order object (optional)
  * @returns {Object} 返回流动性计算结果 Returns liquidity calculation result
+ *   - free_lp_sol_amount_sum: {bigint} 自由流动性SOL总量 Free liquidity SOL sum
+ *   - free_lp_token_amount_sum: {bigint} 自由流动性Token总量 Free liquidity token sum  
+ *   - lock_lp_sol_amount_sum: {bigint} 锁定流动性SOL总量 Locked liquidity SOL sum
+ *   - lock_lp_token_amount_sum: {bigint} 锁定流动性Token总量 Locked liquidity token sum
+ *   - hasInfiniteLiquidity: {boolean} 是否包含无限流动性 Whether includes infinite liquidity
  */
 function calcLiqTokenBuy(price,buyTokenAmount,orders,onceMaxOrder, passOrder = null) {
   // 由于是买入操作 肯定拿的是 up_orders 方向的 订单  lock_lp_start_price <  lock_lp_end_price
@@ -34,6 +39,7 @@ function calcLiqTokenBuy(price,buyTokenAmount,orders,onceMaxOrder, passOrder = n
     free_lp_token_amount_sum: 0n,
     lock_lp_sol_amount_sum: 0n,
     lock_lp_token_amount_sum: 0n,
+    hasInfiniteLiquidity: false,
   }
   let buyTokenAmountCount = BigInt(buyTokenAmount);
 
@@ -111,13 +117,15 @@ function calcLiqTokenBuy(price,buyTokenAmount,orders,onceMaxOrder, passOrder = n
           const [solAmount, tokenAmount] = infiniteLiquidity;
           result.free_lp_sol_amount_sum += BigInt(solAmount);
           result.free_lp_token_amount_sum += BigInt(tokenAmount);
+          result.hasInfiniteLiquidity = true;
           
           console.log(`无限流动性计算结果 - SOL: ${solAmount}, Token: ${tokenAmount}`);
           console.log(`最终累计结果:`, {
             free_lp_sol_amount_sum: result.free_lp_sol_amount_sum.toString(),
             free_lp_token_amount_sum: result.free_lp_token_amount_sum.toString(),
             lock_lp_sol_amount_sum: result.lock_lp_sol_amount_sum.toString(),
-            lock_lp_token_amount_sum: result.lock_lp_token_amount_sum.toString()
+            lock_lp_token_amount_sum: result.lock_lp_token_amount_sum.toString(),
+            hasInfiniteLiquidity: result.hasInfiniteLiquidity
           });
         } else {
           console.log(`无限流动性计算返回null或格式错误`);
@@ -157,6 +165,11 @@ function calcLiqTokenBuy(price,buyTokenAmount,orders,onceMaxOrder, passOrder = n
  * @param {number} onceMaxOrder - 一次处理的最大订单数 Maximum orders to process at once
  * @param {Object|null} passOrder - 传递的订单对象 Pass order object (optional)
  * @returns {Object} 返回流动性计算结果 Returns liquidity calculation result
+ *   - free_lp_sol_amount_sum: {bigint} 自由流动性SOL总量 Free liquidity SOL sum
+ *   - free_lp_token_amount_sum: {bigint} 自由流动性Token总量 Free liquidity token sum  
+ *   - lock_lp_sol_amount_sum: {bigint} 锁定流动性SOL总量 Locked liquidity SOL sum
+ *   - lock_lp_token_amount_sum: {bigint} 锁定流动性Token总量 Locked liquidity token sum
+ *   - hasInfiniteLiquidity: {boolean} 是否包含无限流动性 Whether includes infinite liquidity
  */
 function calcLiqTokenSell(price,sellTokenAmount,orders,onceMaxOrder, passOrder = null) {
 
