@@ -166,25 +166,73 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
       console.log(`无价格间隙（endPrice <= startPrice）`);
     }
 
-    // 累加锁定的流动性
-    try {
-      if (order.lock_lp_sol_amount === undefined || order.lock_lp_sol_amount === null) {
-        throw new Error(`订单数据格式错误：订单 ${i} 缺少 lock_lp_sol_amount Order data format error: Order ${i} missing lock_lp_sol_amount`);
-      }
-      if (order.lock_lp_token_amount === undefined || order.lock_lp_token_amount === null) {
-        throw new Error(`订单数据格式错误：订单 ${i} 缺少 lock_lp_token_amount Order data format error: Order ${i} missing lock_lp_token_amount`);
-      }
+    // 检查是否需要跳过该订单（passOrder 逻辑）
+    const shouldSkipOrder = passOrder && typeof passOrder === 'string' && order.order_pda === passOrder;
+    
+    if (shouldSkipOrder) {
+      console.log(`跳过订单 ${i} (PDA: ${order.order_pda})，将其流动性加到自由流动性中`);
       
-      result.lock_lp_sol_amount_sum += BigInt(order.lock_lp_sol_amount);
-      result.lock_lp_token_amount_sum += BigInt(order.lock_lp_token_amount);
-    } catch (error) {
-      if (error.message.includes('订单数据格式错误')) {
-        throw error;
+      // 将跳过订单的流动性加到自由流动性中
+      try {
+        if (order.lock_lp_sol_amount === undefined || order.lock_lp_sol_amount === null) {
+          throw new Error(`订单数据格式错误：跳过订单 ${i} 缺少 lock_lp_sol_amount Order data format error: Skipped order ${i} missing lock_lp_sol_amount`);
+        }
+        if (order.lock_lp_token_amount === undefined || order.lock_lp_token_amount === null) {
+          throw new Error(`订单数据格式错误：跳过订单 ${i} 缺少 lock_lp_token_amount Order data format error: Skipped order ${i} missing lock_lp_token_amount`);
+        }
+        
+        const prevFreeSolSum = result.free_lp_sol_amount_sum; // 保存之前的值用于计算
+        result.free_lp_sol_amount_sum += BigInt(order.lock_lp_sol_amount);
+        result.free_lp_token_amount_sum += BigInt(order.lock_lp_token_amount);
+        
+        console.log(`跳过订单流动性已加入自由流动性 - SOL: ${order.lock_lp_sol_amount}, Token: ${order.lock_lp_token_amount}`);
+        
+        // 检查跳过订单后的自由流动性是否已满足买入需求
+        if (result.real_lp_sol_amount === 0n) {
+          if (result.free_lp_token_amount_sum >= buyTokenAmountBigInt) {
+            // 自由流动性已经够买入需求了
+            try {
+              const remainingToken = result.free_lp_token_amount_sum - buyTokenAmountBigInt;
+              // 从当前价格开始计算需要多少SOL来买到精确的token数量
+              const targetPrice = i === 0 ? BigInt(price) : BigInt(orders[i - 1].lock_lp_end_price);
+              const [_, preciseSol] = CurveAMM.buyFromPriceWithTokenOutput(targetPrice, buyTokenAmountBigInt - (result.free_lp_token_amount_sum - BigInt(order.lock_lp_token_amount)));
+              result.real_lp_sol_amount = prevFreeSolSum + BigInt(preciseSol);
+              result.force_close_num = counti;
+              console.log(`跳过订单后流动性已满足买入需求，实际使用SOL: ${result.real_lp_sol_amount}`);
+            } catch (error) {
+              throw new Error(`流动性计算错误：跳过订单后精确SOL计算失败 Liquidity calculation error: Precise SOL calculation failed after skipping order - ${error.message}`);
+            }
+          }
+        }
+        
+      } catch (error) {
+        if (error.message.includes('订单数据格式错误') || error.message.includes('流动性计算错误')) {
+          throw error;
+        }
+        throw new Error(`流动性计算错误：无法处理跳过订单 ${i} 的流动性 Liquidity calculation error: Cannot process skipped order ${i} liquidity - ${error.message}`);
       }
-      throw new Error(`流动性计算错误：无法累加订单 ${i} 的锁定流动性 Liquidity calculation error: Cannot accumulate locked liquidity for order ${i} - ${error.message}`);
+    } else {
+      // 累加锁定的流动性（正常情况）
+      try {
+        if (order.lock_lp_sol_amount === undefined || order.lock_lp_sol_amount === null) {
+          throw new Error(`订单数据格式错误：订单 ${i} 缺少 lock_lp_sol_amount Order data format error: Order ${i} missing lock_lp_sol_amount`);
+        }
+        if (order.lock_lp_token_amount === undefined || order.lock_lp_token_amount === null) {
+          throw new Error(`订单数据格式错误：订单 ${i} 缺少 lock_lp_token_amount Order data format error: Order ${i} missing lock_lp_token_amount`);
+        }
+        
+        result.lock_lp_sol_amount_sum += BigInt(order.lock_lp_sol_amount);
+        result.lock_lp_token_amount_sum += BigInt(order.lock_lp_token_amount);
+        console.log(`订单 ${i} 锁定流动性 - SOL: ${order.lock_lp_sol_amount}, Token: ${order.lock_lp_token_amount}`);
+      } catch (error) {
+        if (error.message.includes('订单数据格式错误')) {
+          throw error;
+        }
+        throw new Error(`流动性计算错误：无法累加订单 ${i} 的锁定流动性 Liquidity calculation error: Cannot accumulate locked liquidity for order ${i} - ${error.message}`);
+      }
     }
+    
     counti += 1;
-    console.log(`订单 ${i} 锁定流动性 - SOL: ${order.lock_lp_sol_amount}, Token: ${order.lock_lp_token_amount}`);
 
 
     console.log(`当前累计结果:`, {
