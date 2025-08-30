@@ -4,37 +4,67 @@ const CurveAMM = require('../../utils/curve_amm');
 
 /**
  * 计算代币买入时的流动性影响 Calculate liquidity impact for token buy operations
- * @param {bigint|string|number} price - 当前代币价格 Current token price
- * @param {bigint|string|number} buyTokenAmount - 购买的代币数量 Amount of tokens to buy
- * @param {Array<Object>} orders - 订单数组，每个订单包含以下字段 Array of order objects with following fields:
+ * 
+ * 此函数分析买入操作对价格区间内流动性的影响，计算可用的自由流动性、锁定流动性，
+ * 并支持跳过指定订单（将其流动性视为可用）。适用于做多订单（up_orders）场景。
+ * This function analyzes the liquidity impact of buy operations within price ranges,
+ * calculates available free liquidity, locked liquidity, and supports skipping specific
+ * orders (treating their liquidity as available). Applicable for long orders (up_orders) scenarios.
+ * 
+ * @param {bigint|string|number} price - 当前代币价格，作为计算起始价格 Current token price, used as calculation start price
+ * @param {bigint|string|number} buyTokenAmount - 购买的代币数量，目标买入数量 Amount of tokens to buy, target purchase amount
+ * @param {Array<Object>} orders - 订单数组，按 lock_lp_start_price 从小到大排序 Array of orders sorted by lock_lp_start_price (ascending):
  *   - order_type: {number} 订单类型(1=做多,2=做空) Order type (1=long, 2=short)
  *   - mint: {string} 代币地址 Token mint address
  *   - user: {string} 用户地址 User address
- *   - lock_lp_start_price: {string} LP锁定开始价格 LP lock start price
- *   - lock_lp_end_price: {string} LP锁定结束价格 LP lock end price
- *   - lock_lp_sol_amount: {number} 锁定的SOL数量 Locked SOL amount
- *   - lock_lp_token_amount: {number} 锁定的代币数量 Locked token amount
+ *   - lock_lp_start_price: {string} LP锁定开始价格 LP lock start price (required)
+ *   - lock_lp_end_price: {string} LP锁定结束价格 LP lock end price (required)
+ *   - lock_lp_sol_amount: {number} 锁定的SOL数量 Locked SOL amount (required)
+ *   - lock_lp_token_amount: {number} 锁定的代币数量 Locked token amount (required)
  *   - start_time: {number} 开始时间戳 Start timestamp
  *   - end_time: {number} 结束时间戳 End timestamp
  *   - margin_sol_amount: {number} 保证金SOL数量 Margin SOL amount
  *   - borrow_amount: {number} 借贷数量 Borrow amount
  *   - position_asset_amount: {number} 持仓资产数量 Position asset amount
  *   - borrow_fee: {number} 借贷费用 Borrow fee
- *   - order_pda: {string} 订单PDA地址 Order PDA address  
- * @param {number} onceMaxOrder - 一次处理的最大订单数 Maximum orders to process at once
- * @param {Object|null} passOrder - 传递的订单对象 Pass order object (optional)
- * @returns {Object} 返回流动性计算结果 Returns liquidity calculation result
- *   - free_lp_sol_amount_sum: {bigint} 自由流动性SOL总量 Free liquidity SOL sum
- *   - free_lp_token_amount_sum: {bigint} 自由流动性Token总量 Free liquidity token sum  
- *   - lock_lp_sol_amount_sum: {bigint} 锁定流动性SOL总量 Locked liquidity SOL sum
- *   - lock_lp_token_amount_sum: {bigint} 锁定流动性Token总量 Locked liquidity token sum
- *   - has_infinite_lp: {boolean} 是否包含无限流动性 Whether includes infinite liquidity
- * @throws {Error} 参数验证错误 Parameter validation error
- * @throws {Error} 价格转换错误 Price conversion error  
- * @throws {Error} 流动性计算错误 Liquidity calculation error
- * @throws {Error} 间隙流动性计算失败 Gap liquidity calculation failure
- * @throws {Error} 无限流动性计算失败 Infinite liquidity calculation failure
- * @throws {Error} 订单数据格式错误 Order data format error
+ *   - order_pda: {string} 订单PDA地址 Order PDA address (required for passOrder matching)
+ * @param {number} onceMaxOrder - 一次处理的最大订单数，限制遍历范围 Maximum orders to process at once, limits traversal range
+ * @param {string|null} passOrder - 需要跳过的订单PDA地址字符串，当该值与订单的order_pda匹配时，跳过该订单并将其流动性计入自由流动性 Order PDA address string to skip, when this value matches an order's order_pda, skip that order and count its liquidity as free liquidity
+ * 
+ * @returns {Object} 流动性计算结果对象，包含详细的流动性分析数据 Liquidity calculation result object with detailed liquidity analysis data:
+ * 
+ *   **自由流动性 Free Liquidity:**
+ *   - free_lp_sol_amount_sum: {bigint} 可用自由流动性SOL总量，包含以下来源：1)价格间隙流动性 2)跳过订单的流动性 3)无限流动性（如有）
+ *                                       Total available free liquidity SOL amount, includes: 1) price gap liquidity 2) skipped order liquidity 3) infinite liquidity (if any)
+ *   - free_lp_token_amount_sum: {bigint} 可用自由流动性Token总量，与SOL对应，表示在不强平任何订单情况下可买到的最大代币数量
+ *                                         Total available free liquidity token amount, corresponds to SOL, represents max tokens buyable without force closing any orders
+ * 
+ *   **锁定流动性 Locked Liquidity:**
+ *   - lock_lp_sol_amount_sum: {bigint} 被锁定的流动性SOL总量，不包括跳过的订单，这部分流动性不可直接使用
+ *                                       Total locked liquidity SOL amount, excludes skipped orders, this liquidity is not directly usable
+ *   - lock_lp_token_amount_sum: {bigint} 被锁定的流动性Token总量，不包括跳过的订单，对应于锁定的SOL流动性
+ *                                         Total locked liquidity token amount, excludes skipped orders, corresponds to locked SOL liquidity
+ * 
+ *   **流动性状态标识 Liquidity Status Indicators:**
+ *   - has_infinite_lp: {boolean} 是否包含无限流动性，true表示订单链表已结束且计算了到最大价格(MAX_U128_PRICE)的流动性
+ *                                  Whether includes infinite liquidity, true means order chain ended and liquidity to max price (MAX_U128_PRICE) was calculated
+ *   - pass_order_id: {number} 被跳过的订单在数组中的索引位置，-1表示没有跳过任何订单，>=0表示跳过了对应索引的订单
+ *                               Index of skipped order in array, -1 means no order skipped, >=0 means order at that index was skipped
+ * 
+ *   **买入执行信息 Buy Execution Info:**
+ *   - force_close_num: {number} 需要强平的订单数量，表示为了买到目标数量需要强制平仓多少个订单，0表示无需强平
+ *                                 Number of orders that need to be force closed, indicates how many orders need force closure to buy target amount, 0 means no force closure needed
+ *   - ideal_lp_sol_amount: {bigint} 理想SOL使用量，基于当前价格使用CurveAMM直接计算的理论最小SOL需求，不考虑流动性分布
+ *                                     Ideal SOL usage, theoretical minimum SOL requirement calculated directly from current price using CurveAMM, ignores liquidity distribution
+ *   - real_lp_sol_amount: {bigint} 实际SOL使用量，考虑真实流动性分布的精确SOL需求。0表示当前自由流动性不足以满足买入需求，需要强平更多订单
+ *                                    Actual SOL usage, precise SOL requirement considering real liquidity distribution. 0 means current free liquidity insufficient for buy requirement, need to force close more orders
+ * 
+ * @throws {Error} 参数验证错误：price、buyTokenAmount、orders、onceMaxOrder 参数无效 Parameter validation error: invalid price, buyTokenAmount, orders, or onceMaxOrder
+ * @throws {Error} 价格转换错误：无法将价格参数转换为 BigInt Price conversion error: cannot convert price parameters to BigInt
+ * @throws {Error} 流动性计算错误：CurveAMM 计算失败或数值转换错误 Liquidity calculation error: CurveAMM calculation failure or value conversion error
+ * @throws {Error} 间隙流动性计算失败：价格间隙流动性计算异常 Gap liquidity calculation failure: price gap liquidity calculation exception
+ * @throws {Error} 无限流动性计算失败：最大价格流动性计算异常 Infinite liquidity calculation failure: max price liquidity calculation exception
+ * @throws {Error} 订单数据格式错误：订单对象缺少必需字段 Order data format error: order object missing required fields
  */
 function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder = null) {
   // 由于是买入操作 肯定拿的是 up_orders 方向的 订单  lock_lp_start_price <  lock_lp_end_price
@@ -57,13 +87,16 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
   const result = {
     free_lp_sol_amount_sum: 0n,  // 间隙中可使用的sol流动性数量
     free_lp_token_amount_sum: 0n, // 间隙中可使用的token流动性数量
-    lock_lp_sol_amount_sum: 0n,
+    lock_lp_sol_amount_sum: 0n, 
     lock_lp_token_amount_sum: 0n,
-    has_infinite_lp: false,
+    has_infinite_lp: false, // 是否包含无限流动性
+    pass_order_id: -1, // 跳过的订单索引
     force_close_num: 0, // 强平订单数量
     ideal_lp_sol_amount: 0n, // 理想情况下买到buyTokenAmount的数量, 理想情况下使用的SOL数量
     real_lp_sol_amount: 0n, // 要买到buyTokenAmount的数量, 实际使用的SOL数量
   }
+
+
   
   let buyTokenAmountBigInt;
   try {
@@ -134,6 +167,7 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
           } catch (error) {
             throw new Error(`流动性计算错误：无法转换间隙流动性数值 Liquidity calculation error: Cannot convert gap liquidity values - ${error.message}`);
           }
+          
 
           // 计算实际使用的SOL数量 到能买到为止
           if (result.real_lp_sol_amount === 0n) {
@@ -167,9 +201,11 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
     }
 
     // 检查是否需要跳过该订单（passOrder 逻辑）
-    const shouldSkipOrder = passOrder && typeof passOrder === 'string' && order.order_pda === passOrder;
+    //const shouldSkipOrder = passOrder && typeof passOrder === 'string' && order.order_pda === passOrder;
     
-    if (shouldSkipOrder) {
+    console.log(`检查是否跳过订单: 传递订单 PDA: ${passOrder}, 当前订单 PDA: ${order.order_pda}`);
+
+    if (passOrder == order.order_pda) {
       console.log(`跳过订单 ${i} (PDA: ${order.order_pda})，将其流动性加到自由流动性中`);
       
       // 将跳过订单的流动性加到自由流动性中
@@ -185,6 +221,8 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
         result.free_lp_sol_amount_sum += BigInt(order.lock_lp_sol_amount);
         result.free_lp_token_amount_sum += BigInt(order.lock_lp_token_amount);
         
+        result.pass_order_id = i;
+
         console.log(`跳过订单流动性已加入自由流动性 - SOL: ${order.lock_lp_sol_amount}, Token: ${order.lock_lp_token_amount}`);
         
         // 检查跳过订单后的自由流动性是否已满足买入需求
@@ -230,9 +268,11 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
         }
         throw new Error(`流动性计算错误：无法累加订单 ${i} 的锁定流动性 Liquidity calculation error: Cannot accumulate locked liquidity for order ${i} - ${error.message}`);
       }
+
+      counti += 1;
     }
     
-    counti += 1;
+    
 
 
     console.log(`当前累计结果:`, {
