@@ -93,6 +93,41 @@ function calcLiqTokenBuy(price,buyTokenAmount,orders,onceMaxOrder, passOrder = n
     });
   }
 
+  // 如果遍历的订单数小于等于onceMaxOrder，说明链表结束，需要计算无限流动性
+  if (orders.length <= onceMaxOrder && orders.length > 0) {
+    console.log('\n计算无限流动性（链表已结束）');
+    
+    const lastOrder = orders[orders.length - 1];
+    const lastEndPrice = BigInt(lastOrder.lock_lp_end_price);
+    const maxPrice = CurveAMM.MAX_U128_PRICE;
+    
+    console.log(`最后一个订单结束价格: ${lastEndPrice}`);
+    console.log(`最大价格: ${maxPrice}`);
+    
+    if (maxPrice > lastEndPrice) {
+      try {
+        const infiniteLiquidity = CurveAMM.buyFromPriceToPrice(lastEndPrice, maxPrice);
+        if (infiniteLiquidity && Array.isArray(infiniteLiquidity) && infiniteLiquidity.length === 2) {
+          const [solAmount, tokenAmount] = infiniteLiquidity;
+          result.free_lp_sol_amount_sum += BigInt(solAmount);
+          result.free_lp_token_amount_sum += BigInt(tokenAmount);
+          
+          console.log(`无限流动性计算结果 - SOL: ${solAmount}, Token: ${tokenAmount}`);
+          console.log(`最终累计结果:`, {
+            free_lp_sol_amount_sum: result.free_lp_sol_amount_sum.toString(),
+            free_lp_token_amount_sum: result.free_lp_token_amount_sum.toString(),
+            lock_lp_sol_amount_sum: result.lock_lp_sol_amount_sum.toString(),
+            lock_lp_token_amount_sum: result.lock_lp_token_amount_sum.toString()
+          });
+        } else {
+          console.log(`无限流动性计算返回null或格式错误`);
+        }
+      } catch (error) {
+        console.log(`无限流动性计算错误: ${error.message}`);
+      }
+    }
+  }
+
   return result;
 
 }
