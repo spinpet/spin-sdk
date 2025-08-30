@@ -81,6 +81,7 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
         const gapLiquidity = CurveAMM.buyFromPriceToPrice(startPrice, endPrice);
         if (gapLiquidity && Array.isArray(gapLiquidity) && gapLiquidity.length === 2) {
           const [solAmount, tokenAmount] = gapLiquidity;
+          prve_free_lp_sol_amount_sum = result.free_lp_sol_amount_sum; // 上次的值
           result.free_lp_sol_amount_sum += BigInt(solAmount);
           result.free_lp_token_amount_sum += BigInt(tokenAmount);
 
@@ -91,7 +92,7 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
               // 计算最后精确需要买多少token
               const lastFreeToken = result.free_lp_token_amount_sum - buyTokenAmountBigInt;
               const [_, lastFreeSol] = CurveAMM.buyFromPriceWithTokenOutput(startPrice, lastFreeToken)
-              result.real_lp_sol_amount += BigInt(lastFreeSol);
+              result.real_lp_sol_amount += prve_free_lp_sol_amount_sum + BigInt(lastFreeSol);
               result.force_close_num = counti; // 强平订单数量
               console.log(`间隙流动性已满足买入需求，实际使用SOL: ${result.real_lp_sol_amount}, 标记`);
 
