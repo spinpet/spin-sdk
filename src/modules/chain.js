@@ -547,6 +547,8 @@ class ChainModule {
 
       while (currentAddress && count < limit) {
         try {
+          console.log(`chain.orders: 遍历 Traversing [${count}] ${currentAddress.toString()}`);
+          
           // Get raw account data
           const accountInfo = await this.sdk.connection.getAccountInfo(currentAddress);
           if (!accountInfo) {
@@ -597,9 +599,9 @@ class ChainModule {
           // Move to next node
           if (orderData.nextOrder) {
             currentAddress = orderData.nextOrder;
-            //console.log(`chain.orders: Next order: ${currentAddress.toString()}`);
+            console.log(`chain.orders: 下一个 Next: ${currentAddress.toString()}`);
           } else {
-            //console.log(`chain.orders: Linked list ended, no next node`);
+            console.log(`chain.orders: 链表结束 List ended at node ${count}`);
             break;
           }
 
