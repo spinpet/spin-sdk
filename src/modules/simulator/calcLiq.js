@@ -116,7 +116,6 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
 
   // 选择较小值进行遍历
   const loopCount = Math.min(orders.length, onceMaxOrder);
-  console.log(`遍历订单数量: ${loopCount}`);
 
   let counti = 0;
   for (let i = 0; i < loopCount; i++) {
@@ -133,7 +132,6 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
       throw new Error(`订单数据格式错误：订单 ${i} 缺少 lock_lp_end_price Order data format error: Order ${i} missing lock_lp_end_price`);
     }
 
-    console.log(`\n处理订单 ${i}:`, order.order_pda);
 
     // 计算间隙流动性
     let startPrice, endPrice;
@@ -151,7 +149,6 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
       throw new Error(`价格转换错误：无法转换订单 ${i} 的价格数据 Price conversion error: Cannot convert price data for order ${i} - ${error.message}`);
     }
 
-    console.log(`计算间隙流动性 - 从价格 ${startPrice} 到 ${endPrice}`);
 
     // 如果存在价格间隙，计算自由流动性
     if (endPrice > startPrice) {
@@ -179,14 +176,12 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
                 const [_, lastFreeSol] = CurveAMM.buyFromPriceWithTokenOutput(startPrice, lastFreeToken)
                 result.real_lp_sol_amount += prve_free_lp_sol_amount_sum + BigInt(lastFreeSol);
                 result.force_close_num = counti; // 强平订单数量
-                console.log(`间隙流动性已满足买入需求，实际使用SOL: ${result.real_lp_sol_amount}, 标记`);
               } catch (error) {
                 throw new Error(`流动性计算错误：精确SOL计算失败 Liquidity calculation error: Precise SOL calculation failed - ${error.message}`);
               }
             }
           }
 
-          console.log(`间隙流动性计算结果 - SOL: ${solAmount}, Token: ${tokenAmount}`);
         } else {
           throw new Error(`间隙流动性计算失败：返回数据格式错误 Gap liquidity calculation failure: Invalid return data format`);
         }
@@ -197,16 +192,13 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
         throw new Error(`间隙流动性计算失败：${error.message} Gap liquidity calculation failure: ${error.message}`);
       }
     } else {
-      console.log(`无价格间隙（endPrice <= startPrice）`);
     }
 
     // 检查是否需要跳过该订单（passOrder 逻辑）
     //const shouldSkipOrder = passOrder && typeof passOrder === 'string' && order.order_pda === passOrder;
 
-    console.log(`检查是否跳过订单: 传递订单 PDA: ${passOrder}, 当前订单 PDA: ${order.order_pda}`);
 
     if (passOrder == order.order_pda) {
-      console.log(`跳过订单 ${i} (PDA: ${order.order_pda})，将其流动性加到自由流动性中`);
 
       // 将跳过订单的流动性加到自由流动性中
       try {
@@ -223,7 +215,6 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
 
         result.pass_order_id = i;
 
-        console.log(`跳过订单流动性已加入自由流动性 - SOL: ${order.lock_lp_sol_amount}, Token: ${order.lock_lp_token_amount}`);
 
         // 检查跳过订单后的自由流动性是否已满足买入需求
         if (result.real_lp_sol_amount === 0n) {
@@ -492,7 +483,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
       throw new Error(`订单数据格式错误：订单 ${i} 缺少 lock_lp_end_price Order data format error: Order ${i} missing lock_lp_end_price`);
     }
 
-    console.log(`\n处理订单 ${i}:`, order.order_pda);
 
     // 计算间隙流动性（卖出方向：从高价到低价）
     let startPrice, endPrice;
@@ -510,7 +500,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
       throw new Error(`价格转换错误：无法转换订单 ${i} 的价格数据 Price conversion error: Cannot convert price data for order ${i} - ${error.message}`);
     }
 
-    console.log(`计算间隙流动性 - 从价格 ${startPrice} 到 ${endPrice}`);
 
     // 如果存在价格间隙（卖出时startPrice应该大于endPrice）
     if (startPrice > endPrice) {
@@ -545,7 +534,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
             }
           }
 
-          console.log(`间隙流动性计算结果 - SOL: ${solAmount}, Token: ${tokenAmount}`);
         } else {
           throw new Error(`间隙流动性计算失败：返回数据格式错误 Gap liquidity calculation failure: Invalid return data format`);
         }
@@ -560,10 +548,8 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
     }
 
     // 检查是否需要跳过该订单（passOrder 逻辑）
-    console.log(`检查是否跳过订单: 传递订单 PDA: ${passOrder}, 当前订单 PDA: ${order.order_pda}`);
 
     if (passOrder == order.order_pda) {
-      console.log(`跳过订单 ${i} (PDA: ${order.order_pda})，将其流动性加到自由流动性中`);
 
       // 将跳过订单的流动性加到自由流动性中
       try {
@@ -580,7 +566,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
 
         result.pass_order_id = i;
 
-        console.log(`跳过订单流动性已加入自由流动性 - SOL: ${order.lock_lp_sol_amount}, Token: ${order.lock_lp_token_amount}`);
 
         // 检查跳过订单后的自由流动性是否已满足卖出需求
         if (result.real_lp_sol_amount === 0n) {
