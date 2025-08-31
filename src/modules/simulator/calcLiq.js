@@ -227,7 +227,6 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
               const [_, preciseSol] = CurveAMM.buyFromPriceWithTokenOutput(targetPrice, buyTokenAmountBigInt - (result.free_lp_token_amount_sum - BigInt(order.lock_lp_token_amount)));
               result.real_lp_sol_amount = prevFreeSolSum + BigInt(preciseSol);
               result.force_close_num = counti;
-              console.log(`跳过订单后流动性已满足买入需求，实际使用SOL: ${result.real_lp_sol_amount}`);
             } catch (error) {
               throw new Error(`流动性计算错误：跳过订单后精确SOL计算失败 Liquidity calculation error: Precise SOL calculation failed after skipping order - ${error.message}`);
             }
@@ -252,7 +251,6 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
 
         result.lock_lp_sol_amount_sum += BigInt(order.lock_lp_sol_amount);
         result.lock_lp_token_amount_sum += BigInt(order.lock_lp_token_amount);
-        console.log(`订单 ${i} 锁定流动性 - SOL: ${order.lock_lp_sol_amount}, Token: ${order.lock_lp_token_amount}`);
       } catch (error) {
         if (error.message.includes('订单数据格式错误')) {
           throw error;
@@ -266,20 +264,10 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
 
 
 
-    console.log(`当前累计结果:`, {
-      free_lp_sol_amount_sum: result.free_lp_sol_amount_sum.toString(),
-      free_lp_token_amount_sum: result.free_lp_token_amount_sum.toString(),
-      lock_lp_sol_amount_sum: result.lock_lp_sol_amount_sum.toString(),
-      lock_lp_token_amount_sum: result.lock_lp_token_amount_sum.toString(),
-      has_infinite_lp: result.has_infinite_lp,
-      force_close_num: result.force_close_num,
-      real_lp_sol_amount: result.real_lp_sol_amount, // 要买到buyTokenAmount的数量, 实际使用的SOL数量
-    });
   }
 
   // 如果遍历的订单数小于等于onceMaxOrder，说明链表结束，需要计算无限流动性
   if (orders.length <= onceMaxOrder && orders.length > 0) {
-    console.log('\n计算无限流动性（链表已结束）');
 
     const lastOrder = orders[orders.length - 1];
     if (!lastOrder || !lastOrder.lock_lp_end_price) {
@@ -294,8 +282,6 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
       throw new Error(`价格转换错误：无法转换最后订单价格或最大价格 Price conversion error: Cannot convert last order price or max price - ${error.message}`);
     }
 
-    console.log(`最后一个订单结束价格: ${lastEndPrice}`);
-    console.log(`最大价格: ${maxPrice}`);
 
     if (maxPrice > lastEndPrice) {
       try {
@@ -321,21 +307,12 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
                 const [_, lastFreeSol] = CurveAMM.buyFromPriceWithTokenOutput(lastEndPrice, lastFreeToken)
                 result.real_lp_sol_amount += BigInt(lastFreeSol);
                 result.force_close_num = counti; // 强平订单数量
-                console.log(`无限流动性才满足买入需求，实际使用SOL: ${result.real_lp_sol_amount}, 标记`);
               } catch (error) {
                 throw new Error(`流动性计算错误：无限流动性精确SOL计算失败 Liquidity calculation error: Infinite liquidity precise SOL calculation failed - ${error.message}`);
               }
             }
           }
 
-          console.log(`无限流动性计算结果 - SOL: ${solAmount}, Token: ${tokenAmount}`);
-          console.log(`最终累计结果:`, {
-            free_lp_sol_amount_sum: result.free_lp_sol_amount_sum.toString(),
-            free_lp_token_amount_sum: result.free_lp_token_amount_sum.toString(),
-            lock_lp_sol_amount_sum: result.lock_lp_sol_amount_sum.toString(),
-            lock_lp_token_amount_sum: result.lock_lp_token_amount_sum.toString(),
-            has_infinite_lp: result.has_infinite_lp
-          });
         } else {
           throw new Error(`无限流动性计算失败：返回数据格式错误 Infinite liquidity calculation failure: Invalid return data format`);
         }
@@ -466,7 +443,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
 
   // 选择较小值进行遍历
   const loopCount = Math.min(orders.length, onceMaxOrder);
-  console.log(`遍历订单数量: ${loopCount}`);
 
   let counti = 0;
   for (let i = 0; i < loopCount; i++) {
@@ -527,7 +503,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
                 const [_, preciseSol] = CurveAMM.sellFromPriceWithTokenInput(startPrice, actualSellAmount);
                 result.real_lp_sol_amount = prve_free_lp_sol_amount_sum + preciseSol;
                 result.force_close_num = counti; // 强平订单数量
-                console.log(`间隙流动性已满足卖出需求，实际获得SOL: ${result.real_lp_sol_amount}, 标记`);
               } catch (error) {
                 throw new Error(`流动性计算错误：精确SOL计算失败 Liquidity calculation error: Precise SOL calculation failed - ${error.message}`);
               }
@@ -544,7 +519,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
         throw new Error(`间隙流动性计算失败：${error.message} Gap liquidity calculation failure: ${error.message}`);
       }
     } else {
-      console.log(`无价格间隙（startPrice <= endPrice）`);
     }
 
     // 检查是否需要跳过该订单（passOrder 逻辑）
@@ -578,7 +552,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
               const [_, preciseSol] = CurveAMM.sellFromPriceWithTokenInput(targetPrice, actualSellAmount);
               result.real_lp_sol_amount = prevFreeSolSum + preciseSol;
               result.force_close_num = counti;
-              console.log(`跳过订单后流动性已满足卖出需求，实际获得SOL: ${result.real_lp_sol_amount}`);
             } catch (error) {
               throw new Error(`流动性计算错误：跳过订单后精确SOL计算失败 Liquidity calculation error: Precise SOL calculation failed after skipping order - ${error.message}`);
             }
@@ -603,7 +576,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
 
         result.lock_lp_sol_amount_sum += BigInt(order.lock_lp_sol_amount);
         result.lock_lp_token_amount_sum += BigInt(order.lock_lp_token_amount);
-        console.log(`订单 ${i} 锁定流动性 - SOL: ${order.lock_lp_sol_amount}, Token: ${order.lock_lp_token_amount}`);
       } catch (error) {
         if (error.message.includes('订单数据格式错误')) {
           throw error;
@@ -627,7 +599,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
 
   // 如果遍历的订单数小于等于onceMaxOrder，说明链表结束，需要计算无限流动性
   if (orders.length <= onceMaxOrder && orders.length > 0) {
-    console.log('\n计算无限流动性（链表已结束）');
 
     const lastOrder = orders[orders.length - 1];
     if (!lastOrder || !lastOrder.lock_lp_end_price) {
@@ -648,9 +619,7 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
     if (lastEndPrice > minPrice) {
 
       try {
-        console.log(`计算无限流动性 - 从价格 ${lastEndPrice} 到 ${minPrice}`);
         const infiniteLiquidity = CurveAMM.sellFromPriceToPrice(lastEndPrice, minPrice);
-        console.log('无限流动性计算结果:', infiniteLiquidity);
         if (infiniteLiquidity && Array.isArray(infiniteLiquidity) && infiniteLiquidity.length === 2) {
           const [tokenAmount, solAmount] = infiniteLiquidity;
 
@@ -673,26 +642,16 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
                 const [_,preciseSol] = CurveAMM.sellFromPriceWithTokenInput(lastEndPrice, actualSellAmount);
                 result.real_lp_sol_amount = prevFreeSolSum + preciseSol;
                 result.force_close_num = counti; // 强平订单数量
-                console.log(`无限流动性才满足卖出需求，实际获得SOL: ${result.real_lp_sol_amount}, 标记`);
               } catch (error) {
                 throw new Error(`流动性计算错误：无限流动性精确SOL计算失败 Liquidity calculation error: Infinite liquidity precise SOL calculation failed - ${error.message}`);
               }
             }
           }
 
-          console.log(`无限流动性计算结果 - SOL: ${solAmount}, Token: ${tokenAmount}`);
-          console.log(`最终累计结果:`, {
-            free_lp_sol_amount_sum: result.free_lp_sol_amount_sum.toString(),
-            free_lp_token_amount_sum: result.free_lp_token_amount_sum.toString(),
-            lock_lp_sol_amount_sum: result.lock_lp_sol_amount_sum.toString(),
-            lock_lp_token_amount_sum: result.lock_lp_token_amount_sum.toString(),
-            has_infinite_lp: result.has_infinite_lp
-          });
         } else {
           throw new Error(`无限流动性计算失败a：返回数据格式错误 Infinite liquidity calculation failure: Invalid return data format`);
         }
       } catch (error) {
-        console.log('计算无限流动性时出错e:', error);
         if (error.message.includes('无限流动性计算失败') || error.message.includes('流动性计算错误') || error.message.includes('订单数据格式错误') || error.message.includes('价格转换错误')) {
           throw error;
         }
