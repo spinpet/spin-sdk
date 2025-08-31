@@ -586,15 +586,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
       counti += 1;
     }
 
-    console.log(`当前累计结果:`, {
-      free_lp_sol_amount_sum: result.free_lp_sol_amount_sum.toString(),
-      free_lp_token_amount_sum: result.free_lp_token_amount_sum.toString(),
-      lock_lp_sol_amount_sum: result.lock_lp_sol_amount_sum.toString(),
-      lock_lp_token_amount_sum: result.lock_lp_token_amount_sum.toString(),
-      has_infinite_lp: result.has_infinite_lp,
-      force_close_num: result.force_close_num,
-      real_lp_sol_amount: result.real_lp_sol_amount.toString(),
-    });
   }
 
   // 如果遍历的订单数小于等于onceMaxOrder，说明链表结束，需要计算无限流动性
@@ -613,8 +604,6 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
       throw new Error(`价格转换错误：无法转换最后订单价格或最小价格 Price conversion error: Cannot convert last order price or min price - ${error.message}`);
     }
 
-    console.log(`最后一个订单结束价格: ${lastEndPrice}`);
-    console.log(`最小价格: ${minPrice}`);
 
     if (lastEndPrice > minPrice) {
 
