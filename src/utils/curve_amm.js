@@ -656,94 +656,56 @@ class CurveAMM {
      * Price rounded down, SOL amount rounded up
      */
     static buyFromPriceWithTokenOutput(startLowPrice, tokenOutputAmount) {
-        console.log('\n=== buyFromPriceWithTokenOutput 调试信息 ===');
-        console.log('输入参数:');
-        console.log('  startLowPrice:', startLowPrice);
-        console.log('  tokenOutputAmount:', tokenOutputAmount);
-
         // Convert to Decimal for calculation
         const startPriceDec = this.u128ToDecimal(startLowPrice);
         const tokenOutputDec = this.u64ToTokenDecimal(tokenOutputAmount);
 
-        console.log('价格转换结果:');
-        console.log('  startPriceDec:', startPriceDec.toString());
-        console.log('  tokenOutputDec:', tokenOutputDec.toString());
-
         // Check if input parameters are valid
         if (startPriceDec.lte(0)) {
-            console.log('❌ 失败原因: 起始价格小于或等于0');
             return null;
         }
         
         // If token output amount is 0, return unchanged price and SOL input of 0
         if (tokenOutputDec.eq(0)) {
-            console.log('⚠️  特殊情况: token输出量为0，返回价格不变、SOL输入为0');
             const endPriceU128 = this.decimalToU128(startPriceDec);
             if (endPriceU128 === null) return null;
             return [endPriceU128, 0n];
         }
         
         if (tokenOutputDec.lt(0)) {
-            console.log('❌ 失败原因: token输出量小于0');
             return null;
         }
 
         // Use initial k value
         const k = this.calculateInitialK();
-        console.log('k值:', k.toString());
 
         // Calculate reserves for starting state
         const startReserves = this.calculateReservesByPrice(startPriceDec, k);
-        if (!startReserves) {
-            console.log('❌ 失败原因: 起始状态储备量计算失败');
-            return null;
-        }
+        if (!startReserves) return null;
 
         const [startSolReserve, startTokenReserve] = startReserves;
-
-        console.log('起始状态储备量:');
-        console.log('  起始SOL储备:', startSolReserve.toString());
-        console.log('  起始Token储备:', startTokenReserve.toString());
 
         // Calculate token reserves for ending state
         const endTokenReserve = startTokenReserve.sub(tokenOutputDec);
 
-        console.log('计算结束状态token储备:');
-        console.log('  期望token输出量:', tokenOutputDec.toString());
         console.log('  结束token储备 = 起始token储备 - token输出量:', endTokenReserve.toString());
 
         // Check if token reserves are sufficient
         if (endTokenReserve.lte(0)) {
-            console.log('❌ 失败原因: token储备量不足，结束状态token储备 <= 0');
-            console.log('  endTokenReserve:', endTokenReserve.toString());
             return null;
         }
 
         // 根据AMM公式计算结束状态的SOL储备量
         const endSolReserve = k.div(endTokenReserve);
 
-        console.log('计算结束状态SOL储备:');
-        console.log('  结束SOL储备 = k / 结束token储备:', endSolReserve.toString());
-
         // Calculate required SOL input amount
         const solInputAmount = endSolReserve.sub(startSolReserve);
-
-        console.log('计算所需SOL输入量:');
-        console.log('  SOL输入量 = 结束SOL储备 - 起始SOL储备:', solInputAmount.toString());
 
         // Calculate ending price
         const endPrice = endSolReserve.div(endTokenReserve);
 
-        console.log('计算结束价格:');
-        console.log('  结束价格 = 结束SOL储备 / 结束token储备:', endPrice.toString());
-
         // Check if calculation results are valid
         if (solInputAmount.lte(0) || endPrice.lte(0)) {
-            console.log('❌ 失败原因: 计算结果无效');
-            console.log('  solInputAmount.lte(0):', solInputAmount.lte(0));
-            console.log('  endPrice.lte(0):', endPrice.lte(0));
-            console.log('  solInputAmount:', solInputAmount.toString());
-            console.log('  endPrice:', endPrice.toString());
             return null;
         }
 
@@ -751,21 +713,9 @@ class CurveAMM {
         const endPriceU128 = this.decimalToU128(endPrice); // Price rounded down
         const solAmountU64 = this.solDecimalToU64Ceil(solInputAmount); // SOL rounded up
 
-        console.log('u128/u64转换结果:');
-        console.log('  endPriceU128:', endPriceU128);
-        console.log('  solAmountU64:', solAmountU64);
-
         if (endPriceU128 === null || solAmountU64 === null) {
-            console.log('❌ 失败原因: u128/u64转换失败');
-            console.log('  endPriceU128 === null:', endPriceU128 === null);
-            console.log('  solAmountU64 === null:', solAmountU64 === null);
             return null;
         }
-
-        console.log('✅ 成功! 返回结果:');
-        console.log('  交易完成后的价格:', endPriceU128.toString());
-        console.log('  需要付出的SOL数量:', solAmountU64.toString());
-        console.log('=== buyFromPriceWithTokenOutput 调试结束 ===\n');
 
         return [endPriceU128, solAmountU64];
     }
