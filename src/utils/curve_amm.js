@@ -528,7 +528,18 @@ class CurveAMM {
         const solInputDec = this.u64ToSolDecimal(solInputAmount);
 
         // 检查输入参数是否有效
-        if (startPriceDec.lte(0) || solInputDec.lte(0)) {
+        if (startPriceDec.lte(0)) {
+            return null;
+        }
+        
+        // 如果SOL输入量为0，返回价格不变、token输出为0
+        if (solInputDec.eq(0)) {
+            const endPriceU128 = this.decimalToU128(startPriceDec);
+            if (endPriceU128 === null) return null;
+            return [endPriceU128, 0n];
+        }
+        
+        if (solInputDec.lt(0)) {
             return null;
         }
 
@@ -582,8 +593,20 @@ class CurveAMM {
         const startPriceDec = this.u128ToDecimal(startHighPrice);
         const tokenInputDec = this.u64ToTokenDecimal(tokenInputAmount);
 
+        //console.log("startHighPrice, tokenInputAmount",startHighPrice, tokenInputAmount)
         // 检查输入参数是否有效
-        if (startPriceDec.lte(0) || tokenInputDec.lte(0)) {
+        if (startPriceDec.lte(0)) {
+            return null;
+        }
+        
+        // 如果token输入量为0，返回价格不变、SOL输出为0
+        if (tokenInputDec.eq(0)) {
+            const endPriceU128 = this.decimalToU128(startPriceDec);
+            if (endPriceU128 === null) return null;
+            return [endPriceU128, 0n];
+        }
+        
+        if (tokenInputDec.lt(0)) {
             return null;
         }
 
@@ -638,7 +661,18 @@ class CurveAMM {
         const tokenOutputDec = this.u64ToTokenDecimal(tokenOutputAmount);
 
         // 检查输入参数是否有效
-        if (startPriceDec.lte(0) || tokenOutputDec.lte(0)) {
+        if (startPriceDec.lte(0)) {
+            return null;
+        }
+        
+        // 如果token输出量为0，返回价格不变、SOL输入为0
+        if (tokenOutputDec.eq(0)) {
+            const endPriceU128 = this.decimalToU128(startPriceDec);
+            if (endPriceU128 === null) return null;
+            return [endPriceU128, 0n];
+        }
+        
+        if (tokenOutputDec.lt(0)) {
             return null;
         }
 
@@ -698,7 +732,18 @@ class CurveAMM {
         const solOutputDec = this.u64ToSolDecimal(solOutputAmount);
 
         // 检查输入参数是否有效
-        if (startPriceDec.lte(0) || solOutputDec.lte(0)) {
+        if (startPriceDec.lte(0)) {
+            return null;
+        }
+        
+        // 如果SOL输出量为0，返回价格不变、token输入为0
+        if (solOutputDec.eq(0)) {
+            const endPriceU128 = this.decimalToU128(startPriceDec);
+            if (endPriceU128 === null) return null;
+            return [endPriceU128, 0n];
+        }
+        
+        if (solOutputDec.lt(0)) {
             return null;
         }
 
