@@ -21,7 +21,7 @@ class SpinPetSdk {
    * @param {PublicKey|string} programId - Program ID
    * @param {Object} options - Configuration options (optional)
    */
-  constructor(connection, wallet, programId, options = {}) {
+  constructor(connection, programId, options = {}) {
     // Save configuration options
     this.options = options;
     
@@ -34,7 +34,7 @@ class SpinPetSdk {
     
     // Basic configuration
     this.connection = connection;
-    this.wallet = wallet instanceof anchor.Wallet ? wallet : new anchor.Wallet(wallet);
+    //this.wallet = wallet instanceof anchor.Wallet ? wallet : new anchor.Wallet(wallet);
     this.programId = typeof programId === 'string' ? new PublicKey(programId) : programId;
     
     // Initialize account configuration with options
@@ -84,7 +84,6 @@ class SpinPetSdk {
   _initProgram(options = {}) {
     const provider = new anchor.AnchorProvider(
       this.connection,
-      this.wallet,
       {
         commitment: options.commitment,
         preflightCommitment: options.preflightCommitment,
