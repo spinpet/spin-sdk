@@ -176,7 +176,9 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
               try {
                 const lastFreeToken = result.free_lp_token_amount_sum - buyTokenAmountBigInt;
                 const [_, lastFreeSol] = CurveAMM.buyFromPriceWithTokenOutput(startPrice, lastFreeToken)
-                result.real_lp_sol_amount += prve_free_lp_sol_amount_sum + BigInt(lastFreeSol);
+                //result.real_lp_sol_amount += prve_free_lp_sol_amount_sum + BigInt(lastFreeSol);
+                result.real_lp_sol_amount += BigInt(lastFreeSol);
+
                 console.log(`实际计算[${i}]: 自由流动性已足够, lastFreeToken=${lastFreeToken}, lastFreeSol=${lastFreeSol}, 实际SOL=${result.real_lp_sol_amount}`);
                 result.force_close_num = counti; // 强平订单数量
               } catch (error) {
