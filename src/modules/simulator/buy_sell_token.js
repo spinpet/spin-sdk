@@ -48,7 +48,68 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
     console.log('实际 SOL 使用量:', liqResult.real_lp_sol_amount.toString());
     console.log('===============================\n');
 
-    return liqResult;
+    // Convert to BigInt for calculations
+    const buyTokenAmountBig = BigInt(buyTokenAmount);
+    const freeTokenAmount = BigInt(liqResult.free_lp_token_amount_sum);
+    const realSolAmount = BigInt(liqResult.real_lp_sol_amount);
+    const idealSolAmount = BigInt(liqResult.ideal_lp_sol_amount);
+
+    // 1. Calculate completion percentage
+    let completionPercentage;
+    if (freeTokenAmount >= buyTokenAmountBig) {
+      completionPercentage = "100.0";
+    } else {
+      const percentage = Math.floor((Number(freeTokenAmount) / Number(buyTokenAmountBig)) * 1000) / 10;
+      completionPercentage = percentage.toFixed(1);
+    }
+
+    // 2. Calculate slippage percentage
+    let slippagePercentage;
+    let suggestedLiquidity;
+
+    if (realSolAmount > 0n) {
+      // Normal case: calculate slippage
+      const diff = idealSolAmount > realSolAmount ? idealSolAmount - realSolAmount : realSolAmount - idealSolAmount;
+      const slippage = Math.floor((Number(diff) / Number(idealSolAmount)) * 1000) / 10;
+      slippagePercentage = slippage.toFixed(1);
+    } else {
+      // Special case: real SOL amount is 0, need to recalculate with suggested liquidity
+      const suggestedAmount = (freeTokenAmount * BigInt(this.sdk.SUGGEST_LIQ_RATIO)) / 1000n;
+      
+      const recalcResult = calcLiqTokenBuy(
+        price,
+        suggestedAmount,
+        orders,
+        this.sdk.MAX_ORDERS_COUNT,
+        passOrder
+      );
+      
+      const recalcRealSol = BigInt(recalcResult.real_lp_sol_amount);
+      const recalcIdealSol = BigInt(recalcResult.ideal_lp_sol_amount);
+      
+      if (recalcRealSol <= 0n) {
+        throw new Error('Recalculated real SOL amount should be greater than 0');
+      }
+      
+      const diff = recalcIdealSol > recalcRealSol ? recalcIdealSol - recalcRealSol : recalcRealSol - recalcIdealSol;
+      const slippage = Math.floor((Number(diff) / Number(recalcIdealSol)) * 1000) / 10;
+      slippagePercentage = slippage.toFixed(1);
+    }
+
+    // 3. Calculate suggested liquidity
+    if (completionPercentage === "100.0") {
+      suggestedLiquidity = buyTokenAmountBig.toString();
+    } else {
+      const suggested = (freeTokenAmount * BigInt(this.sdk.SUGGEST_LIQ_RATIO)) / 1000n;
+      suggestedLiquidity = suggested.toString();
+    }
+
+    return {
+      liqResult,
+      completionPercentage,
+      slippagePercentage,
+      suggestedLiquidity
+    };
   } catch (error) {
     console.error('calcLiqTokenBuy 调用失败:', error.message);
     throw error;
@@ -101,7 +162,68 @@ async function simulateTokenSell(mint, sellTokenAmount, passOrder = null) {
     console.log('实际 SOL 获得量:', liqResult.real_lp_sol_amount.toString());
     console.log('===============================\n');
 
-    return liqResult;
+    // Convert to BigInt for calculations
+    const sellTokenAmountBig = BigInt(sellTokenAmount);
+    const freeTokenAmount = BigInt(liqResult.free_lp_token_amount_sum);
+    const realSolAmount = BigInt(liqResult.real_lp_sol_amount);
+    const idealSolAmount = BigInt(liqResult.ideal_lp_sol_amount);
+
+    // 1. Calculate completion percentage
+    let completionPercentage;
+    if (freeTokenAmount >= sellTokenAmountBig) {
+      completionPercentage = "100.0";
+    } else {
+      const percentage = Math.floor((Number(freeTokenAmount) / Number(sellTokenAmountBig)) * 1000) / 10;
+      completionPercentage = percentage.toFixed(1);
+    }
+
+    // 2. Calculate slippage percentage
+    let slippagePercentage;
+    let suggestedLiquidity;
+
+    if (realSolAmount > 0n) {
+      // Normal case: calculate slippage
+      const diff = idealSolAmount > realSolAmount ? idealSolAmount - realSolAmount : realSolAmount - idealSolAmount;
+      const slippage = Math.floor((Number(diff) / Number(idealSolAmount)) * 1000) / 10;
+      slippagePercentage = slippage.toFixed(1);
+    } else {
+      // Special case: real SOL amount is 0, need to recalculate with suggested liquidity
+      const suggestedAmount = (freeTokenAmount * BigInt(this.sdk.SUGGEST_LIQ_RATIO)) / 1000n;
+      
+      const recalcResult = calcLiqTokenSell(
+        price,
+        suggestedAmount,
+        orders,
+        this.sdk.MAX_ORDERS_COUNT,
+        passOrder
+      );
+      
+      const recalcRealSol = BigInt(recalcResult.real_lp_sol_amount);
+      const recalcIdealSol = BigInt(recalcResult.ideal_lp_sol_amount);
+      
+      if (recalcRealSol <= 0n) {
+        throw new Error('Recalculated real SOL amount should be greater than 0');
+      }
+      
+      const diff = recalcIdealSol > recalcRealSol ? recalcIdealSol - recalcRealSol : recalcRealSol - recalcIdealSol;
+      const slippage = Math.floor((Number(diff) / Number(recalcIdealSol)) * 1000) / 10;
+      slippagePercentage = slippage.toFixed(1);
+    }
+
+    // 3. Calculate suggested liquidity
+    if (completionPercentage === "100.0") {
+      suggestedLiquidity = sellTokenAmountBig.toString();
+    } else {
+      const suggested = (freeTokenAmount * BigInt(this.sdk.SUGGEST_LIQ_RATIO)) / 1000n;
+      suggestedLiquidity = suggested.toString();
+    }
+
+    return {
+      liqResult,
+      completionPercentage,
+      slippagePercentage,
+      suggestedLiquidity
+    };
   } catch (error) {
     console.error('calcLiqTokenSell 调用失败:', error.message);
     throw error;

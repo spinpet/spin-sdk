@@ -44,7 +44,7 @@ class SpinPetSdk {
     this.spinFastApiUrl = this.options.spin_fast_api_url;
 
     // Maximum number of orders that can be processed at once in the contract
-    this.MAX_ORDERS_COUNT = 10
+    this.MAX_ORDERS_COUNT = 3
     // Maximum number of orders to fetch during queries
     this.FIND_MAX_ORDERS_COUNT = 1000
 
