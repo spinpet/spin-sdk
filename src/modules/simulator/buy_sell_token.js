@@ -63,9 +63,10 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
       completionPercentage = percentage.toFixed(1);
     }
 
-    // 2. Calculate slippage percentage
+    // 2. Calculate slippage percentage and get final SOL amount
     let slippagePercentage;
     let suggestedLiquidity;
+    let finalRealSolAmount = realSolAmount;
 
     if (realSolAmount > 0n) {
       // Normal case: calculate slippage
@@ -91,6 +92,8 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
         throw new Error('Recalculated real SOL amount should be greater than 0');
       }
       
+      finalRealSolAmount = recalcRealSol;
+      
       const diff = recalcIdealSol > recalcRealSol ? recalcIdealSol - recalcRealSol : recalcRealSol - recalcIdealSol;
       const slippage = Math.floor((Number(diff) / Number(recalcIdealSol)) * 1000) / 10;
       slippagePercentage = slippage.toFixed(1);
@@ -108,7 +111,8 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
       liqResult,
       completion: completionPercentage,
       slippage: slippagePercentage,
-      suggestedAmount: suggestedLiquidity
+      suggestedTokenAmount: suggestedLiquidity,
+      suggestedSolAmount: finalRealSolAmount.toString()
     };
   } catch (error) {
     console.error('calcLiqTokenBuy 调用失败:', error.message);
@@ -177,9 +181,10 @@ async function simulateTokenSell(mint, sellTokenAmount, passOrder = null) {
       completionPercentage = percentage.toFixed(1);
     }
 
-    // 2. Calculate slippage percentage
+    // 2. Calculate slippage percentage and get final SOL amount
     let slippagePercentage;
     let suggestedLiquidity;
+    let finalRealSolAmount = realSolAmount;
 
     if (realSolAmount > 0n) {
       // Normal case: calculate slippage
@@ -205,6 +210,8 @@ async function simulateTokenSell(mint, sellTokenAmount, passOrder = null) {
         throw new Error('Recalculated real SOL amount should be greater than 0');
       }
       
+      finalRealSolAmount = recalcRealSol;
+      
       const diff = recalcIdealSol > recalcRealSol ? recalcIdealSol - recalcRealSol : recalcRealSol - recalcIdealSol;
       const slippage = Math.floor((Number(diff) / Number(recalcIdealSol)) * 1000) / 10;
       slippagePercentage = slippage.toFixed(1);
@@ -222,7 +229,8 @@ async function simulateTokenSell(mint, sellTokenAmount, passOrder = null) {
       liqResult,
       completion: completionPercentage,
       slippage: slippagePercentage,
-      suggestedAmount: suggestedLiquidity
+      suggestedTokenAmount: suggestedLiquidity,
+      suggestedSolAmount: finalRealSolAmount.toString()
     };
   } catch (error) {
     console.error('calcLiqTokenSell 调用失败:', error.message);
