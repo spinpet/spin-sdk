@@ -48,6 +48,9 @@ class SpinPetSdk {
     // Maximum number of orders to fetch during queries
     this.FIND_MAX_ORDERS_COUNT = 1000
 
+    // 在流动性不足时, 建议实际使用流动性的比例, 分每 (1000=100%)
+    this.SUGGEST_LIQ_RATIO = 975; // 97.5% (1000=100%)
+
     // Initialize Anchor program
     this.program = this._initProgram(this.options);
     
