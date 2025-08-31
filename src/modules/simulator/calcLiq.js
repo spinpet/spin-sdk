@@ -112,6 +112,8 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
     [_, result.ideal_lp_sol_amount] = CurveAMM.buyFromPriceWithTokenOutput(priceBigInt, buyTokenAmountBigInt);
     //console.log(`理想计算: 当前价格=${priceBigInt}, 目标代币=${buyTokenAmountBigInt}, 理想SOL=${result.ideal_lp_sol_amount}`);
   } catch (error) {
+    //console.log(`理想计算失败: 当前价格=${price}, 目标代币=${buyTokenAmountBigInt}`);
+    console.log('错误详情:', error);
     throw new Error(`流动性计算错误：理想流动性计算失败 Liquidity calculation error: Ideal liquidity calculation failed - ${error.message}`);
   }
 
