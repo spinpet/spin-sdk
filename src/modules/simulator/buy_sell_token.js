@@ -1,5 +1,6 @@
 
 
+const { calcLiqTokenBuy, calcLiqTokenSell } = require('./calcLiq');
 
 /**
  * Simulate token buy transaction - calculate if target token amount can be purchased
@@ -14,7 +15,7 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
   const price = await this.sdk.data.price(mint);
   const ordersResponse = await this.sdk.data.orders(mint, {
     type: 'up_orders',
-    count: this.sdk.MAX_ORDERS_COUNT + 1
+    limit: this.sdk.MAX_ORDERS_COUNT + 1
   });
 
   // 提取实际的订单数组
@@ -25,8 +26,33 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
   console.log('订单数量:', orders.length);
   console.log('订单数据:', orders);
 
-  // TODO: 处理订单格式以满足 calcLiq.js 需求
-  // TODO: 调用 calcLiqTokenBuy 进行计算
+  // 调用 calcLiqTokenBuy 进行流动性计算
+  try {
+    const liqResult = calcLiqTokenBuy(
+      price,
+      buyTokenAmount, 
+      orders,
+      this.sdk.MAX_ORDERS_COUNT,
+      passOrder
+    );
+
+    console.log('\n=== calcLiqTokenBuy 返回结果 ===');
+    console.log('自由流动性 SOL 总量:', liqResult.free_lp_sol_amount_sum.toString());
+    console.log('自由流动性 Token 总量:', liqResult.free_lp_token_amount_sum.toString());
+    console.log('锁定流动性 SOL 总量:', liqResult.lock_lp_sol_amount_sum.toString());
+    console.log('锁定流动性 Token 总量:', liqResult.lock_lp_token_amount_sum.toString());
+    console.log('是否包含无限流动性:', liqResult.has_infinite_lp);
+    console.log('跳过的订单索引:', liqResult.pass_order_id);
+    console.log('需要强平的订单数量:', liqResult.force_close_num);
+    console.log('理想 SOL 使用量:', liqResult.ideal_lp_sol_amount.toString());
+    console.log('实际 SOL 使用量:', liqResult.real_lp_sol_amount.toString());
+    console.log('===============================\n');
+
+    return liqResult;
+  } catch (error) {
+    console.error('calcLiqTokenBuy 调用失败:', error.message);
+    throw error;
+  }
 }
 
 
@@ -42,7 +68,7 @@ async function simulateTokenSell(mint, sellTokenAmount, passOrder = null) {
   const price = await this.sdk.data.price(mint);
   const ordersResponse = await this.sdk.data.orders(mint, {
     type: 'down_orders',
-    count: this.sdk.MAX_ORDERS_COUNT + 1
+    limit: this.sdk.MAX_ORDERS_COUNT + 1
   });
 
   // 提取实际的订单数组
@@ -53,8 +79,33 @@ async function simulateTokenSell(mint, sellTokenAmount, passOrder = null) {
   console.log('订单数量:', orders.length);
   console.log('订单数据:', orders);
 
-  // TODO: 处理订单格式以满足 calcLiq.js 需求
-  // TODO: 调用 calcLiqTokenSell 进行计算
+  // 调用 calcLiqTokenSell 进行流动性计算
+  try {
+    const liqResult = calcLiqTokenSell(
+      price,
+      sellTokenAmount,
+      orders,
+      this.sdk.MAX_ORDERS_COUNT,
+      passOrder
+    );
+
+    console.log('\n=== calcLiqTokenSell 返回结果 ===');
+    console.log('自由流动性 SOL 总量:', liqResult.free_lp_sol_amount_sum.toString());
+    console.log('自由流动性 Token 总量:', liqResult.free_lp_token_amount_sum.toString());
+    console.log('锁定流动性 SOL 总量:', liqResult.lock_lp_sol_amount_sum.toString());
+    console.log('锁定流动性 Token 总量:', liqResult.lock_lp_token_amount_sum.toString());
+    console.log('是否包含无限流动性:', liqResult.has_infinite_lp);
+    console.log('跳过的订单索引:', liqResult.pass_order_id);
+    console.log('需要强平的订单数量:', liqResult.force_close_num);
+    console.log('理想 SOL 获得量:', liqResult.ideal_lp_sol_amount.toString());
+    console.log('实际 SOL 获得量:', liqResult.real_lp_sol_amount.toString());
+    console.log('===============================\n');
+
+    return liqResult;
+  } catch (error) {
+    console.error('calcLiqTokenSell 调用失败:', error.message);
+    throw error;
+  }
 }
 
 
