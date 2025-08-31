@@ -12,10 +12,13 @@
 async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
   // 获取价格和订单数据
   const price = await this.sdk.data.price(mint);
-  const orders = await this.sdk.data.orders(mint, {
+  const ordersResponse = await this.sdk.data.orders(mint, {
     type: 'up_orders',
     count: this.sdk.MAX_ORDERS_COUNT + 1
   });
+
+  // 提取实际的订单数组
+  const orders = ordersResponse.data.orders;
 
   console.log('simulateTokenBuy 获取的数据:');
   console.log('价格:', price);
@@ -37,10 +40,13 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
 async function simulateTokenSell(mint, sellTokenAmount, passOrder = null) {
   // 获取价格和订单数据
   const price = await this.sdk.data.price(mint);
-  const orders = await this.sdk.data.orders(mint, {
+  const ordersResponse = await this.sdk.data.orders(mint, {
     type: 'down_orders',
     count: this.sdk.MAX_ORDERS_COUNT + 1
   });
+
+  // 提取实际的订单数组
+  const orders = ordersResponse.data.orders;
 
   console.log('simulateTokenSell 获取的数据:');
   console.log('价格:', price);
