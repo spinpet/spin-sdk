@@ -1,7 +1,6 @@
 const CurveAMM = require('../utils/curve_amm');
 const { simulateLongStopLoss,simulateSellStopLoss } = require('./simulator/long_shrot_stop');
-const { simulateBuy, simulateTokenBuy } = require('./simulator/buy');
-const { simulateSell } = require('./simulator/sell');
+const { simulateTokenBuy, simulateTokenSell } = require('./simulator/buy_sell_token');
 
 
 
@@ -20,26 +19,6 @@ class SimulatorModule {
     }
 
     /**
-     * Simulate buy transaction analysis
-     * @param {string} mint - Token address
-     * @param {bigint|string|number} buySolAmount - SOL amount to buy (u64 format, precision 10^9)
-     * @returns {Promise<Object>} Buy analysis result
-     */
-    async simulateBuy(mint, buySolAmount) {
-        return simulateBuy.call(this, mint, buySolAmount);
-    }
-
-    /**
-     * Simulate sell transaction analysis
-     * @param {string} mint - Token address
-     * @param {bigint|string|number} sellTokenAmount - Token amount to sell (u64 format, precision 10^6)
-     * @returns {Promise<Object>} Sell analysis result
-     */
-    async simulateSell(mint, sellTokenAmount) {
-        return simulateSell.call(this, mint, sellTokenAmount);
-    }
-
-    /**
      * Simulate token buy transaction - calculate if target token amount can be purchased
      * 模拟以 Token 数量为目标的买入交易 - 计算是否能买到指定数量的 Token
      * @param {string} mint - Token address 代币地址
@@ -49,6 +28,17 @@ class SimulatorModule {
      */
     async simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
         return simulateTokenBuy.call(this, mint, buyTokenAmount, passOrder);
+    }
+
+    /**
+     * Simulate token sell transaction analysis
+     * @param {string} mint - Token address
+     * @param {bigint|string|number} sellTokenAmount - Token amount to sell (u64 format, precision 10^6)
+     * @param {string} passOrder - Optional order address to skip (won't be liquidated) 可选的跳过订单地址
+     * @returns {Promise<Object>} Sell analysis result
+     */
+    async simulateTokenSell(mint, sellTokenAmount, passOrder = null) {
+        return simulateTokenSell.call(this, mint, sellTokenAmount, passOrder);
     }
 
     /**
