@@ -106,9 +106,9 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
 
     return {
       liqResult,
-      completionPercentage,
-      slippagePercentage,
-      suggestedLiquidity
+      completion: completionPercentage,
+      slippage: slippagePercentage,
+      suggestedAmount: suggestedLiquidity
     };
   } catch (error) {
     console.error('calcLiqTokenBuy 调用失败:', error.message);
@@ -220,9 +220,9 @@ async function simulateTokenSell(mint, sellTokenAmount, passOrder = null) {
 
     return {
       liqResult,
-      completionPercentage,
-      slippagePercentage,
-      suggestedLiquidity
+      completion: completionPercentage,
+      slippage: slippagePercentage,
+      suggestedAmount: suggestedLiquidity
     };
   } catch (error) {
     console.error('calcLiqTokenSell 调用失败:', error.message);
