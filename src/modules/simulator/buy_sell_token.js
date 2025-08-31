@@ -24,7 +24,7 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
   console.log('simulateTokenBuy 获取的数据:');
   console.log('价格:', price);
   console.log('订单数量:', orders.length);
-  orders.forEach((order, i) => console.log(`订单${i}: start=${order.lockLpStartPrice?.toString()}, end=${order.lockLpEndPrice?.toString()}, sol=${order.lockLpSolAmount?.toNumber()}, token=${order.lockLpTokenAmount?.toNumber()}`));
+  orders.forEach((order, i) => console.log(`订单${i}: start=${order.lock_lp_start_price}, end=${order.lock_lp_end_price}, sol=${order.lock_lp_sol_amount}, token=${order.lock_lp_token_amount}`));
 
   // 调用 calcLiqTokenBuy 进行流动性计算
   try {
@@ -77,7 +77,7 @@ async function simulateTokenSell(mint, sellTokenAmount, passOrder = null) {
   console.log('simulateTokenSell 获取的数据:');
   console.log('价格:', price);
   console.log('订单数量:', orders.length);
-  orders.forEach((order, i) => console.log(`订单${i}: start=${order.lockLpStartPrice?.toString()}, end=${order.lockLpEndPrice?.toString()}, sol=${order.lockLpSolAmount?.toNumber()}, token=${order.lockLpTokenAmount?.toNumber()}`));
+  orders.forEach((order, i) => console.log(`订单${i}: start=${order.lock_lp_start_price}, end=${order.lock_lp_end_price}, sol=${order.lock_lp_sol_amount}, token=${order.lock_lp_token_amount}`));
 
   // 调用 calcLiqTokenSell 进行流动性计算
   try {
