@@ -21,7 +21,7 @@ async function simulateLongStopLoss(mint, buyTokenAmount, stopLossPrice, mintInf
 
         // Get current price
         if (!mintInfo) {
-            console.log('Getting current price...');
+            //console.log('Getting current price...');
             mintInfo = await this.sdk.data.price(mint);
             if (!mintInfo) {
                 throw new Error('Failed to get current price');
@@ -30,7 +30,7 @@ async function simulateLongStopLoss(mint, buyTokenAmount, stopLossPrice, mintInf
 
         // Get ordersData
         if (!ordersData) {
-            console.log('Getting orders data...');
+            //console.log('Getting orders data...');
             ordersData = await this.sdk.data.orders(mint, { type: 'down_orders' });
             if (!ordersData || !ordersData.success) {
                 throw new Error('Failed to get orders data');
@@ -52,7 +52,7 @@ async function simulateLongStopLoss(mint, buyTokenAmount, stopLossPrice, mintInf
 
         // Transform orders data
         const downOrders = transformOrdersData(ordersData);
-        console.log(`Found ${downOrders.length} existing long orders`);
+        //console.log(`Found ${downOrders.length} existing long orders`);
 
         // Initialize stop loss prices
         let stopLossStartPrice = BigInt(stopLossPrice);
@@ -121,13 +121,13 @@ async function simulateLongStopLoss(mint, buyTokenAmount, stopLossPrice, mintInf
             leverage = Number((BigInt(10000) * currentPrice) / (currentPrice - executableStopLossPrice)) / 10000;
         }
 
-        console.log(`Calculation completed:`);
-        console.log(`  Executable stop loss price: ${executableStopLossPrice}`);
-        console.log(`  SOL output amount: ${finalTradeAmount}`);
-        console.log(`  Stop loss percentage: ${stopLossPercentage}%`);
-        console.log(`  Leverage: ${leverage}x`);
-        console.log(`  Previous order PDA: ${finalOverlapResult.prev_order_pda}`);
-        console.log(`  Next order PDA: ${finalOverlapResult.next_order_pda}`);
+        // console.log(`Calculation completed:`);
+        // console.log(`  Executable stop loss price: ${executableStopLossPrice}`);
+        // console.log(`  SOL output amount: ${finalTradeAmount}`);
+        // console.log(`  Stop loss percentage: ${stopLossPercentage}%`);
+        // console.log(`  Leverage: ${leverage}x`);
+        // console.log(`  Previous order PDA: ${finalOverlapResult.prev_order_pda}`);
+        // console.log(`  Next order PDA: ${finalOverlapResult.next_order_pda}`);
 
         return {
             executableStopLossPrice: executableStopLossPrice, // Calculated reasonable stop loss value
@@ -166,7 +166,7 @@ async function simulateSellStopLoss(mint, sellTokenAmount, stopLossPrice, mintIn
 
         // Get current price
         if (!mintInfo) {
-            console.log('Getting current price...');
+            //console.log('Getting current price...');
             mintInfo = await this.sdk.data.price(mint);
             if (!mintInfo) {
                 throw new Error('Failed to get current price');
@@ -175,7 +175,7 @@ async function simulateSellStopLoss(mint, sellTokenAmount, stopLossPrice, mintIn
 
         // Get ordersData
         if (!ordersData) {
-            console.log('Getting orders data...');
+            //console.log('Getting orders data...');
             ordersData = await this.sdk.data.orders(mint, { type: 'up_orders' });
             if (!ordersData || !ordersData.success) {
                 throw new Error('Failed to get orders data');
@@ -197,7 +197,7 @@ async function simulateSellStopLoss(mint, sellTokenAmount, stopLossPrice, mintIn
 
         // Transform orders data
         const upOrders = transformOrdersData(ordersData);
-        console.log(`Found ${upOrders.length} existing short orders`);
+        //console.log(`Found ${upOrders.length} existing short orders`);
 
         // Initialize stop loss prices
         let stopLossStartPrice = BigInt(stopLossPrice);
@@ -207,7 +207,7 @@ async function simulateSellStopLoss(mint, sellTokenAmount, stopLossPrice, mintIn
         let finalOverlapResult = null; // Record final overlap result
         let finalTradeAmount = 0n; // Record final trade amount
 
-        console.log(`Start price: ${stopLossStartPrice}, Target token amount: ${sellTokenAmount}`);
+        //console.log(`Start price: ${stopLossStartPrice}, Target token amount: ${sellTokenAmount}`);
 
         // Loop to adjust stop loss price until no overlap
         while (iteration < maxIterations) {
@@ -228,7 +228,7 @@ async function simulateSellStopLoss(mint, sellTokenAmount, stopLossPrice, mintIn
             const overlapResult = checkPriceRangeOverlap('up_orders', upOrders, stopLossStartPrice, stopLossEndPrice);
             
             if (overlapResult.no_overlap) {
-                console.log(' / No price range overlap, can execute');
+                //console.log(' / No price range overlap, can execute');
                 finalOverlapResult = overlapResult; // 记录最终的overlap结果 / Record final overlap result
                 finalTradeAmount = tradeAmount; // 记录最终的交易金额 / Record final trade amount
                 break;
@@ -264,13 +264,13 @@ async function simulateSellStopLoss(mint, sellTokenAmount, stopLossPrice, mintIn
         // For short position, leverage = current price / (stop loss price - current price)
         const leverage = Number((BigInt(10000) * currentPrice) / (executableStopLossPrice - currentPrice)) / 10000;
 
-        console.log(`Calculation completed:`);
-        console.log(`  Executable stop loss price: ${executableStopLossPrice}`);
-        console.log(`  SOL input amount: ${finalTradeAmount}`);
-        console.log(`  Stop loss percentage: ${stopLossPercentage}%`);
-        console.log(`  Leverage: ${leverage}x`);
-        console.log(`  Previous order PDA: ${finalOverlapResult.prev_order_pda}`);
-        console.log(`  Next order PDA: ${finalOverlapResult.next_order_pda}`);
+        // console.log(`Calculation completed:`);
+        // console.log(`  Executable stop loss price: ${executableStopLossPrice}`);
+        // console.log(`  SOL input amount: ${finalTradeAmount}`);
+        // console.log(`  Stop loss percentage: ${stopLossPercentage}%`);
+        // console.log(`  Leverage: ${leverage}x`);
+        // console.log(`  Previous order PDA: ${finalOverlapResult.prev_order_pda}`);
+        // console.log(`  Next order PDA: ${finalOverlapResult.next_order_pda}`);
 
         return {
             executableStopLossPrice: executableStopLossPrice, // Calculated reasonable stop loss value

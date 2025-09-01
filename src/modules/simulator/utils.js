@@ -4,7 +4,7 @@
 const LIQUIDITY_RESERVATION = 100;  // 100%
 
 // Price adjustment percentage
-const PRICE_ADJUSTMENT_PERCENTAGE = 5; //  5就是 0.5%
+const PRICE_ADJUSTMENT_PERCENTAGE = 15; //  5就是 0.5%
 
 
 /**
