@@ -607,6 +607,7 @@ class ChainModule {
 
         } catch (error) {
           // If order account doesn't exist or read fails, throw error
+          console.log("A_chain.orders() err:",error);
           throw new Error(`Failed to read order: ${error.message}`);
         }
       }
@@ -635,6 +636,7 @@ class ChainModule {
 
     } catch (error) {
       // Error handling
+      console.log("chain.orders() err:",error);
       console.error('chain.orders: Failed to get orders', error.message);
       throw new Error(`Failed to get orders: ${error.message}`);
     }
