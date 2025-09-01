@@ -55,7 +55,7 @@ class SpinPetSdk {
     this.SUGGEST_LIQ_RATIO = 975; // 97.5% (1000=100%)
 
     // 如果设置了调试日志路径, 就会输出一些调试数据,如果没有设置, 则不输出
-    this.debugLogPath = this.options.debug_log_path || null;
+    this.debugLogPath = this.options.debug_log_path || this.options.debugLogPath || null;
     
     // 如果设置了调试日志路径，删除旧的 orderPda.txt 文件以确保文件是最新的
     if (this.debugLogPath && typeof this.debugLogPath === 'string') {
