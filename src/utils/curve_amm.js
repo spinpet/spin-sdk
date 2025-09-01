@@ -688,7 +688,7 @@ class CurveAMM {
         // Calculate token reserves for ending state
         const endTokenReserve = startTokenReserve.sub(tokenOutputDec);
 
-        console.log('buyFromPriceWithTokenOutput  结束token储备 = 起始token储备 - token输出量:', endTokenReserve.toString());
+        //console.log('buyFromPriceWithTokenOutput  结束token储备 = 起始token储备 - token输出量:', endTokenReserve.toString());
 
         // Check if token reserves are sufficient
         if (endTokenReserve.lte(0)) {
