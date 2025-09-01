@@ -1,6 +1,8 @@
 const { ComputeBudgetProgram, PublicKey, Transaction, SystemProgram, SYSVAR_RENT_PUBKEY } = require('@solana/web3.js');
 const { createAssociatedTokenAccountInstruction, getAssociatedTokenAddress, TOKEN_PROGRAM_ID, ASSOCIATED_TOKEN_PROGRAM_ID } = require('@solana/spl-token');
 const anchor = require('@coral-xyz/anchor');
+const fs = require('fs');
+const path = require('path');
 
 /**
  * Trading Module
@@ -323,6 +325,16 @@ class TradingModule {
       this.sdk.programId
     );
 
+    // 如果设置了调试日志路径，将订单地址写入 orderPda.txt 文件
+    if (this.sdk.debugLogPath && typeof this.sdk.debugLogPath === 'string') {
+      try {
+        const orderPdaFilePath = path.join(this.sdk.debugLogPath, 'orderPda.txt');
+        fs.appendFileSync(orderPdaFilePath, `${selfOrderAddress.toString()}\n`);
+      } catch (error) {
+        console.warn('Warning: Failed to write order PDA to file:', error.message);
+      }
+    }
+
     // // 8. Get prevOrder and nextOrder (simplified calculation)
     // // Use simplified logic here, in actual project you can call simulator as needed
     // const prevOrder = null; // Can calculate as needed
@@ -460,6 +472,16 @@ class TradingModule {
       ],
       this.sdk.programId
     );
+
+    // 如果设置了调试日志路径，将订单地址写入 orderPda.txt 文件
+    if (this.sdk.debugLogPath && typeof this.sdk.debugLogPath === 'string') {
+      try {
+        const orderPdaFilePath = path.join(this.sdk.debugLogPath, 'orderPda.txt');
+        fs.appendFileSync(orderPdaFilePath, `${selfOrderAddress.toString()}\n`);
+      } catch (error) {
+        console.warn('Warning: Failed to write order PDA to file:', error.message);
+      }
+    }
 
     // 8. 获取用户代币账户 / Get user token account
     const userTokenAccount = await getAssociatedTokenAddress(

@@ -1,5 +1,7 @@
 const anchor = require('@coral-xyz/anchor');
 const { PublicKey } = require('@solana/web3.js');
+const fs = require('fs');
+const path = require('path');
 const TradingModule = require('./modules/trading');
 const TokenModule = require('./modules/token');
 const ParamModule = require('./modules/param');
@@ -51,6 +53,21 @@ class SpinPetSdk {
 
     // 在流动性不足时, 建议实际使用流动性的比例, 分每 (1000=100%)
     this.SUGGEST_LIQ_RATIO = 975; // 97.5% (1000=100%)
+
+    // 如果设置了调试日志路径, 就会输出一些调试数据,如果没有设置, 则不输出
+    this.debugLogPath = this.options.debug_log_path || null;
+    
+    // 如果设置了调试日志路径，删除旧的 orderPda.txt 文件以确保文件是最新的
+    if (this.debugLogPath && typeof this.debugLogPath === 'string') {
+      const orderPdaFilePath = path.join(this.debugLogPath, 'orderPda.txt');
+      try {
+        if (fs.existsSync(orderPdaFilePath)) {
+          fs.unlinkSync(orderPdaFilePath);
+        }
+      } catch (error) {
+        console.warn('Warning: Failed to delete orderPda.txt:', error.message);
+      }
+    }
 
     // Initialize Anchor program
     this.program = this._initProgram(this.options);
