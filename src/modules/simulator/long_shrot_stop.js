@@ -84,7 +84,7 @@ async function simulateLongStopLoss(mint, buyTokenAmount, stopLossPrice, mintInf
             const overlapResult = checkPriceRangeOverlap('down_orders', downOrders, stopLossStartPrice, stopLossEndPrice);
             
             if (overlapResult.no_overlap) {
-                console.log('价格区间无重叠，可以执行 / No price range overlap, can execute');
+                //console.log('价格区间无重叠，可以执行 / No price range overlap, can execute');
                 finalOverlapResult = overlapResult; // 记录最终的overlap结果 / Record final overlap result
                 finalTradeAmount = tradeAmount; // 记录最终的交易金额 / Record final trade amount
                 break;
@@ -228,7 +228,7 @@ async function simulateSellStopLoss(mint, sellTokenAmount, stopLossPrice, mintIn
             const overlapResult = checkPriceRangeOverlap('up_orders', upOrders, stopLossStartPrice, stopLossEndPrice);
             
             if (overlapResult.no_overlap) {
-                console.log('价格区间无重叠，可以执行 / No price range overlap, can execute');
+                console.log(' / No price range overlap, can execute');
                 finalOverlapResult = overlapResult; // 记录最终的overlap结果 / Record final overlap result
                 finalTradeAmount = tradeAmount; // 记录最终的交易金额 / Record final trade amount
                 break;

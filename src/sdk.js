@@ -7,6 +7,7 @@ const FastModule = require('./modules/fast');
 const SimulatorModule = require('./modules/simulator');
 const ChainModule = require('./modules/chain');
 const OrderUtils = require('./utils/orderUtils');
+const CurveAMM = require('./utils/curve_amm');
 const spinpetIdl = require('./idl/spinpet.json');
 
 /**
@@ -61,6 +62,9 @@ class SpinPetSdk {
     this.fast = new FastModule(this);
     this.simulator = new SimulatorModule(this);
     this.chain = new ChainModule(this);
+    
+    // Initialize curve AMM utility
+    this.curve = CurveAMM;
     
     // Initialize unified data interface
     this.data = {
