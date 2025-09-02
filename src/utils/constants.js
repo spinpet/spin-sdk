@@ -27,9 +27,9 @@ const DEFAULT_NETWORKS = {
     defaultDataSource: 'chain', // 'fast' or 'chain'
     solanaEndpoint: 'http://192.168.18.5:8899',
     spin_fast_api_url: 'http://192.168.18.5:8080',
-    fee_recipient: 'BrfUqPncmMQFS2iXKaHgwgZfR3E5ajLWZApjED8JaqKu',
-    base_fee_recipient: '5ZV3mpAZvqGtaVCcq9kUGBL9RTWQoLU766StNdrSxGhB',
-    params_account: '4aDh7jiPcDnfideoMJSLU8iEEkukohGtV1VLkpbVz1Bv'
+    fee_recipient: '2vXUJQMcYdveC9acBQanN1JB3Eh5463itc2TG6bMbPse',
+    base_fee_recipient: '94R4pKyj5oTUcdpcfjR9CLWTEpNbSNVA2dLQUg4Gc5sd',
+    params_account: '8yaYiKaLSHMMKTGAHz4ZHhNnt34ytUeTfeA2d8k33zzD'
   }
 };
 

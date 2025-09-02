@@ -98,6 +98,7 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
 
 
 
+
   let buyTokenAmountBigInt;
   try {
     buyTokenAmountBigInt = BigInt(buyTokenAmount);
@@ -114,6 +115,18 @@ function calcLiqTokenBuy(price, buyTokenAmount, orders, onceMaxOrder, passOrder 
   } catch (error) {
     throw new Error(`流动性计算错误：理想流动性计算失败 Liquidity calculation error: Ideal liquidity calculation failed - ${error.message}`);
   }
+
+
+  // orders 长度为0 时要单独计算
+  if (orders.length === 0) {
+    [result.free_lp_sol_amount_sum, result.free_lp_token_amount_sum] = CurveAMM.buyFromPriceToPrice(BigInt(price), CurveAMM.MAX_U128_PRICE);
+    result.has_infinite_lp = true;
+    result.real_lp_sol_amount = result.ideal_lp_sol_amount
+    return result
+  }
+
+
+
 
   // 选择较小值进行遍历
   const loopCount = Math.min(orders.length, onceMaxOrder);
@@ -450,6 +463,17 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
     throw new Error(`流动性计算错误：理想流动性计算失败 Liquidity calculation error: Ideal liquidity calculation failed - ${error.message}`);
   }
 
+  // orders 长度为0 时要单独计算
+  if (orders.length === 0) {
+    [result.free_lp_token_amount_sum, result.free_lp_sol_amount_sum] = CurveAMM.sellFromPriceToPrice(BigInt(price), CurveAMM.MIN_U128_PRICE);
+    result.has_infinite_lp = true;
+    result.real_lp_sol_amount = result.ideal_lp_sol_amount
+    return result
+  }
+
+
+
+
   // 选择较小值进行遍历
   const loopCount = Math.min(orders.length, onceMaxOrder);
 
@@ -640,7 +664,7 @@ function calcLiqTokenSell(price, sellTokenAmount, orders, onceMaxOrder, passOrde
               // 无限流动性够卖出需求了
               try {
                 const actualSellAmount = sellTokenAmountBigInt - (result.free_lp_token_amount_sum - BigInt(tokenAmount));
-                const [_,preciseSol] = CurveAMM.sellFromPriceWithTokenInput(lastEndPrice, actualSellAmount);
+                const [_, preciseSol] = CurveAMM.sellFromPriceWithTokenInput(lastEndPrice, actualSellAmount);
                 result.real_lp_sol_amount = prevFreeSolSum + preciseSol;
                 result.force_close_num = counti; // 强平订单数量
               } catch (error) {

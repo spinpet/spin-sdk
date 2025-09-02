@@ -90,7 +90,7 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
     } else {
       // Special case: real SOL amount is 0, need to recalculate with suggested liquidity
       const suggestedAmount = (freeTokenAmount * BigInt(this.sdk.SUGGEST_LIQ_RATIO)) / 1000n;
-      
+
       const recalcResult = calcLiqTokenBuy(
         price,
         suggestedAmount,
@@ -129,7 +129,7 @@ async function simulateTokenBuy(mint, buyTokenAmount, passOrder = null) {
       suggestedSolAmount: finalRealSolAmount.toString()
     };
   } catch (error) {
-    console.error('calcLiqTokenBuy 调用失败:', error.message);
+    console.error('calcLiqTokenBuy 调用失败:', error);
     throw error;
   }
 }
