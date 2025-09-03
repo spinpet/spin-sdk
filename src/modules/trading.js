@@ -333,6 +333,15 @@ class TradingModule {
       } catch (error) {
         console.warn('Warning: Failed to write order PDA to file:', error.message);
       }
+
+      try {
+        const orderOpenFilePath = path.join(this.sdk.debugLogPath, 'orderOpen.txt');
+        const prevOrderStr = prevOrder ? prevOrder.toString() : 'null';
+        const nextOrderStr = nextOrder ? nextOrder.toString() : 'null';
+        fs.appendFileSync(orderOpenFilePath, `${prevOrderStr} -> ${selfOrderAddress.toString()} -> ${nextOrderStr}\n`);
+      } catch (error) {
+        console.warn('Warning: Failed to write order chain to file:', error.message);
+      }
     }
 
     // // 8. Get prevOrder and nextOrder (simplified calculation)
@@ -480,6 +489,15 @@ class TradingModule {
         fs.appendFileSync(orderPdaFilePath, `${selfOrderAddress.toString()}\n`);
       } catch (error) {
         console.warn('Warning: Failed to write order PDA to file:', error.message);
+      }
+
+      try {
+        const orderOpenFilePath = path.join(this.sdk.debugLogPath, 'orderOpen.txt');
+        const prevOrderStr = prevOrder ? prevOrder.toString() : 'null';
+        const nextOrderStr = nextOrder ? nextOrder.toString() : 'null';
+        fs.appendFileSync(orderOpenFilePath, `${prevOrderStr} -> ${selfOrderAddress.toString()} -> ${nextOrderStr}\n`);
+      } catch (error) {
+        console.warn('Warning: Failed to write order chain to file:', error.message);
       }
     }
 
