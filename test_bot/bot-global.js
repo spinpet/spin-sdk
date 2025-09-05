@@ -34,8 +34,8 @@ const CONFIG = {
       enabled: true, 
       description: '买入100,000个代币',
       params: {
-        buyTokenAmount: '1000000000',  // 100,000 tokens (精度 10^6)
-        maxSolAmount: '5000000000'       // 最多花费5 SOL
+        buyTokenAmount: '300000000000000',  // 100,000 tokens (精度 10^6)
+        maxSolAmount: '50000000000'       // 最多花费5 SOL
       }
     },
     // 步骤3：卖出50,000个代币（50%）
@@ -44,10 +44,32 @@ const CONFIG = {
       enabled: true, 
       description: '卖出50,000个代币',
       params: {
-        sellTokenAmount: '500000000',  // 50,000 tokens
+        sellTokenAmount: '5000000000',  // 50,000 tokens
         minSolOutput: '10'       // 最少得到1 SOL
       }
-    }
+    },
+    // 步骤4：做多交易（1 SOL，止损10%）
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 1 SOL，止损 10%',
+      params: {
+        useSol: 1000000000,    // 使用 1 SOL (lamports)
+        downPercentage: 0.1    // 止损 10%
+      }
+    },
+    // 步骤5：做多交易（2 SOL，止损10%）
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 1 SOL，止损 10%',
+      params: {
+        useSol: 2000000000,    // 使用 1 SOL (lamports)
+        downPercentage: 0.20    // 止损 10%
+      }
+    },
+
+
   ],
   
   // 日志配置

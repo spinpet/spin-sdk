@@ -9,8 +9,8 @@ const BotGlobal = require('../bot-global');
 const { createToken } = require('./create-token');
 const { buyTokens } = require('./buy');
 const { sellTokens } = require('./sell');
-// TODO: 未来添加保证金交易模块
-// const { longPosition } = require('./long');
+const { longTokens } = require('./long');
+// TODO: 未来添加其他保证金交易模块
 // const { shortPosition } = require('./short');
 // const { closeLongPosition } = require('./close-long');
 // const { closeShortPosition } = require('./close-short');
@@ -20,8 +20,8 @@ const TRADE_HANDLERS = {
   'create-token': createToken,
   'buy': buyTokens,
   'sell': sellTokens,
-  // TODO: 添加保证金交易处理器
-  'long': null,      // 待实现
+  'long': longTokens,    // 做多交易
+  // TODO: 添加其他保证金交易处理器
   'short': null,     // 待实现
   'closeLong': null, // 待实现
   'closeShort': null // 待实现

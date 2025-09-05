@@ -19,8 +19,8 @@
         "enabled": true,
         "description": "买入100,000个代币",
         "params": {
-          "buyTokenAmount": "1000000000",
-          "maxSolAmount": "5000000000"
+          "buyTokenAmount": "300000000000000",
+          "maxSolAmount": "50000000000"
         }
       },
       {
@@ -28,8 +28,17 @@
         "enabled": true,
         "description": "卖出50,000个代币",
         "params": {
-          "sellTokenAmount": "500000000",
+          "sellTokenAmount": "5000000000",
           "minSolOutput": "10"
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 1 SOL，止损 10%",
+        "params": {
+          "useSol": 1000000000,
+          "downPercentage": 0.1
         }
       }
     ],
@@ -37,75 +46,112 @@
   },
   "state": {
     "token": {
-      "mintAddress": "9StiQAZvMFaWRi2vDjtXLVMc42NHZnAiBzrPEY9h673e",
-      "mintKeypair": "5RbSWiHunAQn8XcddYt1iGcGkCk4fzx2hMDmZA7Gj3hgo1jv4rQLtWWumqHRLGveiVHma3LjCcu3FRkcAuqjz24Y",
-      "curveAccount": "9AUoa9EBvXe1PdK5BLhpgNeeiNckWrkJCwBfbYEqinYq",
-      "poolTokenAccount": "DkPsbbpuKpkouka8EKUpCbVonDZpn2fhtD1e9NArb59P",
-      "poolSolAccount": "DMUMofQLFdrAxP6vpS4pmWQGvXSj6YK1uQm8zzgdDxH6",
-      "createdAt": "2025-09-05T02:09:08.179Z",
-      "createTxSignature": "XPcfPqoSEJQohBGHsigEYV88Y12ud6RPtcQtLmfHafYfVywyLqd1MJBPu2Dwvohaakd4jYJCc3BV3eNkxEbx2u1"
+      "mintAddress": "6ek4GEQTm4nyKC1X3ewUWWQcg4sbdw7yFuJFNTSMXsDv",
+      "mintKeypair": "2nwXMR4kpgeN5TUW8uhRACe9MAvg4oXFyc8xVddXsMS75vXbHTNvnCPHvHAcxEGn4zJbpec7zFph2ef1YdRJJu9n",
+      "curveAccount": "5ER2qBKcHKHJMwS49E5JJ6at7PASaf2LqMwRQhuAVTtr",
+      "poolTokenAccount": "HMKgR7aXyahb5JXFTVcWoVB7fHLvR4UmCEUaWw7Go6UR",
+      "poolSolAccount": "ETdHSW8dcTNEcNbd2CGoixE9JKZDJuFvn397w2fDmmAd",
+      "createdAt": "2025-09-05T02:28:25.804Z",
+      "createTxSignature": "2qN2itfYzmEYWC5CEioxUyUVXF6hAwX71qQsEUZ1TXXdS7bvCEnQ8GQ3UTh9SruuQoF6PKiNEjmeNHsnmJvUMgnq"
     },
     "tradingHistory": [
       {
         "type": "create-token",
         "description": "创建代币 TestBot Token (TBT)",
         "status": "completed",
-        "txSignature": "XPcfPqoSEJQohBGHsigEYV88Y12ud6RPtcQtLmfHafYfVywyLqd1MJBPu2Dwvohaakd4jYJCc3BV3eNkxEbx2u1",
-        "mintAddress": "9StiQAZvMFaWRi2vDjtXLVMc42NHZnAiBzrPEY9h673e",
+        "txSignature": "2qN2itfYzmEYWC5CEioxUyUVXF6hAwX71qQsEUZ1TXXdS7bvCEnQ8GQ3UTh9SruuQoF6PKiNEjmeNHsnmJvUMgnq",
+        "mintAddress": "6ek4GEQTm4nyKC1X3ewUWWQcg4sbdw7yFuJFNTSMXsDv",
         "accounts": {
-          "mint": "9StiQAZvMFaWRi2vDjtXLVMc42NHZnAiBzrPEY9h673e",
-          "curveAccount": "9AUoa9EBvXe1PdK5BLhpgNeeiNckWrkJCwBfbYEqinYq",
-          "poolTokenAccount": "DkPsbbpuKpkouka8EKUpCbVonDZpn2fhtD1e9NArb59P",
-          "poolSolAccount": "DMUMofQLFdrAxP6vpS4pmWQGvXSj6YK1uQm8zzgdDxH6"
+          "mint": "6ek4GEQTm4nyKC1X3ewUWWQcg4sbdw7yFuJFNTSMXsDv",
+          "curveAccount": "5ER2qBKcHKHJMwS49E5JJ6at7PASaf2LqMwRQhuAVTtr",
+          "poolTokenAccount": "HMKgR7aXyahb5JXFTVcWoVB7fHLvR4UmCEUaWw7Go6UR",
+          "poolSolAccount": "ETdHSW8dcTNEcNbd2CGoixE9JKZDJuFvn397w2fDmmAd"
         },
-        "duration": "0.32s",
-        "timestamp": "2025-09-05T02:09:08.179Z",
+        "duration": "0.49s",
+        "timestamp": "2025-09-05T02:28:25.805Z",
         "index": 0
       },
       {
         "type": "buy",
-        "description": "买入 1000 个代币",
+        "description": "买入 300000000 个代币",
         "status": "completed",
-        "txSignature": "4RwSf8HiTtzNwwtVyA8vmsbpSj6dzFo82pUpuZA7HTsMVAQKPRD339momo5quvyL4PX1MvXUtwvbbCFBfxahtHNj",
-        "mintAddress": "9StiQAZvMFaWRi2vDjtXLVMc42NHZnAiBzrPEY9h673e",
+        "txSignature": "27hQ7raMdStQozmFq43zj1zBJdYepwtSF6V3uAu6WV3w7b6sdU6xH1tZCxDgb9bx8qV4xcGGagmQT6QirKJFWjvP",
+        "mintAddress": "6ek4GEQTm4nyKC1X3ewUWWQcg4sbdw7yFuJFNTSMXsDv",
         "params": {
-          "buyTokenAmount": "1000000000",
-          "maxSolAmount": "5000000000"
+          "buyTokenAmount": "300000000000000",
+          "maxSolAmount": "50000000000"
         },
         "results": {
-          "actualTokenBalance": "1000000000",
-          "solSpent": "2072519",
-          "userTokenAccount": "2QRroTkPQHZwgprHMaJvrzsCZWgSJK9eqS3LbHQzCEME"
+          "actualTokenBalance": "300000000000000",
+          "solSpent": "11761423323",
+          "userTokenAccount": "BRJ1ftEGSMHfcDG78qxXQPyroCchTpWYhKpn5u8WZeJL"
         },
-        "duration": "0.46s",
-        "timestamp": "2025-09-05T02:09:10.647Z",
+        "duration": "0.40s",
+        "timestamp": "2025-09-05T02:28:28.214Z",
         "index": 1
       },
       {
         "type": "sell",
-        "description": "卖出 500.00 个代币",
+        "description": "卖出 5000.00 个代币",
         "status": "completed",
-        "txSignature": "vu9Ah8vGu5mazoBemjxiXQumFtGJV6oni1AF6EsA3Z8AZ7J4w6sFkWmgG5TTdJga2WZx5gaKQB2wXAhKrS1p9pD",
-        "mintAddress": "9StiQAZvMFaWRi2vDjtXLVMc42NHZnAiBzrPEY9h673e",
+        "txSignature": "34WMHdSLEWnW61baj9KdeMgQ5gC7DrS514nutey5CpXLxJfMo7jFnyumxaUMaBcwJab4bNhfwDAS8Zo6drokYbD8",
+        "mintAddress": "6ek4GEQTm4nyKC1X3ewUWWQcg4sbdw7yFuJFNTSMXsDv",
         "params": {
-          "sellTokenAmount": "500000000",
+          "sellTokenAmount": "5000000000",
           "minSolOutput": "10"
         },
         "results": {
-          "tokensSold": "500000000",
-          "solReceived": "8841",
-          "newTokenBalance": "500000000",
-          "avgPrice": "0.017682000",
-          "userTokenAccount": "2QRroTkPQHZwgprHMaJvrzsCZWgSJK9eqS3LbHQzCEME"
+          "tokensSold": "5000000000",
+          "solReceived": "261665",
+          "newTokenBalance": "299995000000000",
+          "avgPrice": "0.052333000",
+          "userTokenAccount": "BRJ1ftEGSMHfcDG78qxXQPyroCchTpWYhKpn5u8WZeJL"
         },
-        "duration": "0.43s",
-        "timestamp": "2025-09-05T02:09:13.081Z",
+        "duration": "0.39s",
+        "timestamp": "2025-09-05T02:28:30.615Z",
         "index": 2
+      },
+      {
+        "type": "long",
+        "description": "做多 18127496 个代币，止损 10.0%",
+        "status": "completed",
+        "txSignature": "3gM15jT7GmkZLe2gjydAoCydnXzpxnWH2qaU6eRdyFYG9bth4VM88fzpRPmMwVaGT77i54SB9DHJFfYY11xi81Xy",
+        "mintAddress": "6ek4GEQTm4nyKC1X3ewUWWQcg4sbdw7yFuJFNTSMXsDv",
+        "params": {
+          "useSol": 1000000000,
+          "downPercentage": 0.1,
+          "buyTokenAmount": "18127495658390",
+          "maxSolAmount": "2000000000",
+          "marginSol": "5000000000",
+          "closePrice": "484840488362747153285"
+        },
+        "results": {
+          "orderPda": "GhayK3tfoUWgnq9axihsTD3sq9uj1BDX6Cs4yuUdY3EW",
+          "solSpent": "165046966",
+          "leverage": "10.00x",
+          "stopLossPercentage": "10.00%",
+          "prevOrder": null,
+          "nextOrder": null
+        },
+        "duration": "0.44s",
+        "timestamp": "2025-09-05T02:28:33.064Z",
+        "index": 3
       }
     ],
     "positions": {
-      "spotBalance": "500000000",
-      "longPositions": [],
+      "spotBalance": "299995000000000",
+      "longPositions": [
+        {
+          "orderPda": "GhayK3tfoUWgnq9axihsTD3sq9uj1BDX6Cs4yuUdY3EW",
+          "mintAddress": "6ek4GEQTm4nyKC1X3ewUWWQcg4sbdw7yFuJFNTSMXsDv",
+          "buyTokenAmount": "18127495658390",
+          "marginSol": "5000000000",
+          "closePrice": "484840488362747153285",
+          "openTime": "2025-09-05T02:28:33.064Z",
+          "leverage": "10.00x",
+          "stopLossPercentage": "10.00%"
+        }
+      ],
       "shortPositions": []
     },
     "execution": {
@@ -113,12 +159,13 @@
       "completedSteps": [
         "create-token",
         "buy",
-        "sell"
+        "sell",
+        "long"
       ],
       "errors": [],
-      "startTime": "2025-09-05T02:09:07.860Z",
-      "endTime": "2025-09-05T02:09:13.081Z"
+      "startTime": "2025-09-05T02:28:25.314Z",
+      "endTime": "2025-09-05T02:28:33.064Z"
     }
   },
-  "savedAt": "2025-09-05T02:09:13.082Z"
+  "savedAt": "2025-09-05T02:28:33.067Z"
 }
