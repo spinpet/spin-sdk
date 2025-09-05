@@ -168,7 +168,7 @@ async function sellTokens(customParams = null) {
     }
     
     // 11. 查询卖出后的SOL余额
-    const newWalletBalance = await connection.getBalance(walletKeypair.publicKey);
+    const newWalletBalance = await connection.getBalance(wallet.keypair.publicKey);
     const solReceived = newWalletBalance - walletBalance;
     const solReceivedDisplay = (solReceived / 1e9).toFixed(6);
     const newBalanceDisplay = (newWalletBalance / 1e9).toFixed(4);

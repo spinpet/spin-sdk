@@ -34,7 +34,7 @@ const CONFIG = {
       enabled: true, 
       description: '买入100,000个代币',
       params: {
-        buyTokenAmount: '100000000000',  // 100,000 tokens (精度 10^6)
+        buyTokenAmount: '1000000000',  // 100,000 tokens (精度 10^6)
         maxSolAmount: '5000000000'       // 最多花费5 SOL
       }
     },
@@ -44,8 +44,8 @@ const CONFIG = {
       enabled: true, 
       description: '卖出50,000个代币',
       params: {
-        sellTokenAmount: '50000000000',  // 50,000 tokens
-        minSolOutput: '1000000000'       // 最少得到1 SOL
+        sellTokenAmount: '500000000',  // 50,000 tokens
+        minSolOutput: '10'       // 最少得到1 SOL
       }
     }
   ],

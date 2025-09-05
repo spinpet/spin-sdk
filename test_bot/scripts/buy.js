@@ -144,7 +144,7 @@ async function buyTokens(customParams = null) {
     }
     
     // 11. 查询买入后的SOL余额
-    const newWalletBalance = await connection.getBalance(walletKeypair.publicKey);
+    const newWalletBalance = await connection.getBalance(wallet.keypair.publicKey);
     const solSpent = walletBalance - newWalletBalance;
     const solSpentDisplay = (solSpent / 1e9).toFixed(6);
     const newBalanceDisplay = (newWalletBalance / 1e9).toFixed(4);

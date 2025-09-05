@@ -72,11 +72,18 @@ function getSdk(options = {}) {
   if (cachedSdk && 
       options.network === config.network && 
       options.walletIndex === config.walletIndex) {
+    BotGlobal.logMessage('info', 'SDK实例已存在，使用缓存');
     return {
       sdk: cachedSdk,
       connection: cachedConnection,
       wallet: cachedWallet
     };
+  }
+  
+  // 清除旧的缓存
+  if (cachedSdk) {
+    BotGlobal.logMessage('info', '配置变化，清除旧的SDK缓存');
+    clearCache();
   }
   
   // 获取网络配置
@@ -94,11 +101,11 @@ function getSdk(options = {}) {
     
     // 获取网络选项
     const networkOptions = getDefaultOptions(network);
+    BotGlobal.logMessage('info', `网络选项: ${JSON.stringify(networkOptions)}`);
     
     // 创建SDK实例
     const sdk = new SpinPetSdk(
       connection,
-      walletObj.wallet,
       new PublicKey(SPINPET_PROGRAM_ID),
       networkOptions
     );
