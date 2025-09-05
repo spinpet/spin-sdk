@@ -57,6 +57,9 @@ async function executeStep(planStep, stepIndex) {
     // 执行交易步骤
     const result = await handler(params);
     
+    // 更新执行步骤，包含步骤索引
+    BotGlobal.updateExecutionStep(type, 'completed', { stepIndex });
+    
     BotGlobal.logMessage('info', `步骤 ${stepIndex + 1}: [${type}] ${description} - 执行成功`);
     
     return {
@@ -67,6 +70,9 @@ async function executeStep(planStep, stepIndex) {
     };
     
   } catch (error) {
+    // 更新执行步骤错误状态
+    BotGlobal.updateExecutionStep(type, 'error', { error: error.message, stepIndex });
+    
     BotGlobal.logMessage('error', `步骤 ${stepIndex + 1}: [${type}] ${description} - 执行失败: ${error.message}`);
     
     return {
@@ -137,15 +143,15 @@ async function runTradingPlan(options = {}) {
     let errorCount = 0;
     let skippedCount = 0;
     
-    // 获取已完成的步骤
-    const completedSteps = state.state.execution.completedSteps;
+    // 获取已完成的步骤索引
+    const completedStepIndexes = state.state.execution.completedStepIndexes || [];
     
     // 逐步执行交易计划
     for (let i = 0; i < tradingPlan.length; i++) {
       const step = tradingPlan[i];
       
-      // 如果设置跳过已完成步骤，且步骤已完成，则跳过
-      if (skipCompleted && completedSteps.includes(step.type)) {
+      // 如果设置跳过已完成步骤，且步骤索引已完成，则跳过
+      if (skipCompleted && completedStepIndexes.includes(i)) {
         BotGlobal.logMessage('info', `步骤 ${i + 1}: [${step.type}] ${step.description} - 跳过（已完成）`);
         results.push({
           success: true,
@@ -279,7 +285,8 @@ function showTradingPlan() {
   console.log('交易步骤:');
   config.tradingPlan.forEach((step, index) => {
     const status = step.enabled ? '✅ 启用' : '❌ 禁用';
-    const completed = state.state.execution.completedSteps.includes(step.type) ? '(已完成)' : '';
+    const completedStepIndexes = state.state.execution.completedStepIndexes || [];
+    const completed = completedStepIndexes.includes(index) ? '(已完成)' : '';
     
     console.log(`  ${index + 1}. [${step.type}] ${step.description} - ${status} ${completed}`);
     

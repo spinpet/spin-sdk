@@ -58,11 +58,11 @@ const CONFIG = {
         downPercentage: 0.1    // 止损 10%
       }
     },
-    // 步骤5：做多交易（2 SOL，止损10%）
+    // 步骤5：做多交易
     { 
       type: 'long', 
       enabled: true,  // 启用做多交易测试
-      description: '做多交易 1 SOL，止损 10%',
+      description: '做多交易 2 SOL，止损 20%',
       params: {
         useSol: 2000000000,    // 使用 1 SOL (lamports)
         downPercentage: 0.20    // 止损 10%
@@ -103,6 +103,7 @@ let STATE = {
   execution: {
     currentStep: 'idle',
     completedSteps: [],
+    completedStepIndexes: [],  // 新增：已完成步骤索引列表
     errors: [],
     startTime: null,
     endTime: null
@@ -176,11 +177,23 @@ function updateExecutionStep(step, status, data = {}) {
       STATE.execution.startTime = new Date().toISOString();
     }
   } else if (status === 'completed') {
+    // 保持向后兼容，继续维护 completedSteps
     if (!STATE.execution.completedSteps.includes(step)) {
       STATE.execution.completedSteps.push(step);
     }
-    // 如果这是最后一步，设置结束时间
-    if (STATE.execution.completedSteps.length === CONFIG.tradingPlan.filter(p => p.enabled).length) {
+    // 新增：维护步骤索引列表
+    if (data.stepIndex !== undefined) {
+      if (!STATE.execution.completedStepIndexes) {
+        STATE.execution.completedStepIndexes = [];
+      }
+      if (!STATE.execution.completedStepIndexes.includes(data.stepIndex)) {
+        STATE.execution.completedStepIndexes.push(data.stepIndex);
+      }
+    }
+    // 判断是否完成所有步骤（基于索引而非类型）
+    const enabledStepsCount = CONFIG.tradingPlan.filter(p => p.enabled).length;
+    const completedIndexesCount = STATE.execution.completedStepIndexes ? STATE.execution.completedStepIndexes.length : STATE.execution.completedSteps.length;
+    if (completedIndexesCount === enabledStepsCount) {
       STATE.execution.endTime = new Date().toISOString();
       STATE.execution.currentStep = 'completed';
     }
@@ -286,6 +299,7 @@ function resetState() {
     execution: {
       currentStep: 'idle',
       completedSteps: [],
+      completedStepIndexes: [],
       errors: [],
       startTime: null,
       endTime: null

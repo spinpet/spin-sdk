@@ -1953,3 +1953,1439 @@
 === 最终状态 ===
 [2025-09-05T02:28:33.067Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
 [2025-09-05T02:28:33.067Z] [INFO] 🎉 交易计划执行完成！
+[2025-09-05T02:30:43.444Z] [INFO] === SpinPet 交易机器人开始执行 ===
+[2025-09-05T02:30:43.445Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:30:43.445Z] [INFO] 钱包索引: 0
+[2025-09-05T02:30:43.445Z] [INFO] 代币: TestBot Token (TBT)
+[2025-09-05T02:30:43.445Z] [INFO] 交易计划总步骤: 5
+[2025-09-05T02:30:43.445Z] [INFO] 启用的步骤: 5
+[2025-09-05T02:30:43.445Z] [INFO] 
+执行计划:
+[2025-09-05T02:30:43.445Z] [INFO]   1. [create-token] 创建测试代币 - 启用
+[2025-09-05T02:30:43.445Z] [INFO]   2. [buy] 买入100,000个代币 - 启用
+[2025-09-05T02:30:43.445Z] [INFO]   3. [sell] 卖出50,000个代币 - 启用
+[2025-09-05T02:30:43.446Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 启用
+[2025-09-05T02:30:43.446Z] [INFO]   5. [long] 做多交易 1 SOL，止损 10% - 启用
+[2025-09-05T02:30:43.446Z] [INFO] 
+[2025-09-05T02:30:43.446Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 开始执行
+[2025-09-05T02:30:43.446Z] [INFO] === 开始创建代币 ===
+[2025-09-05T02:30:43.446Z] [INFO] 代币信息: TestBot Token (TBT)
+[2025-09-05T02:30:43.446Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:30:43.446Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:30:43.446Z] [INFO] 钱包索引: 0
+[2025-09-05T02:30:43.447Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:30:43.478Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:30:43.478Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:30:43.478Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:30:43.483Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:30:43.483Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:30:43.483Z] [INFO] 程序对象存在: true
+[2025-09-05T02:30:43.484Z] [INFO] 生成代币 mint 地址: 3AGptez3RQVcrkAACGCeMYcumTvV41kefHo8AQuvaoCK
+[2025-09-05T02:30:43.484Z] [INFO] 开始构建代币创建交易...
+[2025-09-05T02:30:43.487Z] [INFO] 代币创建交易已构建
+[2025-09-05T02:30:43.487Z] [INFO] 相关账户:
+[2025-09-05T02:30:43.487Z] [INFO]   - 支付者: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:30:43.488Z] [INFO]   - 代币 Mint: 3AGptez3RQVcrkAACGCeMYcumTvV41kefHo8AQuvaoCK
+[2025-09-05T02:30:43.488Z] [INFO]   - 借贷流动池: 96Chio4rvRViCEyrBTeHf9PWEBY4wi3KS1PMwmzXU34N
+[2025-09-05T02:30:43.488Z] [INFO]   - 流动池代币账户: EX5JsnX3BGf1HsCKyrMhTAZcYppSSaYHv4VSjgYuSg4e
+[2025-09-05T02:30:43.488Z] [INFO]   - 流动池SOL账户: 6q1NKfm9HsG65FafGXiGF2TNckYZGF7r265e1uKS5qjx
+[2025-09-05T02:30:43.488Z] [INFO] 开始签名和发送交易...
+[2025-09-05T02:30:43.525Z] [INFO] 交易已发送，签名: 4q8gztN2X6pqXx4mqd2bAMEbQrrGFopDzYWcZtzRBVejLDU8juQmP67Pw3hkCMEHUJ8CFtoFwJW3ZgaFkhQmCYUu
+[2025-09-05T02:30:43.525Z] [INFO] 等待交易确认...
+[2025-09-05T02:30:43.869Z] [INFO] ✅ 代币创建成功！耗时 0.42 秒
+[2025-09-05T02:30:43.870Z] [INFO] 交易签名: 4q8gztN2X6pqXx4mqd2bAMEbQrrGFopDzYWcZtzRBVejLDU8juQmP67Pw3hkCMEHUJ8CFtoFwJW3ZgaFkhQmCYUu
+[2025-09-05T02:30:43.870Z] [INFO] 代币 Mint 地址: 3AGptez3RQVcrkAACGCeMYcumTvV41kefHo8AQuvaoCK
+[2025-09-05T02:30:43.871Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:30:43.871Z] [INFO] === 代币创建完成 ===
+[2025-09-05T02:30:43.872Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 执行成功
+[2025-09-05T02:30:43.872Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:30:45.873Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 开始执行
+[2025-09-05T02:30:45.875Z] [INFO] === 开始买入代币 ===
+[2025-09-05T02:30:45.875Z] [INFO] 使用代币地址: 3AGptez3RQVcrkAACGCeMYcumTvV41kefHo8AQuvaoCK
+[2025-09-05T02:30:45.875Z] [INFO] 使用自定义买入参数
+[2025-09-05T02:30:45.877Z] [INFO] 买入数量: 300000000 个代币
+[2025-09-05T02:30:45.877Z] [INFO] 最大花费: 50.0000 SOL
+[2025-09-05T02:30:45.877Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:30:45.877Z] [INFO] SDK缓存已清除
+[2025-09-05T02:30:45.877Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:30:45.877Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:30:45.877Z] [INFO] 钱包索引: 0
+[2025-09-05T02:30:45.878Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:30:45.879Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:30:45.879Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:30:45.880Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:30:45.885Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:30:45.885Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:30:45.885Z] [INFO] 程序对象存在: true
+[2025-09-05T02:30:45.889Z] [INFO] 钱包SOL余额: 99927.8521 SOL
+[2025-09-05T02:30:45.889Z] [INFO] 正在模拟买入交易...
+[2025-09-05T02:30:45.905Z] [INFO] 模拟结果:
+[2025-09-05T02:30:45.905Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:30:45.905Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:30:45.905Z] [INFO]   - 建议买入: 300000000.00 个代币
+[2025-09-05T02:30:45.905Z] [INFO]   - 需要SOL: 11.642950 SOL
+[2025-09-05T02:30:45.905Z] [INFO] 开始构建买入交易...
+[2025-09-05T02:30:45.915Z] [INFO] 买入交易已构建
+[2025-09-05T02:30:45.916Z] [INFO] 交易详情:
+[2025-09-05T02:30:45.916Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:30:45.916Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:30:45.916Z] [INFO]   - 用户代币账户: 7o3AirMq6DC5HcZKpd9nNw7Qb7R8cjXr6PiTfkwXhkdg
+[2025-09-05T02:30:45.916Z] [INFO] 开始签名和发送买入交易...
+[2025-09-05T02:30:45.929Z] [INFO] 买入交易已发送，签名: 4zASASR8JXJgytSb5ia2QCNWsvvQNbQvMeVptx1zirkMYcCRzoravzf41ZAYCkpWfmDyNcDdZvdtjiyzCrRSWPmZ
+[2025-09-05T02:30:45.930Z] [INFO] 等待交易确认...
+[2025-09-05T02:30:46.252Z] [INFO] ✅ 代币买入成功！耗时 0.38 秒
+[2025-09-05T02:30:46.252Z] [INFO] 交易签名: 4zASASR8JXJgytSb5ia2QCNWsvvQNbQvMeVptx1zirkMYcCRzoravzf41ZAYCkpWfmDyNcDdZvdtjiyzCrRSWPmZ
+[2025-09-05T02:30:46.254Z] [INFO] 买入后代币余额: 300000000.00 个代币
+[2025-09-05T02:30:46.257Z] [INFO] 花费SOL: 11.761423 SOL
+[2025-09-05T02:30:46.257Z] [INFO] 剩余SOL余额: 99916.0907 SOL
+[2025-09-05T02:30:46.258Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:30:46.258Z] [INFO] === 代币买入完成 ===
+[2025-09-05T02:30:46.258Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 执行成功
+[2025-09-05T02:30:46.258Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:30:48.258Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 开始执行
+[2025-09-05T02:30:48.260Z] [INFO] === 开始卖出代币 ===
+[2025-09-05T02:30:48.260Z] [INFO] 使用代币地址: 3AGptez3RQVcrkAACGCeMYcumTvV41kefHo8AQuvaoCK
+[2025-09-05T02:30:48.260Z] [INFO] 当前代币余额: 300000000.00 个代币
+[2025-09-05T02:30:48.260Z] [INFO] 使用自定义卖出参数
+[2025-09-05T02:30:48.261Z] [INFO] 卖出数量: 5000 个代币
+[2025-09-05T02:30:48.261Z] [INFO] 最少获得: 0.0000 SOL
+[2025-09-05T02:30:48.261Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:30:48.261Z] [INFO] SDK缓存已清除
+[2025-09-05T02:30:48.261Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:30:48.261Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:30:48.261Z] [INFO] 钱包索引: 0
+[2025-09-05T02:30:48.261Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:30:48.263Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:30:48.263Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:30:48.263Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:30:48.268Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:30:48.268Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:30:48.268Z] [INFO] 程序对象存在: true
+[2025-09-05T02:30:48.270Z] [INFO] 钱包SOL余额: 99916.0907 SOL
+[2025-09-05T02:30:48.270Z] [INFO] 正在模拟卖出交易...
+[2025-09-05T02:30:48.279Z] [INFO] 模拟结果:
+[2025-09-05T02:30:48.279Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:30:48.279Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:30:48.279Z] [INFO]   - 建议卖出: 5000.00 个代币
+[2025-09-05T02:30:48.279Z] [INFO]   - 预期获得: 0.000269 SOL
+[2025-09-05T02:30:48.279Z] [INFO] 开始构建卖出交易...
+[2025-09-05T02:30:48.286Z] [INFO] 卖出交易已构建
+[2025-09-05T02:30:48.286Z] [INFO] 交易详情:
+[2025-09-05T02:30:48.286Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:30:48.286Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:30:48.286Z] [INFO]   - 用户代币账户: 7o3AirMq6DC5HcZKpd9nNw7Qb7R8cjXr6PiTfkwXhkdg
+[2025-09-05T02:30:48.286Z] [INFO] 开始签名和发送卖出交易...
+[2025-09-05T02:30:48.297Z] [INFO] 卖出交易已发送，签名: 2qZFK6V52PY8RnMbEAQCeJbn6FRnbScY5LZGf9g1puNnbE8y7tq2Fmqgp8nUEDjNZotMmA5LGjrtFPfKjfPQukUK
+[2025-09-05T02:30:48.297Z] [INFO] 等待交易确认...
+[2025-09-05T02:30:48.778Z] [INFO] ✅ 代币卖出成功！耗时 0.52 秒
+[2025-09-05T02:30:48.779Z] [INFO] 交易签名: 2qZFK6V52PY8RnMbEAQCeJbn6FRnbScY5LZGf9g1puNnbE8y7tq2Fmqgp8nUEDjNZotMmA5LGjrtFPfKjfPQukUK
+[2025-09-05T02:30:48.782Z] [INFO] 卖出后代币余额: 299995000.00 个代币
+[2025-09-05T02:30:48.785Z] [INFO] 获得SOL: 0.000262 SOL
+[2025-09-05T02:30:48.785Z] [INFO] 总SOL余额: 99916.0910 SOL
+[2025-09-05T02:30:48.785Z] [INFO] 实际卖出: 5000.00 个代币
+[2025-09-05T02:30:48.785Z] [INFO] 平均价格: 0.052333000 SOL/千代币
+[2025-09-05T02:30:48.786Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:30:48.786Z] [INFO] === 代币卖出完成 ===
+[2025-09-05T02:30:48.786Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 执行成功
+[2025-09-05T02:30:48.786Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:30:50.787Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 开始执行
+[2025-09-05T02:30:50.787Z] [INFO] === 开始执行做多交易 ===
+[2025-09-05T02:30:50.787Z] [INFO] 使用代币地址: 3AGptez3RQVcrkAACGCeMYcumTvV41kefHo8AQuvaoCK
+[2025-09-05T02:30:50.787Z] [INFO] 使用自定义做多参数
+[2025-09-05T02:30:50.787Z] [INFO] 使用SOL: 1.0000 SOL
+[2025-09-05T02:30:50.787Z] [INFO] 止损百分比: 10.0%
+[2025-09-05T02:30:50.787Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:30:50.787Z] [INFO] SDK缓存已清除
+[2025-09-05T02:30:50.787Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:30:50.787Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:30:50.787Z] [INFO] 钱包索引: 0
+[2025-09-05T02:30:50.788Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:30:50.788Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:30:50.788Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:30:50.788Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:30:50.791Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:30:50.791Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:30:50.791Z] [INFO] 程序对象存在: true
+[2025-09-05T02:30:50.791Z] [INFO] 获取代币当前价格...
+[2025-09-05T02:30:50.794Z] [INFO] 当前价格: 538711653736385725873
+[2025-09-05T02:30:50.794Z] [INFO] 计算买入代币数量...
+[2025-09-05T02:30:50.794Z] [INFO] 计算买入数量: 18127496 个代币
+[2025-09-05T02:30:50.794Z] [INFO] 预期价格变化: 538711653736385725873 -> 564895363080684877661
+[2025-09-05T02:30:50.794Z] [INFO] 模拟买入交易验证流动性...
+[2025-09-05T02:30:50.805Z] [INFO] 买入模拟结果:
+[2025-09-05T02:30:50.805Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:30:50.805Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:30:50.805Z] [INFO]   - 建议买入: 18127495.66 个代币
+[2025-09-05T02:30:50.805Z] [INFO]   - 需要SOL: 1.000000 SOL
+[2025-09-05T02:30:50.805Z] [INFO] 计算止损价格...
+[2025-09-05T02:30:50.805Z] [INFO] 预期止损价格 (下跌 10.0%): 484840488362747153285
+[2025-09-05T02:30:50.805Z] [INFO] 调用止损模拟器...
+[2025-09-05T02:30:50.814Z] [INFO] 止损模拟结果:
+[2025-09-05T02:30:50.814Z] [INFO]   - 可执行止损价格: 484840488362747153285
+[2025-09-05T02:30:50.814Z] [INFO]   - 止损百分比: 10.00%
+[2025-09-05T02:30:50.814Z] [INFO]   - 杠杆倍数: 10.00x
+[2025-09-05T02:30:50.814Z] [INFO]   - 预期SOL输出: 0.859767 SOL
+[2025-09-05T02:30:50.814Z] [INFO]   - 价格调整次数: 1
+[2025-09-05T02:30:50.814Z] [INFO] 订单链表位置:
+[2025-09-05T02:30:50.814Z] [INFO]   - 前一个订单: null
+[2025-09-05T02:30:50.814Z] [INFO]   - 下一个订单: null
+[2025-09-05T02:30:50.814Z] [INFO] 交易参数:
+[2025-09-05T02:30:50.814Z] [INFO]   - 买入代币数量: 18127496 个
+[2025-09-05T02:30:50.814Z] [INFO]   - 最大SOL花费: 2.0000 SOL
+[2025-09-05T02:30:50.814Z] [INFO]   - 保证金: 5.0000 SOL
+[2025-09-05T02:30:50.814Z] [INFO]   - 平仓价格: 484840488362747153285
+[2025-09-05T02:30:50.815Z] [INFO] 钱包SOL余额: 99916.0910 SOL
+[2025-09-05T02:30:50.815Z] [INFO] 开始构建做多交易...
+[2025-09-05T02:30:50.824Z] [INFO] 做多交易已构建
+[2025-09-05T02:30:50.824Z] [INFO] 交易详情:
+[2025-09-05T02:30:50.824Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:30:50.824Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:30:50.824Z] [INFO]   - 自建订单: FD4NbXBJ8HwcekdatzsM9Jn3hZvfbg3D5K8znH56MTGk
+[2025-09-05T02:30:50.824Z] [INFO] 开始签名和发送做多交易...
+[2025-09-05T02:30:50.832Z] [INFO] 做多交易已发送，签名: aNWZ8zAGdPdQWfV641kxsgK5qdh1uzphVc79jFGDR3Shk9s4G2NHs9bS6RxUQ66mBiyE82i45vP8bWMg1tTE9g9
+[2025-09-05T02:30:50.832Z] [INFO] 等待交易确认...
+[2025-09-05T02:30:51.161Z] [INFO] ✅ 代币做多成功！耗时 0.37 秒
+[2025-09-05T02:30:51.161Z] [INFO] 交易签名: aNWZ8zAGdPdQWfV641kxsgK5qdh1uzphVc79jFGDR3Shk9s4G2NHs9bS6RxUQ66mBiyE82i45vP8bWMg1tTE9g9
+[2025-09-05T02:30:51.162Z] [INFO] 订单PDA: FD4NbXBJ8HwcekdatzsM9Jn3hZvfbg3D5K8znH56MTGk
+[2025-09-05T02:30:51.163Z] [INFO] 花费SOL: 0.165047 SOL
+[2025-09-05T02:30:51.163Z] [INFO] 剩余SOL余额: 99915.9259 SOL
+[2025-09-05T02:30:51.164Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:30:51.164Z] [INFO] === 代币做多完成 ===
+[2025-09-05T02:30:51.164Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 执行成功
+[2025-09-05T02:30:51.164Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:30:53.165Z] [INFO] 步骤 5: [long] 做多交易 1 SOL，止损 10% - 跳过（已完成）
+[2025-09-05T02:30:53.167Z] [INFO] 
+=== 执行完成 ===
+[2025-09-05T02:30:53.167Z] [INFO] 总用时: 9.72 秒
+[2025-09-05T02:30:53.167Z] [INFO] 成功步骤: 4
+[2025-09-05T02:30:53.167Z] [INFO] 失败步骤: 0
+[2025-09-05T02:30:53.168Z] [INFO] 跳过步骤: 1
+[2025-09-05T02:30:53.168Z] [INFO] 
+=== 详细结果 ===
+[2025-09-05T02:30:53.169Z] [INFO]   1. [create-token] 创建测试代币 - 成功
+[2025-09-05T02:30:53.169Z] [INFO]   2. [buy] 买入100,000个代币 - 成功
+[2025-09-05T02:30:53.169Z] [INFO]   3. [sell] 卖出50,000个代币 - 成功
+[2025-09-05T02:30:53.169Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 成功
+[2025-09-05T02:30:53.169Z] [INFO]   5. [long] 做多交易 1 SOL，止损 10% - 已完成（跳过）
+[2025-09-05T02:30:53.169Z] [INFO] 
+=== 最终状态 ===
+[2025-09-05T02:30:53.172Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:30:53.172Z] [INFO] 🎉 交易计划执行完成！
+[2025-09-05T02:31:12.537Z] [INFO] === SpinPet 交易机器人开始执行 ===
+[2025-09-05T02:31:12.538Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:31:12.538Z] [INFO] 钱包索引: 0
+[2025-09-05T02:31:12.538Z] [INFO] 代币: TestBot Token (TBT)
+[2025-09-05T02:31:12.539Z] [INFO] 交易计划总步骤: 5
+[2025-09-05T02:31:12.539Z] [INFO] 启用的步骤: 5
+[2025-09-05T02:31:12.539Z] [INFO] 
+执行计划:
+[2025-09-05T02:31:12.539Z] [INFO]   1. [create-token] 创建测试代币 - 启用
+[2025-09-05T02:31:12.539Z] [INFO]   2. [buy] 买入100,000个代币 - 启用
+[2025-09-05T02:31:12.539Z] [INFO]   3. [sell] 卖出50,000个代币 - 启用
+[2025-09-05T02:31:12.539Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 启用
+[2025-09-05T02:31:12.539Z] [INFO]   5. [long] 做多交易 1 SOL，止损 10% - 启用
+[2025-09-05T02:31:12.539Z] [INFO] 
+[2025-09-05T02:31:12.539Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 开始执行
+[2025-09-05T02:31:12.539Z] [INFO] === 开始创建代币 ===
+[2025-09-05T02:31:12.539Z] [INFO] 代币信息: TestBot Token (TBT)
+[2025-09-05T02:31:12.540Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:31:12.540Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:31:12.540Z] [INFO] 钱包索引: 0
+[2025-09-05T02:31:12.540Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:31:12.573Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:31:12.574Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:31:12.574Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:31:12.578Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:31:12.579Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:31:12.579Z] [INFO] 程序对象存在: true
+[2025-09-05T02:31:12.580Z] [INFO] 生成代币 mint 地址: FufP8BifyYSDtejHEbaWyAZhcNwVF5jwE9wm9Qo9i6Pv
+[2025-09-05T02:31:12.580Z] [INFO] 开始构建代币创建交易...
+[2025-09-05T02:31:12.583Z] [INFO] 代币创建交易已构建
+[2025-09-05T02:31:12.583Z] [INFO] 相关账户:
+[2025-09-05T02:31:12.583Z] [INFO]   - 支付者: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:31:12.583Z] [INFO]   - 代币 Mint: FufP8BifyYSDtejHEbaWyAZhcNwVF5jwE9wm9Qo9i6Pv
+[2025-09-05T02:31:12.583Z] [INFO]   - 借贷流动池: 9KF2eSJBrhkEqmcHqG3c5dxH6RsVFaTz65HyG1ppdCZf
+[2025-09-05T02:31:12.583Z] [INFO]   - 流动池代币账户: FJ9kmz1RAhUsdcgSCxF8F5WSoL5DC6ZcqVKN86WwKMp6
+[2025-09-05T02:31:12.583Z] [INFO]   - 流动池SOL账户: 7u6oWp3HT5ogFtEpp7gyDJAXqk8uJUicXkFejkMkRGsf
+[2025-09-05T02:31:12.583Z] [INFO] 开始签名和发送交易...
+[2025-09-05T02:31:12.624Z] [INFO] 交易已发送，签名: LbpCMBu8BFECgrRyF6Dyn1s49VUe3BE3FpxyUjesNULnfg9SYH5W56r9KV1Sik7Z8uhLigQtMeQ4FNqaDDJ9hco
+[2025-09-05T02:31:12.624Z] [INFO] 等待交易确认...
+[2025-09-05T02:31:12.829Z] [INFO] ✅ 代币创建成功！耗时 0.29 秒
+[2025-09-05T02:31:12.830Z] [INFO] 交易签名: LbpCMBu8BFECgrRyF6Dyn1s49VUe3BE3FpxyUjesNULnfg9SYH5W56r9KV1Sik7Z8uhLigQtMeQ4FNqaDDJ9hco
+[2025-09-05T02:31:12.830Z] [INFO] 代币 Mint 地址: FufP8BifyYSDtejHEbaWyAZhcNwVF5jwE9wm9Qo9i6Pv
+[2025-09-05T02:31:12.830Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:31:12.830Z] [INFO] === 代币创建完成 ===
+[2025-09-05T02:31:12.830Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 执行成功
+[2025-09-05T02:31:12.830Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:31:14.831Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 开始执行
+[2025-09-05T02:31:14.832Z] [INFO] === 开始买入代币 ===
+[2025-09-05T02:31:14.832Z] [INFO] 使用代币地址: FufP8BifyYSDtejHEbaWyAZhcNwVF5jwE9wm9Qo9i6Pv
+[2025-09-05T02:31:14.832Z] [INFO] 使用自定义买入参数
+[2025-09-05T02:31:14.832Z] [INFO] 买入数量: 300000000 个代币
+[2025-09-05T02:31:14.832Z] [INFO] 最大花费: 50.0000 SOL
+[2025-09-05T02:31:14.832Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:31:14.832Z] [INFO] SDK缓存已清除
+[2025-09-05T02:31:14.832Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:31:14.832Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:31:14.832Z] [INFO] 钱包索引: 0
+[2025-09-05T02:31:14.833Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:31:14.833Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:31:14.833Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:31:14.833Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:31:14.836Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:31:14.836Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:31:14.836Z] [INFO] 程序对象存在: true
+[2025-09-05T02:31:14.837Z] [INFO] 钱包SOL余额: 99915.9190 SOL
+[2025-09-05T02:31:14.838Z] [INFO] 正在模拟买入交易...
+[2025-09-05T02:31:14.865Z] [INFO] 模拟结果:
+[2025-09-05T02:31:14.866Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:31:14.866Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:31:14.866Z] [INFO]   - 建议买入: 300000000.00 个代币
+[2025-09-05T02:31:14.866Z] [INFO]   - 需要SOL: 11.642950 SOL
+[2025-09-05T02:31:14.866Z] [INFO] 开始构建买入交易...
+[2025-09-05T02:31:14.889Z] [INFO] 买入交易已构建
+[2025-09-05T02:31:14.890Z] [INFO] 交易详情:
+[2025-09-05T02:31:14.890Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:31:14.890Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:31:14.890Z] [INFO]   - 用户代币账户: F22fnbok3PKQNEDAMyrorJ3vLjpe1exEVZrRcynb8tJq
+[2025-09-05T02:31:14.890Z] [INFO] 开始签名和发送买入交易...
+[2025-09-05T02:31:14.907Z] [INFO] 买入交易已发送，签名: 2qRjAGWMTDm276dARWY2oCMiUr3uiWfc46rjXVpT9mhsXSHA4rrf1uAuE9S5EAJfVWdVd8pfsFXZAXs7eEaCy6C8
+[2025-09-05T02:31:14.907Z] [INFO] 等待交易确认...
+[2025-09-05T02:31:15.352Z] [INFO] ✅ 代币买入成功！耗时 0.52 秒
+[2025-09-05T02:31:15.353Z] [INFO] 交易签名: 2qRjAGWMTDm276dARWY2oCMiUr3uiWfc46rjXVpT9mhsXSHA4rrf1uAuE9S5EAJfVWdVd8pfsFXZAXs7eEaCy6C8
+[2025-09-05T02:31:15.356Z] [INFO] 买入后代币余额: 300000000.00 个代币
+[2025-09-05T02:31:15.358Z] [INFO] 花费SOL: 11.761423 SOL
+[2025-09-05T02:31:15.358Z] [INFO] 剩余SOL余额: 99904.1576 SOL
+[2025-09-05T02:31:15.358Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:31:15.358Z] [INFO] === 代币买入完成 ===
+[2025-09-05T02:31:15.358Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 执行成功
+[2025-09-05T02:31:15.358Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:31:17.359Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 开始执行
+[2025-09-05T02:31:17.361Z] [INFO] === 开始卖出代币 ===
+[2025-09-05T02:31:17.361Z] [INFO] 使用代币地址: FufP8BifyYSDtejHEbaWyAZhcNwVF5jwE9wm9Qo9i6Pv
+[2025-09-05T02:31:17.361Z] [INFO] 当前代币余额: 300000000.00 个代币
+[2025-09-05T02:31:17.361Z] [INFO] 使用自定义卖出参数
+[2025-09-05T02:31:17.361Z] [INFO] 卖出数量: 5000 个代币
+[2025-09-05T02:31:17.361Z] [INFO] 最少获得: 0.0000 SOL
+[2025-09-05T02:31:17.361Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:31:17.361Z] [INFO] SDK缓存已清除
+[2025-09-05T02:31:17.361Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:31:17.361Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:31:17.362Z] [INFO] 钱包索引: 0
+[2025-09-05T02:31:17.362Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:31:17.363Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:31:17.364Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:31:17.364Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:31:17.369Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:31:17.369Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:31:17.369Z] [INFO] 程序对象存在: true
+[2025-09-05T02:31:17.371Z] [INFO] 钱包SOL余额: 99904.1576 SOL
+[2025-09-05T02:31:17.371Z] [INFO] 正在模拟卖出交易...
+[2025-09-05T02:31:17.382Z] [INFO] 模拟结果:
+[2025-09-05T02:31:17.382Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:31:17.382Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:31:17.382Z] [INFO]   - 建议卖出: 5000.00 个代币
+[2025-09-05T02:31:17.382Z] [INFO]   - 预期获得: 0.000269 SOL
+[2025-09-05T02:31:17.382Z] [INFO] 开始构建卖出交易...
+[2025-09-05T02:31:17.391Z] [INFO] 卖出交易已构建
+[2025-09-05T02:31:17.391Z] [INFO] 交易详情:
+[2025-09-05T02:31:17.391Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:31:17.391Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:31:17.391Z] [INFO]   - 用户代币账户: F22fnbok3PKQNEDAMyrorJ3vLjpe1exEVZrRcynb8tJq
+[2025-09-05T02:31:17.391Z] [INFO] 开始签名和发送卖出交易...
+[2025-09-05T02:31:17.398Z] [INFO] 卖出交易已发送，签名: nDSWPxfXCvPZfymESMbyYc7QV9KeQJDfdBnTEkRYSTRaSeZiEZ7y8yRPKwnwQq1EEf6f8EeXcdp413Bya9cnpuq
+[2025-09-05T02:31:17.398Z] [INFO] 等待交易确认...
+[2025-09-05T02:31:17.738Z] [INFO] ✅ 代币卖出成功！耗时 0.38 秒
+[2025-09-05T02:31:17.738Z] [INFO] 交易签名: nDSWPxfXCvPZfymESMbyYc7QV9KeQJDfdBnTEkRYSTRaSeZiEZ7y8yRPKwnwQq1EEf6f8EeXcdp413Bya9cnpuq
+[2025-09-05T02:31:17.741Z] [INFO] 卖出后代币余额: 299995000.00 个代币
+[2025-09-05T02:31:17.743Z] [INFO] 获得SOL: 0.000262 SOL
+[2025-09-05T02:31:17.743Z] [INFO] 总SOL余额: 99904.1579 SOL
+[2025-09-05T02:31:17.743Z] [INFO] 实际卖出: 5000.00 个代币
+[2025-09-05T02:31:17.743Z] [INFO] 平均价格: 0.052333000 SOL/千代币
+[2025-09-05T02:31:17.744Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:31:17.744Z] [INFO] === 代币卖出完成 ===
+[2025-09-05T02:31:17.744Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 执行成功
+[2025-09-05T02:31:17.744Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:31:19.745Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 开始执行
+[2025-09-05T02:31:19.747Z] [INFO] === 开始执行做多交易 ===
+[2025-09-05T02:31:19.747Z] [INFO] 使用代币地址: FufP8BifyYSDtejHEbaWyAZhcNwVF5jwE9wm9Qo9i6Pv
+[2025-09-05T02:31:19.748Z] [INFO] 使用自定义做多参数
+[2025-09-05T02:31:19.748Z] [INFO] 使用SOL: 1.0000 SOL
+[2025-09-05T02:31:19.748Z] [INFO] 止损百分比: 10.0%
+[2025-09-05T02:31:19.748Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:31:19.748Z] [INFO] SDK缓存已清除
+[2025-09-05T02:31:19.748Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:31:19.749Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:31:19.749Z] [INFO] 钱包索引: 0
+[2025-09-05T02:31:19.749Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:31:19.751Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:31:19.751Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:31:19.751Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:31:19.755Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:31:19.755Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:31:19.755Z] [INFO] 程序对象存在: true
+[2025-09-05T02:31:19.755Z] [INFO] 获取代币当前价格...
+[2025-09-05T02:31:19.758Z] [INFO] 当前价格: 538711653736385725873
+[2025-09-05T02:31:19.759Z] [INFO] 计算买入代币数量...
+[2025-09-05T02:31:19.759Z] [INFO] 计算买入数量: 18127496 个代币
+[2025-09-05T02:31:19.759Z] [INFO] 预期价格变化: 538711653736385725873 -> 564895363080684877661
+[2025-09-05T02:31:19.759Z] [INFO] 模拟买入交易验证流动性...
+[2025-09-05T02:31:19.770Z] [INFO] 买入模拟结果:
+[2025-09-05T02:31:19.770Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:31:19.770Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:31:19.770Z] [INFO]   - 建议买入: 18127495.66 个代币
+[2025-09-05T02:31:19.770Z] [INFO]   - 需要SOL: 1.000000 SOL
+[2025-09-05T02:31:19.770Z] [INFO] 计算止损价格...
+[2025-09-05T02:31:19.770Z] [INFO] 预期止损价格 (下跌 10.0%): 484840488362747153285
+[2025-09-05T02:31:19.770Z] [INFO] 调用止损模拟器...
+[2025-09-05T02:31:19.787Z] [INFO] 止损模拟结果:
+[2025-09-05T02:31:19.787Z] [INFO]   - 可执行止损价格: 484840488362747153285
+[2025-09-05T02:31:19.787Z] [INFO]   - 止损百分比: 10.00%
+[2025-09-05T02:31:19.788Z] [INFO]   - 杠杆倍数: 10.00x
+[2025-09-05T02:31:19.788Z] [INFO]   - 预期SOL输出: 0.859767 SOL
+[2025-09-05T02:31:19.788Z] [INFO]   - 价格调整次数: 1
+[2025-09-05T02:31:19.788Z] [INFO] 订单链表位置:
+[2025-09-05T02:31:19.788Z] [INFO]   - 前一个订单: null
+[2025-09-05T02:31:19.788Z] [INFO]   - 下一个订单: null
+[2025-09-05T02:31:19.788Z] [INFO] 交易参数:
+[2025-09-05T02:31:19.788Z] [INFO]   - 买入代币数量: 18127496 个
+[2025-09-05T02:31:19.788Z] [INFO]   - 最大SOL花费: 2.0000 SOL
+[2025-09-05T02:31:19.788Z] [INFO]   - 保证金: 5.0000 SOL
+[2025-09-05T02:31:19.788Z] [INFO]   - 平仓价格: 484840488362747153285
+[2025-09-05T02:31:19.789Z] [INFO] 钱包SOL余额: 99904.1579 SOL
+[2025-09-05T02:31:19.789Z] [INFO] 开始构建做多交易...
+[2025-09-05T02:31:19.797Z] [INFO] 做多交易已构建
+[2025-09-05T02:31:19.797Z] [INFO] 交易详情:
+[2025-09-05T02:31:19.797Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:31:19.797Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:31:19.797Z] [INFO]   - 自建订单: B6jPMt92rUb9CZyNbhEd1aAiY5vhHba57jrsSatBPhsf
+[2025-09-05T02:31:19.797Z] [INFO] 开始签名和发送做多交易...
+[2025-09-05T02:31:19.812Z] [INFO] 做多交易已发送，签名: 4nkuUwuUzuBaioL48BArMAv8yKkWbVqapH4tjpLnnnUfZVF5e16QgDkmX4coDSAgeAVuLBYYUjRfEc5Zw9kgLors
+[2025-09-05T02:31:19.813Z] [INFO] 等待交易确认...
+[2025-09-05T02:31:20.188Z] [INFO] ✅ 代币做多成功！耗时 0.44 秒
+[2025-09-05T02:31:20.188Z] [INFO] 交易签名: 4nkuUwuUzuBaioL48BArMAv8yKkWbVqapH4tjpLnnnUfZVF5e16QgDkmX4coDSAgeAVuLBYYUjRfEc5Zw9kgLors
+[2025-09-05T02:31:20.189Z] [INFO] 订单PDA: B6jPMt92rUb9CZyNbhEd1aAiY5vhHba57jrsSatBPhsf
+[2025-09-05T02:31:20.191Z] [INFO] 花费SOL: 0.165047 SOL
+[2025-09-05T02:31:20.191Z] [INFO] 剩余SOL余额: 99903.9928 SOL
+[2025-09-05T02:31:20.192Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:31:20.192Z] [INFO] === 代币做多完成 ===
+[2025-09-05T02:31:20.192Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 执行成功
+[2025-09-05T02:31:20.192Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:31:22.193Z] [INFO] 步骤 5: [long] 做多交易 1 SOL，止损 10% - 跳过（已完成）
+[2025-09-05T02:31:22.194Z] [INFO] 
+=== 执行完成 ===
+[2025-09-05T02:31:22.194Z] [INFO] 总用时: 9.66 秒
+[2025-09-05T02:31:22.194Z] [INFO] 成功步骤: 4
+[2025-09-05T02:31:22.194Z] [INFO] 失败步骤: 0
+[2025-09-05T02:31:22.194Z] [INFO] 跳过步骤: 1
+[2025-09-05T02:31:22.194Z] [INFO] 
+=== 详细结果 ===
+[2025-09-05T02:31:22.195Z] [INFO]   1. [create-token] 创建测试代币 - 成功
+[2025-09-05T02:31:22.195Z] [INFO]   2. [buy] 买入100,000个代币 - 成功
+[2025-09-05T02:31:22.195Z] [INFO]   3. [sell] 卖出50,000个代币 - 成功
+[2025-09-05T02:31:22.195Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 成功
+[2025-09-05T02:31:22.195Z] [INFO]   5. [long] 做多交易 1 SOL，止损 10% - 已完成（跳过）
+[2025-09-05T02:31:22.195Z] [INFO] 
+=== 最终状态 ===
+[2025-09-05T02:31:22.197Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:31:22.198Z] [INFO] 🎉 交易计划执行完成！
+[2025-09-05T02:31:54.037Z] [INFO] === SpinPet 交易机器人开始执行 ===
+[2025-09-05T02:31:54.038Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:31:54.038Z] [INFO] 钱包索引: 0
+[2025-09-05T02:31:54.038Z] [INFO] 代币: TestBot Token (TBT)
+[2025-09-05T02:31:54.038Z] [INFO] 交易计划总步骤: 5
+[2025-09-05T02:31:54.038Z] [INFO] 启用的步骤: 5
+[2025-09-05T02:31:54.038Z] [INFO] 
+执行计划:
+[2025-09-05T02:31:54.038Z] [INFO]   1. [create-token] 创建测试代币 - 启用
+[2025-09-05T02:31:54.038Z] [INFO]   2. [buy] 买入100,000个代币 - 启用
+[2025-09-05T02:31:54.038Z] [INFO]   3. [sell] 卖出50,000个代币 - 启用
+[2025-09-05T02:31:54.038Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 启用
+[2025-09-05T02:31:54.038Z] [INFO]   5. [long] 做多交易 2 SOL，止损 20% - 启用
+[2025-09-05T02:31:54.038Z] [INFO] 
+[2025-09-05T02:31:54.039Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 开始执行
+[2025-09-05T02:31:54.039Z] [INFO] === 开始创建代币 ===
+[2025-09-05T02:31:54.039Z] [INFO] 代币信息: TestBot Token (TBT)
+[2025-09-05T02:31:54.039Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:31:54.039Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:31:54.039Z] [INFO] 钱包索引: 0
+[2025-09-05T02:31:54.040Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:31:54.072Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:31:54.072Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:31:54.072Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:31:54.077Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:31:54.077Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:31:54.077Z] [INFO] 程序对象存在: true
+[2025-09-05T02:31:54.078Z] [INFO] 生成代币 mint 地址: 9svMQKRyfdfG9H3a75eky9xtyAan6YAKSVkH8ytMEFrd
+[2025-09-05T02:31:54.078Z] [INFO] 开始构建代币创建交易...
+[2025-09-05T02:31:54.081Z] [INFO] 代币创建交易已构建
+[2025-09-05T02:31:54.081Z] [INFO] 相关账户:
+[2025-09-05T02:31:54.081Z] [INFO]   - 支付者: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:31:54.081Z] [INFO]   - 代币 Mint: 9svMQKRyfdfG9H3a75eky9xtyAan6YAKSVkH8ytMEFrd
+[2025-09-05T02:31:54.081Z] [INFO]   - 借贷流动池: 8HRLfCLFyGvXE6ErfT3r5eWbvY9RhoF4dc9tDjFUFwJC
+[2025-09-05T02:31:54.081Z] [INFO]   - 流动池代币账户: 2WghsNjrnRahLY6VigZimTQDW93SYewRYXSvJpdzwTQw
+[2025-09-05T02:31:54.081Z] [INFO]   - 流动池SOL账户: GYnzjA2YBAKySNKQg8XAU9gnHhhtjWbUtX59jxNSM8iq
+[2025-09-05T02:31:54.081Z] [INFO] 开始签名和发送交易...
+[2025-09-05T02:31:54.126Z] [INFO] 交易已发送，签名: MWVKQMmhJkyz1bC1tgSy52gfGvbeyYSBnP6QHw7tKkv1g6PxPfN2evhd4xzc7rNe49ZNqRyEvoR8RkoH94YiMzW
+[2025-09-05T02:31:54.126Z] [INFO] 等待交易确认...
+[2025-09-05T02:31:54.527Z] [INFO] ✅ 代币创建成功！耗时 0.49 秒
+[2025-09-05T02:31:54.528Z] [INFO] 交易签名: MWVKQMmhJkyz1bC1tgSy52gfGvbeyYSBnP6QHw7tKkv1g6PxPfN2evhd4xzc7rNe49ZNqRyEvoR8RkoH94YiMzW
+[2025-09-05T02:31:54.528Z] [INFO] 代币 Mint 地址: 9svMQKRyfdfG9H3a75eky9xtyAan6YAKSVkH8ytMEFrd
+[2025-09-05T02:31:54.529Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:31:54.529Z] [INFO] === 代币创建完成 ===
+[2025-09-05T02:31:54.529Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 执行成功
+[2025-09-05T02:31:54.529Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:31:56.530Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 开始执行
+[2025-09-05T02:31:56.532Z] [INFO] === 开始买入代币 ===
+[2025-09-05T02:31:56.532Z] [INFO] 使用代币地址: 9svMQKRyfdfG9H3a75eky9xtyAan6YAKSVkH8ytMEFrd
+[2025-09-05T02:31:56.533Z] [INFO] 使用自定义买入参数
+[2025-09-05T02:31:56.534Z] [INFO] 买入数量: 300000000 个代币
+[2025-09-05T02:31:56.534Z] [INFO] 最大花费: 50.0000 SOL
+[2025-09-05T02:31:56.534Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:31:56.534Z] [INFO] SDK缓存已清除
+[2025-09-05T02:31:56.534Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:31:56.534Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:31:56.534Z] [INFO] 钱包索引: 0
+[2025-09-05T02:31:56.535Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:31:56.537Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:31:56.537Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:31:56.537Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:31:56.542Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:31:56.543Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:31:56.543Z] [INFO] 程序对象存在: true
+[2025-09-05T02:31:56.546Z] [INFO] 钱包SOL余额: 99903.9859 SOL
+[2025-09-05T02:31:56.547Z] [INFO] 正在模拟买入交易...
+[2025-09-05T02:31:56.570Z] [INFO] 模拟结果:
+[2025-09-05T02:31:56.570Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:31:56.570Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:31:56.570Z] [INFO]   - 建议买入: 300000000.00 个代币
+[2025-09-05T02:31:56.570Z] [INFO]   - 需要SOL: 11.642950 SOL
+[2025-09-05T02:31:56.570Z] [INFO] 开始构建买入交易...
+[2025-09-05T02:31:56.584Z] [INFO] 买入交易已构建
+[2025-09-05T02:31:56.584Z] [INFO] 交易详情:
+[2025-09-05T02:31:56.584Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:31:56.584Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:31:56.584Z] [INFO]   - 用户代币账户: FZKLXcm4ecYhVcybaasPcJTD1sMBPXwVStQ3numP7JSJ
+[2025-09-05T02:31:56.584Z] [INFO] 开始签名和发送买入交易...
+[2025-09-05T02:31:56.602Z] [INFO] 买入交易已发送，签名: 66rLzRTJ43ZdzbhRQuXHTXbqPB3YTHACAiSyeGfN1UJgDCwqskepirr7wiWVp8bZzNwAxypMtkVySn7T6knwd3LJ
+[2025-09-05T02:31:56.602Z] [INFO] 等待交易确认...
+[2025-09-05T02:31:56.984Z] [INFO] ✅ 代币买入成功！耗时 0.45 秒
+[2025-09-05T02:31:56.984Z] [INFO] 交易签名: 66rLzRTJ43ZdzbhRQuXHTXbqPB3YTHACAiSyeGfN1UJgDCwqskepirr7wiWVp8bZzNwAxypMtkVySn7T6knwd3LJ
+[2025-09-05T02:31:56.987Z] [INFO] 买入后代币余额: 300000000.00 个代币
+[2025-09-05T02:31:56.991Z] [INFO] 花费SOL: 11.761423 SOL
+[2025-09-05T02:31:56.991Z] [INFO] 剩余SOL余额: 99892.2245 SOL
+[2025-09-05T02:31:56.992Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:31:56.992Z] [INFO] === 代币买入完成 ===
+[2025-09-05T02:31:56.992Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 执行成功
+[2025-09-05T02:31:56.992Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:31:58.992Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 开始执行
+[2025-09-05T02:31:58.995Z] [INFO] === 开始卖出代币 ===
+[2025-09-05T02:31:58.995Z] [INFO] 使用代币地址: 9svMQKRyfdfG9H3a75eky9xtyAan6YAKSVkH8ytMEFrd
+[2025-09-05T02:31:58.995Z] [INFO] 当前代币余额: 300000000.00 个代币
+[2025-09-05T02:31:58.995Z] [INFO] 使用自定义卖出参数
+[2025-09-05T02:31:58.996Z] [INFO] 卖出数量: 5000 个代币
+[2025-09-05T02:31:58.996Z] [INFO] 最少获得: 0.0000 SOL
+[2025-09-05T02:31:58.996Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:31:58.996Z] [INFO] SDK缓存已清除
+[2025-09-05T02:31:58.996Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:31:58.996Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:31:58.996Z] [INFO] 钱包索引: 0
+[2025-09-05T02:31:58.997Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:31:58.998Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:31:58.998Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:31:58.999Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:31:59.004Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:31:59.004Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:31:59.004Z] [INFO] 程序对象存在: true
+[2025-09-05T02:31:59.006Z] [INFO] 钱包SOL余额: 99892.2245 SOL
+[2025-09-05T02:31:59.006Z] [INFO] 正在模拟卖出交易...
+[2025-09-05T02:31:59.020Z] [INFO] 模拟结果:
+[2025-09-05T02:31:59.020Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:31:59.020Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:31:59.020Z] [INFO]   - 建议卖出: 5000.00 个代币
+[2025-09-05T02:31:59.021Z] [INFO]   - 预期获得: 0.000269 SOL
+[2025-09-05T02:31:59.021Z] [INFO] 开始构建卖出交易...
+[2025-09-05T02:31:59.034Z] [INFO] 卖出交易已构建
+[2025-09-05T02:31:59.034Z] [INFO] 交易详情:
+[2025-09-05T02:31:59.034Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:31:59.034Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:31:59.034Z] [INFO]   - 用户代币账户: FZKLXcm4ecYhVcybaasPcJTD1sMBPXwVStQ3numP7JSJ
+[2025-09-05T02:31:59.034Z] [INFO] 开始签名和发送卖出交易...
+[2025-09-05T02:31:59.049Z] [INFO] 卖出交易已发送，签名: o7BMGNbVkbtE1QKRUKTUdPBANuUXiEoAxwnN12eaoxv3KkWwHhA9giyYNiufXykB8Da36Bme6j2TURX9F76TCuQ
+[2025-09-05T02:31:59.050Z] [INFO] 等待交易确认...
+[2025-09-05T02:31:59.434Z] [INFO] ✅ 代币卖出成功！耗时 0.44 秒
+[2025-09-05T02:31:59.435Z] [INFO] 交易签名: o7BMGNbVkbtE1QKRUKTUdPBANuUXiEoAxwnN12eaoxv3KkWwHhA9giyYNiufXykB8Da36Bme6j2TURX9F76TCuQ
+[2025-09-05T02:31:59.437Z] [INFO] 卖出后代币余额: 299995000.00 个代币
+[2025-09-05T02:31:59.439Z] [INFO] 获得SOL: 0.000262 SOL
+[2025-09-05T02:31:59.439Z] [INFO] 总SOL余额: 99892.2248 SOL
+[2025-09-05T02:31:59.439Z] [INFO] 实际卖出: 5000.00 个代币
+[2025-09-05T02:31:59.439Z] [INFO] 平均价格: 0.052333000 SOL/千代币
+[2025-09-05T02:31:59.439Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:31:59.440Z] [INFO] === 代币卖出完成 ===
+[2025-09-05T02:31:59.440Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 执行成功
+[2025-09-05T02:31:59.440Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:32:01.441Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 开始执行
+[2025-09-05T02:32:01.443Z] [INFO] === 开始执行做多交易 ===
+[2025-09-05T02:32:01.443Z] [INFO] 使用代币地址: 9svMQKRyfdfG9H3a75eky9xtyAan6YAKSVkH8ytMEFrd
+[2025-09-05T02:32:01.443Z] [INFO] 使用自定义做多参数
+[2025-09-05T02:32:01.443Z] [INFO] 使用SOL: 1.0000 SOL
+[2025-09-05T02:32:01.444Z] [INFO] 止损百分比: 10.0%
+[2025-09-05T02:32:01.444Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:32:01.444Z] [INFO] SDK缓存已清除
+[2025-09-05T02:32:01.444Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:32:01.444Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:32:01.444Z] [INFO] 钱包索引: 0
+[2025-09-05T02:32:01.444Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:32:01.446Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:32:01.446Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:32:01.446Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:32:01.451Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:32:01.452Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:32:01.452Z] [INFO] 程序对象存在: true
+[2025-09-05T02:32:01.452Z] [INFO] 获取代币当前价格...
+[2025-09-05T02:32:01.455Z] [INFO] 当前价格: 538711653736385725873
+[2025-09-05T02:32:01.455Z] [INFO] 计算买入代币数量...
+[2025-09-05T02:32:01.456Z] [INFO] 计算买入数量: 18127496 个代币
+[2025-09-05T02:32:01.456Z] [INFO] 预期价格变化: 538711653736385725873 -> 564895363080684877661
+[2025-09-05T02:32:01.456Z] [INFO] 模拟买入交易验证流动性...
+[2025-09-05T02:32:01.465Z] [INFO] 买入模拟结果:
+[2025-09-05T02:32:01.465Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:32:01.465Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:32:01.465Z] [INFO]   - 建议买入: 18127495.66 个代币
+[2025-09-05T02:32:01.465Z] [INFO]   - 需要SOL: 1.000000 SOL
+[2025-09-05T02:32:01.465Z] [INFO] 计算止损价格...
+[2025-09-05T02:32:01.465Z] [INFO] 预期止损价格 (下跌 10.0%): 484840488362747153285
+[2025-09-05T02:32:01.465Z] [INFO] 调用止损模拟器...
+[2025-09-05T02:32:01.470Z] [INFO] 止损模拟结果:
+[2025-09-05T02:32:01.470Z] [INFO]   - 可执行止损价格: 484840488362747153285
+[2025-09-05T02:32:01.470Z] [INFO]   - 止损百分比: 10.00%
+[2025-09-05T02:32:01.470Z] [INFO]   - 杠杆倍数: 10.00x
+[2025-09-05T02:32:01.470Z] [INFO]   - 预期SOL输出: 0.859767 SOL
+[2025-09-05T02:32:01.470Z] [INFO]   - 价格调整次数: 1
+[2025-09-05T02:32:01.470Z] [INFO] 订单链表位置:
+[2025-09-05T02:32:01.470Z] [INFO]   - 前一个订单: null
+[2025-09-05T02:32:01.470Z] [INFO]   - 下一个订单: null
+[2025-09-05T02:32:01.470Z] [INFO] 交易参数:
+[2025-09-05T02:32:01.470Z] [INFO]   - 买入代币数量: 18127496 个
+[2025-09-05T02:32:01.471Z] [INFO]   - 最大SOL花费: 2.0000 SOL
+[2025-09-05T02:32:01.471Z] [INFO]   - 保证金: 5.0000 SOL
+[2025-09-05T02:32:01.471Z] [INFO]   - 平仓价格: 484840488362747153285
+[2025-09-05T02:32:01.473Z] [INFO] 钱包SOL余额: 99892.2248 SOL
+[2025-09-05T02:32:01.473Z] [INFO] 开始构建做多交易...
+[2025-09-05T02:32:01.479Z] [INFO] 做多交易已构建
+[2025-09-05T02:32:01.479Z] [INFO] 交易详情:
+[2025-09-05T02:32:01.479Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:32:01.479Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:32:01.479Z] [INFO]   - 自建订单: 6mNN4Cy9x8WYaKWcPkn6TvigroTfFcbCgsWHdkmE9odA
+[2025-09-05T02:32:01.480Z] [INFO] 开始签名和发送做多交易...
+[2025-09-05T02:32:01.488Z] [INFO] 做多交易已发送，签名: 3BCYwADqcLBVEZuj73rNg7g2QSehTQYRDvPKXgnLsCZC18NniFxGsQJ1FRxwy2JbFTv93RaH4vMa9Qq75zKhyzdM
+[2025-09-05T02:32:01.488Z] [INFO] 等待交易确认...
+[2025-09-05T02:32:01.993Z] [INFO] ✅ 代币做多成功！耗时 0.55 秒
+[2025-09-05T02:32:01.993Z] [INFO] 交易签名: 3BCYwADqcLBVEZuj73rNg7g2QSehTQYRDvPKXgnLsCZC18NniFxGsQJ1FRxwy2JbFTv93RaH4vMa9Qq75zKhyzdM
+[2025-09-05T02:32:01.994Z] [INFO] 订单PDA: 6mNN4Cy9x8WYaKWcPkn6TvigroTfFcbCgsWHdkmE9odA
+[2025-09-05T02:32:01.996Z] [INFO] 花费SOL: 0.165047 SOL
+[2025-09-05T02:32:01.997Z] [INFO] 剩余SOL余额: 99892.0597 SOL
+[2025-09-05T02:32:01.997Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:32:01.998Z] [INFO] === 代币做多完成 ===
+[2025-09-05T02:32:01.998Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 执行成功
+[2025-09-05T02:32:01.998Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:32:03.999Z] [INFO] 步骤 5: [long] 做多交易 2 SOL，止损 20% - 跳过（已完成）
+[2025-09-05T02:32:04.000Z] [INFO] 
+=== 执行完成 ===
+[2025-09-05T02:32:04.000Z] [INFO] 总用时: 9.96 秒
+[2025-09-05T02:32:04.000Z] [INFO] 成功步骤: 4
+[2025-09-05T02:32:04.000Z] [INFO] 失败步骤: 0
+[2025-09-05T02:32:04.000Z] [INFO] 跳过步骤: 1
+[2025-09-05T02:32:04.000Z] [INFO] 
+=== 详细结果 ===
+[2025-09-05T02:32:04.001Z] [INFO]   1. [create-token] 创建测试代币 - 成功
+[2025-09-05T02:32:04.001Z] [INFO]   2. [buy] 买入100,000个代币 - 成功
+[2025-09-05T02:32:04.001Z] [INFO]   3. [sell] 卖出50,000个代币 - 成功
+[2025-09-05T02:32:04.001Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 成功
+[2025-09-05T02:32:04.001Z] [INFO]   5. [long] 做多交易 2 SOL，止损 20% - 已完成（跳过）
+[2025-09-05T02:32:04.002Z] [INFO] 
+=== 最终状态 ===
+[2025-09-05T02:32:04.005Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:32:04.005Z] [INFO] 🎉 交易计划执行完成！
+[2025-09-05T02:34:12.376Z] [INFO] === SpinPet 交易机器人开始执行 ===
+[2025-09-05T02:34:12.377Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:34:12.377Z] [INFO] 钱包索引: 0
+[2025-09-05T02:34:12.377Z] [INFO] 代币: TestBot Token (TBT)
+[2025-09-05T02:34:12.377Z] [INFO] 交易计划总步骤: 5
+[2025-09-05T02:34:12.377Z] [INFO] 启用的步骤: 5
+[2025-09-05T02:34:12.377Z] [INFO] 
+执行计划:
+[2025-09-05T02:34:12.377Z] [INFO]   1. [create-token] 创建测试代币 - 启用
+[2025-09-05T02:34:12.377Z] [INFO]   2. [buy] 买入100,000个代币 - 启用
+[2025-09-05T02:34:12.377Z] [INFO]   3. [sell] 卖出50,000个代币 - 启用
+[2025-09-05T02:34:12.377Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 启用
+[2025-09-05T02:34:12.377Z] [INFO]   5. [long] 做多交易 2 SOL，止损 20% - 启用
+[2025-09-05T02:34:12.377Z] [INFO] 
+[2025-09-05T02:34:12.377Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 开始执行
+[2025-09-05T02:34:12.377Z] [INFO] === 开始创建代币 ===
+[2025-09-05T02:34:12.377Z] [INFO] 代币信息: TestBot Token (TBT)
+[2025-09-05T02:34:12.377Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:34:12.377Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:34:12.377Z] [INFO] 钱包索引: 0
+[2025-09-05T02:34:12.378Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:34:12.409Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:34:12.409Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:34:12.409Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:34:12.414Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:34:12.414Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:34:12.414Z] [INFO] 程序对象存在: true
+[2025-09-05T02:34:12.415Z] [INFO] 生成代币 mint 地址: BMEVAb48241ZmVKK1r5XBDGZ8h95qR3XgqkH4LpxgYSj
+[2025-09-05T02:34:12.415Z] [INFO] 开始构建代币创建交易...
+[2025-09-05T02:34:12.419Z] [INFO] 代币创建交易已构建
+[2025-09-05T02:34:12.419Z] [INFO] 相关账户:
+[2025-09-05T02:34:12.419Z] [INFO]   - 支付者: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:34:12.419Z] [INFO]   - 代币 Mint: BMEVAb48241ZmVKK1r5XBDGZ8h95qR3XgqkH4LpxgYSj
+[2025-09-05T02:34:12.419Z] [INFO]   - 借贷流动池: A2HXWsmKj5N5Xf6F937y9yw7R2DNMr1YaWcMvuUUvH4p
+[2025-09-05T02:34:12.419Z] [INFO]   - 流动池代币账户: 7pNnbbBhcm9n9PhuuiRaDSXxUNy2VTHHhdVyj6Ug1oSj
+[2025-09-05T02:34:12.419Z] [INFO]   - 流动池SOL账户: EKfx3c4djK7PkFoehcf5XhDgRJsgeSSPGZVStWeq9iUx
+[2025-09-05T02:34:12.419Z] [INFO] 开始签名和发送交易...
+[2025-09-05T02:34:12.456Z] [INFO] 交易已发送，签名: 4kTdbrALobvhDjxv34sXZWwWirGqxVKP1XnZJHifjCmcRXxBs5VpLwhQgbvJqZ77hifMYRXjoYBSjiszg4dbAFHa
+[2025-09-05T02:34:12.457Z] [INFO] 等待交易确认...
+[2025-09-05T02:34:12.714Z] [INFO] ✅ 代币创建成功！耗时 0.34 秒
+[2025-09-05T02:34:12.714Z] [INFO] 交易签名: 4kTdbrALobvhDjxv34sXZWwWirGqxVKP1XnZJHifjCmcRXxBs5VpLwhQgbvJqZ77hifMYRXjoYBSjiszg4dbAFHa
+[2025-09-05T02:34:12.714Z] [INFO] 代币 Mint 地址: BMEVAb48241ZmVKK1r5XBDGZ8h95qR3XgqkH4LpxgYSj
+[2025-09-05T02:34:12.715Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:34:12.715Z] [INFO] === 代币创建完成 ===
+[2025-09-05T02:34:12.715Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 执行成功
+[2025-09-05T02:34:12.715Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:34:14.716Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 开始执行
+[2025-09-05T02:34:14.718Z] [INFO] === 开始买入代币 ===
+[2025-09-05T02:34:14.719Z] [INFO] 使用代币地址: BMEVAb48241ZmVKK1r5XBDGZ8h95qR3XgqkH4LpxgYSj
+[2025-09-05T02:34:14.719Z] [INFO] 使用自定义买入参数
+[2025-09-05T02:34:14.720Z] [INFO] 买入数量: 300000000 个代币
+[2025-09-05T02:34:14.720Z] [INFO] 最大花费: 50.0000 SOL
+[2025-09-05T02:34:14.721Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:34:14.721Z] [INFO] SDK缓存已清除
+[2025-09-05T02:34:14.721Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:34:14.721Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:34:14.721Z] [INFO] 钱包索引: 0
+[2025-09-05T02:34:14.722Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:34:14.722Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:34:14.722Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:34:14.722Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:34:14.725Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:34:14.725Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:34:14.725Z] [INFO] 程序对象存在: true
+[2025-09-05T02:34:14.726Z] [INFO] 钱包SOL余额: 99892.0528 SOL
+[2025-09-05T02:34:14.727Z] [INFO] 正在模拟买入交易...
+[2025-09-05T02:34:14.739Z] [INFO] 模拟结果:
+[2025-09-05T02:34:14.740Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:34:14.740Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:34:14.740Z] [INFO]   - 建议买入: 300000000.00 个代币
+[2025-09-05T02:34:14.740Z] [INFO]   - 需要SOL: 11.642950 SOL
+[2025-09-05T02:34:14.740Z] [INFO] 开始构建买入交易...
+[2025-09-05T02:34:14.752Z] [INFO] 买入交易已构建
+[2025-09-05T02:34:14.752Z] [INFO] 交易详情:
+[2025-09-05T02:34:14.752Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:34:14.752Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:34:14.752Z] [INFO]   - 用户代币账户: 5Gne6ULbdXJEmEyaHaTFJhoTJ4nq7JS3FKhPbBAH6xWN
+[2025-09-05T02:34:14.752Z] [INFO] 开始签名和发送买入交易...
+[2025-09-05T02:34:14.766Z] [INFO] 买入交易已发送，签名: 4Sww339x8x85xJHBdB5vgC3t5sTExjZ9XX8ZHeVFYPGQLpg4Hoo7ZU7D9LJYf8L2vddipEeZ2GpqY1EJpR1QpNN9
+[2025-09-05T02:34:14.767Z] [INFO] 等待交易确认...
+[2025-09-05T02:34:15.170Z] [INFO] ✅ 代币买入成功！耗时 0.45 秒
+[2025-09-05T02:34:15.170Z] [INFO] 交易签名: 4Sww339x8x85xJHBdB5vgC3t5sTExjZ9XX8ZHeVFYPGQLpg4Hoo7ZU7D9LJYf8L2vddipEeZ2GpqY1EJpR1QpNN9
+[2025-09-05T02:34:15.174Z] [INFO] 买入后代币余额: 300000000.00 个代币
+[2025-09-05T02:34:15.176Z] [INFO] 花费SOL: 11.761423 SOL
+[2025-09-05T02:34:15.177Z] [INFO] 剩余SOL余额: 99880.2914 SOL
+[2025-09-05T02:34:15.177Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:34:15.177Z] [INFO] === 代币买入完成 ===
+[2025-09-05T02:34:15.178Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 执行成功
+[2025-09-05T02:34:15.178Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:34:17.179Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 开始执行
+[2025-09-05T02:34:17.181Z] [INFO] === 开始卖出代币 ===
+[2025-09-05T02:34:17.182Z] [INFO] 使用代币地址: BMEVAb48241ZmVKK1r5XBDGZ8h95qR3XgqkH4LpxgYSj
+[2025-09-05T02:34:17.182Z] [INFO] 当前代币余额: 300000000.00 个代币
+[2025-09-05T02:34:17.182Z] [INFO] 使用自定义卖出参数
+[2025-09-05T02:34:17.182Z] [INFO] 卖出数量: 5000 个代币
+[2025-09-05T02:34:17.182Z] [INFO] 最少获得: 0.0000 SOL
+[2025-09-05T02:34:17.183Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:34:17.183Z] [INFO] SDK缓存已清除
+[2025-09-05T02:34:17.183Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:34:17.183Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:34:17.183Z] [INFO] 钱包索引: 0
+[2025-09-05T02:34:17.183Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:34:17.185Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:34:17.185Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:34:17.185Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:34:17.190Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:34:17.190Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:34:17.190Z] [INFO] 程序对象存在: true
+[2025-09-05T02:34:17.192Z] [INFO] 钱包SOL余额: 99880.2914 SOL
+[2025-09-05T02:34:17.193Z] [INFO] 正在模拟卖出交易...
+[2025-09-05T02:34:17.209Z] [INFO] 模拟结果:
+[2025-09-05T02:34:17.209Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:34:17.210Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:34:17.210Z] [INFO]   - 建议卖出: 5000.00 个代币
+[2025-09-05T02:34:17.210Z] [INFO]   - 预期获得: 0.000269 SOL
+[2025-09-05T02:34:17.210Z] [INFO] 开始构建卖出交易...
+[2025-09-05T02:34:17.223Z] [INFO] 卖出交易已构建
+[2025-09-05T02:34:17.223Z] [INFO] 交易详情:
+[2025-09-05T02:34:17.223Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:34:17.223Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:34:17.223Z] [INFO]   - 用户代币账户: 5Gne6ULbdXJEmEyaHaTFJhoTJ4nq7JS3FKhPbBAH6xWN
+[2025-09-05T02:34:17.223Z] [INFO] 开始签名和发送卖出交易...
+[2025-09-05T02:34:17.230Z] [INFO] 卖出交易已发送，签名: 5qVcyQXLmmDiTgoH4tRpGiz5e7xR4jaRAJhvwHcUP3WchVQ2Z6sP1Gy6722FxjANspQQnkUQsQUyZLNQiGmfwU3y
+[2025-09-05T02:34:17.231Z] [INFO] 等待交易确认...
+[2025-09-05T02:34:17.628Z] [INFO] ✅ 代币卖出成功！耗时 0.45 秒
+[2025-09-05T02:34:17.628Z] [INFO] 交易签名: 5qVcyQXLmmDiTgoH4tRpGiz5e7xR4jaRAJhvwHcUP3WchVQ2Z6sP1Gy6722FxjANspQQnkUQsQUyZLNQiGmfwU3y
+[2025-09-05T02:34:17.630Z] [INFO] 卖出后代币余额: 299995000.00 个代币
+[2025-09-05T02:34:17.632Z] [INFO] 获得SOL: 0.000262 SOL
+[2025-09-05T02:34:17.632Z] [INFO] 总SOL余额: 99880.2917 SOL
+[2025-09-05T02:34:17.632Z] [INFO] 实际卖出: 5000.00 个代币
+[2025-09-05T02:34:17.632Z] [INFO] 平均价格: 0.052333000 SOL/千代币
+[2025-09-05T02:34:17.632Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:34:17.632Z] [INFO] === 代币卖出完成 ===
+[2025-09-05T02:34:17.633Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 执行成功
+[2025-09-05T02:34:17.633Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:34:19.634Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 开始执行
+[2025-09-05T02:34:19.637Z] [INFO] === 开始执行做多交易 ===
+[2025-09-05T02:34:19.637Z] [INFO] 使用代币地址: BMEVAb48241ZmVKK1r5XBDGZ8h95qR3XgqkH4LpxgYSj
+[2025-09-05T02:34:19.637Z] [INFO] 使用自定义做多参数
+[2025-09-05T02:34:19.637Z] [INFO] 使用SOL: 1.0000 SOL
+[2025-09-05T02:34:19.638Z] [INFO] 止损百分比: 10.0%
+[2025-09-05T02:34:19.638Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:34:19.638Z] [INFO] SDK缓存已清除
+[2025-09-05T02:34:19.638Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:34:19.638Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:34:19.638Z] [INFO] 钱包索引: 0
+[2025-09-05T02:34:19.638Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:34:19.640Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:34:19.640Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:34:19.640Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:34:19.645Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:34:19.645Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:34:19.646Z] [INFO] 程序对象存在: true
+[2025-09-05T02:34:19.646Z] [INFO] 获取代币当前价格...
+[2025-09-05T02:34:19.648Z] [INFO] 当前价格: 538711653736385725873
+[2025-09-05T02:34:19.649Z] [INFO] 计算买入代币数量...
+[2025-09-05T02:34:19.649Z] [INFO] 计算买入数量: 18127496 个代币
+[2025-09-05T02:34:19.649Z] [INFO] 预期价格变化: 538711653736385725873 -> 564895363080684877661
+[2025-09-05T02:34:19.649Z] [INFO] 模拟买入交易验证流动性...
+[2025-09-05T02:34:19.656Z] [INFO] 买入模拟结果:
+[2025-09-05T02:34:19.656Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:34:19.656Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:34:19.656Z] [INFO]   - 建议买入: 18127495.66 个代币
+[2025-09-05T02:34:19.656Z] [INFO]   - 需要SOL: 1.000000 SOL
+[2025-09-05T02:34:19.656Z] [INFO] 计算止损价格...
+[2025-09-05T02:34:19.656Z] [INFO] 预期止损价格 (下跌 10.0%): 484840488362747153285
+[2025-09-05T02:34:19.656Z] [INFO] 调用止损模拟器...
+[2025-09-05T02:34:19.663Z] [INFO] 止损模拟结果:
+[2025-09-05T02:34:19.663Z] [INFO]   - 可执行止损价格: 484840488362747153285
+[2025-09-05T02:34:19.663Z] [INFO]   - 止损百分比: 10.00%
+[2025-09-05T02:34:19.663Z] [INFO]   - 杠杆倍数: 10.00x
+[2025-09-05T02:34:19.663Z] [INFO]   - 预期SOL输出: 0.859767 SOL
+[2025-09-05T02:34:19.663Z] [INFO]   - 价格调整次数: 1
+[2025-09-05T02:34:19.663Z] [INFO] 订单链表位置:
+[2025-09-05T02:34:19.663Z] [INFO]   - 前一个订单: null
+[2025-09-05T02:34:19.663Z] [INFO]   - 下一个订单: null
+[2025-09-05T02:34:19.663Z] [INFO] 交易参数:
+[2025-09-05T02:34:19.663Z] [INFO]   - 买入代币数量: 18127496 个
+[2025-09-05T02:34:19.663Z] [INFO]   - 最大SOL花费: 2.0000 SOL
+[2025-09-05T02:34:19.663Z] [INFO]   - 保证金: 5.0000 SOL
+[2025-09-05T02:34:19.663Z] [INFO]   - 平仓价格: 484840488362747153285
+[2025-09-05T02:34:19.664Z] [INFO] 钱包SOL余额: 99880.2917 SOL
+[2025-09-05T02:34:19.664Z] [INFO] 开始构建做多交易...
+[2025-09-05T02:34:19.670Z] [INFO] 做多交易已构建
+[2025-09-05T02:34:19.670Z] [INFO] 交易详情:
+[2025-09-05T02:34:19.670Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:34:19.670Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:34:19.670Z] [INFO]   - 自建订单: 5opNuChwpWdhwyGdSsXgXBgUWsk64cbFFeuKoSF4Eu6Y
+[2025-09-05T02:34:19.670Z] [INFO] 开始签名和发送做多交易...
+[2025-09-05T02:34:19.679Z] [INFO] 做多交易已发送，签名: 5TitKNKseTkp3vegT9zr8QRLdJMTm5JUWiFwfDsLbcWP3VaJU6LuxTDajUpWUjG2Dspb6tRQ4ZbXeyhDsZoGTePW
+[2025-09-05T02:34:19.679Z] [INFO] 等待交易确认...
+[2025-09-05T02:34:20.087Z] [INFO] ✅ 代币做多成功！耗时 0.45 秒
+[2025-09-05T02:34:20.087Z] [INFO] 交易签名: 5TitKNKseTkp3vegT9zr8QRLdJMTm5JUWiFwfDsLbcWP3VaJU6LuxTDajUpWUjG2Dspb6tRQ4ZbXeyhDsZoGTePW
+[2025-09-05T02:34:20.087Z] [INFO] 订单PDA: 5opNuChwpWdhwyGdSsXgXBgUWsk64cbFFeuKoSF4Eu6Y
+[2025-09-05T02:34:20.089Z] [INFO] 花费SOL: 0.165047 SOL
+[2025-09-05T02:34:20.089Z] [INFO] 剩余SOL余额: 99880.1266 SOL
+[2025-09-05T02:34:20.090Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:34:20.090Z] [INFO] === 代币做多完成 ===
+[2025-09-05T02:34:20.090Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 执行成功
+[2025-09-05T02:34:20.090Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:34:22.091Z] [INFO] 步骤 5: [long] 做多交易 2 SOL，止损 20% - 跳过（已完成）
+[2025-09-05T02:34:22.091Z] [INFO] 
+=== 执行完成 ===
+[2025-09-05T02:34:22.091Z] [INFO] 总用时: 9.71 秒
+[2025-09-05T02:34:22.091Z] [INFO] 成功步骤: 4
+[2025-09-05T02:34:22.091Z] [INFO] 失败步骤: 0
+[2025-09-05T02:34:22.091Z] [INFO] 跳过步骤: 1
+[2025-09-05T02:34:22.091Z] [INFO] 
+=== 详细结果 ===
+[2025-09-05T02:34:22.091Z] [INFO]   1. [create-token] 创建测试代币 - 成功
+[2025-09-05T02:34:22.091Z] [INFO]   2. [buy] 买入100,000个代币 - 成功
+[2025-09-05T02:34:22.091Z] [INFO]   3. [sell] 卖出50,000个代币 - 成功
+[2025-09-05T02:34:22.091Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 成功
+[2025-09-05T02:34:22.091Z] [INFO]   5. [long] 做多交易 2 SOL，止损 20% - 已完成（跳过）
+[2025-09-05T02:34:22.091Z] [INFO] 
+=== 最终状态 ===
+[2025-09-05T02:34:22.092Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:34:22.092Z] [INFO] 🎉 交易计划执行完成！
+[2025-09-05T02:38:50.371Z] [INFO] === SpinPet 交易机器人开始执行 ===
+[2025-09-05T02:38:50.371Z] [INFO] 重置全局状态...
+[2025-09-05T02:38:50.371Z] [INFO] 状态已重置
+[2025-09-05T02:38:50.372Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:38:50.372Z] [INFO] 钱包索引: 0
+[2025-09-05T02:38:50.372Z] [INFO] 代币: TestBot Token (TBT)
+[2025-09-05T02:38:50.372Z] [INFO] 交易计划总步骤: 5
+[2025-09-05T02:38:50.372Z] [INFO] 启用的步骤: 5
+[2025-09-05T02:38:50.372Z] [INFO] 
+执行计划:
+[2025-09-05T02:38:50.372Z] [INFO]   1. [create-token] 创建测试代币 - 启用
+[2025-09-05T02:38:50.372Z] [INFO]   2. [buy] 买入100,000个代币 - 启用
+[2025-09-05T02:38:50.372Z] [INFO]   3. [sell] 卖出50,000个代币 - 启用
+[2025-09-05T02:38:50.372Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 启用
+[2025-09-05T02:38:50.372Z] [INFO]   5. [long] 做多交易 2 SOL，止损 20% - 启用
+[2025-09-05T02:38:50.372Z] [INFO] 
+[2025-09-05T02:38:50.372Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 开始执行
+[2025-09-05T02:38:50.372Z] [INFO] === 开始创建代币 ===
+[2025-09-05T02:38:50.372Z] [INFO] 代币信息: TestBot Token (TBT)
+[2025-09-05T02:38:50.372Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:38:50.372Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:38:50.372Z] [INFO] 钱包索引: 0
+[2025-09-05T02:38:50.373Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:38:50.405Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:38:50.405Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:38:50.405Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:38:50.410Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:38:50.410Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:38:50.410Z] [INFO] 程序对象存在: true
+[2025-09-05T02:38:50.411Z] [INFO] 生成代币 mint 地址: 8CzBK4apfWKZhQWMch7z3e3QWC6LKfkjPRKMVRpkGLrr
+[2025-09-05T02:38:50.411Z] [INFO] 开始构建代币创建交易...
+[2025-09-05T02:38:50.416Z] [INFO] 代币创建交易已构建
+[2025-09-05T02:38:50.416Z] [INFO] 相关账户:
+[2025-09-05T02:38:50.416Z] [INFO]   - 支付者: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:38:50.416Z] [INFO]   - 代币 Mint: 8CzBK4apfWKZhQWMch7z3e3QWC6LKfkjPRKMVRpkGLrr
+[2025-09-05T02:38:50.416Z] [INFO]   - 借贷流动池: tnndvfTB5szdrK3atKiqc8b1gpp6Z5yVcHpRYqAdXvJ
+[2025-09-05T02:38:50.416Z] [INFO]   - 流动池代币账户: 5U38Mo1AZsWzHMUPreRB1tgi6aCDUvVhHeczoj6i2t8N
+[2025-09-05T02:38:50.416Z] [INFO]   - 流动池SOL账户: E6MpFbipbgcTuWU5ZrEPaTNUmq6rmLHxXfs4ZmxaZM98
+[2025-09-05T02:38:50.416Z] [INFO] 开始签名和发送交易...
+[2025-09-05T02:38:50.456Z] [INFO] 交易已发送，签名: 2xLAC9rnhw1nGpNkUyB3SrwMTMwM5h6anwBpUetYZqLPTqpxzpffwxGqZn2gDMZSPfTQ86qPL4cS8ogGDN5LFhFV
+[2025-09-05T02:38:50.456Z] [INFO] 等待交易确认...
+[2025-09-05T02:38:50.910Z] [INFO] ✅ 代币创建成功！耗时 0.54 秒
+[2025-09-05T02:38:50.911Z] [INFO] 交易签名: 2xLAC9rnhw1nGpNkUyB3SrwMTMwM5h6anwBpUetYZqLPTqpxzpffwxGqZn2gDMZSPfTQ86qPL4cS8ogGDN5LFhFV
+[2025-09-05T02:38:50.911Z] [INFO] 代币 Mint 地址: 8CzBK4apfWKZhQWMch7z3e3QWC6LKfkjPRKMVRpkGLrr
+[2025-09-05T02:38:50.913Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:38:50.913Z] [INFO] === 代币创建完成 ===
+[2025-09-05T02:38:50.913Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 执行成功
+[2025-09-05T02:38:50.913Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:38:52.915Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 开始执行
+[2025-09-05T02:38:52.916Z] [INFO] === 开始买入代币 ===
+[2025-09-05T02:38:52.916Z] [INFO] 使用代币地址: 8CzBK4apfWKZhQWMch7z3e3QWC6LKfkjPRKMVRpkGLrr
+[2025-09-05T02:38:52.916Z] [INFO] 使用自定义买入参数
+[2025-09-05T02:38:52.917Z] [INFO] 买入数量: 300000000 个代币
+[2025-09-05T02:38:52.917Z] [INFO] 最大花费: 50.0000 SOL
+[2025-09-05T02:38:52.918Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:38:52.918Z] [INFO] SDK缓存已清除
+[2025-09-05T02:38:52.918Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:38:52.918Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:38:52.918Z] [INFO] 钱包索引: 0
+[2025-09-05T02:38:52.918Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:38:52.920Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:38:52.920Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:38:52.920Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:38:52.926Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:38:52.926Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:38:52.926Z] [INFO] 程序对象存在: true
+[2025-09-05T02:38:52.930Z] [INFO] 钱包SOL余额: 99880.1197 SOL
+[2025-09-05T02:38:52.930Z] [INFO] 正在模拟买入交易...
+[2025-09-05T02:38:52.951Z] [INFO] 模拟结果:
+[2025-09-05T02:38:52.951Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:38:52.951Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:38:52.951Z] [INFO]   - 建议买入: 300000000.00 个代币
+[2025-09-05T02:38:52.951Z] [INFO]   - 需要SOL: 11.642950 SOL
+[2025-09-05T02:38:52.951Z] [INFO] 开始构建买入交易...
+[2025-09-05T02:38:52.964Z] [INFO] 买入交易已构建
+[2025-09-05T02:38:52.964Z] [INFO] 交易详情:
+[2025-09-05T02:38:52.964Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:38:52.964Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:38:52.964Z] [INFO]   - 用户代币账户: 8SJ5vjXBktsvF4LFXPwDBctU3gRHdmD3wVFpeUBkzECk
+[2025-09-05T02:38:52.964Z] [INFO] 开始签名和发送买入交易...
+[2025-09-05T02:38:52.978Z] [INFO] 买入交易已发送，签名: 3ik213fWg1dzbZpFhkbQ5qLTtVBGdowUbTN8LFmD81eNXs1m3UJdyvPLtRD4CdbrizziksoNQpkX2MKeRJ4ekfeZ
+[2025-09-05T02:38:52.978Z] [INFO] 等待交易确认...
+[2025-09-05T02:38:53.309Z] [INFO] ✅ 代币买入成功！耗时 0.39 秒
+[2025-09-05T02:38:53.309Z] [INFO] 交易签名: 3ik213fWg1dzbZpFhkbQ5qLTtVBGdowUbTN8LFmD81eNXs1m3UJdyvPLtRD4CdbrizziksoNQpkX2MKeRJ4ekfeZ
+[2025-09-05T02:38:53.312Z] [INFO] 买入后代币余额: 300000000.00 个代币
+[2025-09-05T02:38:53.315Z] [INFO] 花费SOL: 11.761423 SOL
+[2025-09-05T02:38:53.315Z] [INFO] 剩余SOL余额: 99868.3583 SOL
+[2025-09-05T02:38:53.315Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:38:53.316Z] [INFO] === 代币买入完成 ===
+[2025-09-05T02:38:53.316Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 执行成功
+[2025-09-05T02:38:53.316Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:38:55.317Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 开始执行
+[2025-09-05T02:38:55.319Z] [INFO] === 开始卖出代币 ===
+[2025-09-05T02:38:55.320Z] [INFO] 使用代币地址: 8CzBK4apfWKZhQWMch7z3e3QWC6LKfkjPRKMVRpkGLrr
+[2025-09-05T02:38:55.320Z] [INFO] 当前代币余额: 300000000.00 个代币
+[2025-09-05T02:38:55.320Z] [INFO] 使用自定义卖出参数
+[2025-09-05T02:38:55.320Z] [INFO] 卖出数量: 5000 个代币
+[2025-09-05T02:38:55.320Z] [INFO] 最少获得: 0.0000 SOL
+[2025-09-05T02:38:55.320Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:38:55.320Z] [INFO] SDK缓存已清除
+[2025-09-05T02:38:55.320Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:38:55.320Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:38:55.320Z] [INFO] 钱包索引: 0
+[2025-09-05T02:38:55.320Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:38:55.322Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:38:55.322Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:38:55.322Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:38:55.327Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:38:55.328Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:38:55.328Z] [INFO] 程序对象存在: true
+[2025-09-05T02:38:55.330Z] [INFO] 钱包SOL余额: 99868.3583 SOL
+[2025-09-05T02:38:55.330Z] [INFO] 正在模拟卖出交易...
+[2025-09-05T02:38:55.341Z] [INFO] 模拟结果:
+[2025-09-05T02:38:55.341Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:38:55.341Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:38:55.341Z] [INFO]   - 建议卖出: 5000.00 个代币
+[2025-09-05T02:38:55.341Z] [INFO]   - 预期获得: 0.000269 SOL
+[2025-09-05T02:38:55.341Z] [INFO] 开始构建卖出交易...
+[2025-09-05T02:38:55.349Z] [INFO] 卖出交易已构建
+[2025-09-05T02:38:55.349Z] [INFO] 交易详情:
+[2025-09-05T02:38:55.349Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:38:55.349Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:38:55.349Z] [INFO]   - 用户代币账户: 8SJ5vjXBktsvF4LFXPwDBctU3gRHdmD3wVFpeUBkzECk
+[2025-09-05T02:38:55.349Z] [INFO] 开始签名和发送卖出交易...
+[2025-09-05T02:38:55.357Z] [INFO] 卖出交易已发送，签名: 4xwJ6x9WTpbUbNsJENLFhq9zXASiXQvrq5eCvgGueBgezngaqZSMJ62N5R77hyPesQTLSmmRBRWKDB2qT1vbLDTw
+[2025-09-05T02:38:55.357Z] [INFO] 等待交易确认...
+[2025-09-05T02:38:55.819Z] [INFO] ✅ 代币卖出成功！耗时 0.50 秒
+[2025-09-05T02:38:55.819Z] [INFO] 交易签名: 4xwJ6x9WTpbUbNsJENLFhq9zXASiXQvrq5eCvgGueBgezngaqZSMJ62N5R77hyPesQTLSmmRBRWKDB2qT1vbLDTw
+[2025-09-05T02:38:55.821Z] [INFO] 卖出后代币余额: 299995000.00 个代币
+[2025-09-05T02:38:55.822Z] [INFO] 获得SOL: 0.000262 SOL
+[2025-09-05T02:38:55.822Z] [INFO] 总SOL余额: 99868.3586 SOL
+[2025-09-05T02:38:55.822Z] [INFO] 实际卖出: 5000.00 个代币
+[2025-09-05T02:38:55.822Z] [INFO] 平均价格: 0.052333000 SOL/千代币
+[2025-09-05T02:38:55.823Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:38:55.823Z] [INFO] === 代币卖出完成 ===
+[2025-09-05T02:38:55.823Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 执行成功
+[2025-09-05T02:38:55.823Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:38:57.824Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 开始执行
+[2025-09-05T02:38:57.825Z] [INFO] === 开始执行做多交易 ===
+[2025-09-05T02:38:57.825Z] [INFO] 使用代币地址: 8CzBK4apfWKZhQWMch7z3e3QWC6LKfkjPRKMVRpkGLrr
+[2025-09-05T02:38:57.825Z] [INFO] 使用自定义做多参数
+[2025-09-05T02:38:57.825Z] [INFO] 使用SOL: 1.0000 SOL
+[2025-09-05T02:38:57.825Z] [INFO] 止损百分比: 10.0%
+[2025-09-05T02:38:57.825Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:38:57.825Z] [INFO] SDK缓存已清除
+[2025-09-05T02:38:57.825Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:38:57.825Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:38:57.825Z] [INFO] 钱包索引: 0
+[2025-09-05T02:38:57.826Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:38:57.827Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:38:57.827Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:38:57.827Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:38:57.832Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:38:57.832Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:38:57.832Z] [INFO] 程序对象存在: true
+[2025-09-05T02:38:57.832Z] [INFO] 获取代币当前价格...
+[2025-09-05T02:38:57.836Z] [INFO] 当前价格: 538711653736385725873
+[2025-09-05T02:38:57.836Z] [INFO] 计算买入代币数量...
+[2025-09-05T02:38:57.836Z] [INFO] 计算买入数量: 18127496 个代币
+[2025-09-05T02:38:57.836Z] [INFO] 预期价格变化: 538711653736385725873 -> 564895363080684877661
+[2025-09-05T02:38:57.836Z] [INFO] 模拟买入交易验证流动性...
+[2025-09-05T02:38:57.846Z] [INFO] 买入模拟结果:
+[2025-09-05T02:38:57.846Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:38:57.846Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:38:57.846Z] [INFO]   - 建议买入: 18127495.66 个代币
+[2025-09-05T02:38:57.846Z] [INFO]   - 需要SOL: 1.000000 SOL
+[2025-09-05T02:38:57.846Z] [INFO] 计算止损价格...
+[2025-09-05T02:38:57.846Z] [INFO] 预期止损价格 (下跌 10.0%): 484840488362747153285
+[2025-09-05T02:38:57.846Z] [INFO] 调用止损模拟器...
+[2025-09-05T02:38:57.851Z] [INFO] 止损模拟结果:
+[2025-09-05T02:38:57.851Z] [INFO]   - 可执行止损价格: 484840488362747153285
+[2025-09-05T02:38:57.851Z] [INFO]   - 止损百分比: 10.00%
+[2025-09-05T02:38:57.851Z] [INFO]   - 杠杆倍数: 10.00x
+[2025-09-05T02:38:57.851Z] [INFO]   - 预期SOL输出: 0.859767 SOL
+[2025-09-05T02:38:57.851Z] [INFO]   - 价格调整次数: 1
+[2025-09-05T02:38:57.851Z] [INFO] 订单链表位置:
+[2025-09-05T02:38:57.851Z] [INFO]   - 前一个订单: null
+[2025-09-05T02:38:57.851Z] [INFO]   - 下一个订单: null
+[2025-09-05T02:38:57.851Z] [INFO] 交易参数:
+[2025-09-05T02:38:57.851Z] [INFO]   - 买入代币数量: 18127496 个
+[2025-09-05T02:38:57.852Z] [INFO]   - 最大SOL花费: 2.0000 SOL
+[2025-09-05T02:38:57.852Z] [INFO]   - 保证金: 5.0000 SOL
+[2025-09-05T02:38:57.852Z] [INFO]   - 平仓价格: 484840488362747153285
+[2025-09-05T02:38:57.852Z] [INFO] 钱包SOL余额: 99868.3586 SOL
+[2025-09-05T02:38:57.852Z] [INFO] 开始构建做多交易...
+[2025-09-05T02:38:57.859Z] [INFO] 做多交易已构建
+[2025-09-05T02:38:57.860Z] [INFO] 交易详情:
+[2025-09-05T02:38:57.860Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:38:57.860Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:38:57.860Z] [INFO]   - 自建订单: CS6UqEB2qy74ftbjVbwQKc2GVg6RmbPsMP9m19wJqGeR
+[2025-09-05T02:38:57.860Z] [INFO] 开始签名和发送做多交易...
+[2025-09-05T02:38:57.868Z] [INFO] 做多交易已发送，签名: F4sXovaYFGjTBtk99XoATZyZYdXR1XE5Yj2zrLy4WMPAQpZpwV959WaDEHFnrJPsj2rKkrUR53wabwMXSv5qw6s
+[2025-09-05T02:38:57.868Z] [INFO] 等待交易确认...
+[2025-09-05T02:38:58.199Z] [INFO] ✅ 代币做多成功！耗时 0.37 秒
+[2025-09-05T02:38:58.199Z] [INFO] 交易签名: F4sXovaYFGjTBtk99XoATZyZYdXR1XE5Yj2zrLy4WMPAQpZpwV959WaDEHFnrJPsj2rKkrUR53wabwMXSv5qw6s
+[2025-09-05T02:38:58.199Z] [INFO] 订单PDA: CS6UqEB2qy74ftbjVbwQKc2GVg6RmbPsMP9m19wJqGeR
+[2025-09-05T02:38:58.201Z] [INFO] 花费SOL: 0.165047 SOL
+[2025-09-05T02:38:58.201Z] [INFO] 剩余SOL余额: 99868.1935 SOL
+[2025-09-05T02:38:58.202Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:38:58.202Z] [INFO] === 代币做多完成 ===
+[2025-09-05T02:38:58.202Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 执行成功
+[2025-09-05T02:38:58.202Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:39:00.203Z] [INFO] 步骤 5: [long] 做多交易 2 SOL，止损 20% - 开始执行
+[2025-09-05T02:39:00.204Z] [INFO] === 开始执行做多交易 ===
+[2025-09-05T02:39:00.204Z] [INFO] 使用代币地址: 8CzBK4apfWKZhQWMch7z3e3QWC6LKfkjPRKMVRpkGLrr
+[2025-09-05T02:39:00.204Z] [INFO] 使用自定义做多参数
+[2025-09-05T02:39:00.204Z] [INFO] 使用SOL: 2.0000 SOL
+[2025-09-05T02:39:00.205Z] [INFO] 止损百分比: 20.0%
+[2025-09-05T02:39:00.205Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:39:00.205Z] [INFO] SDK缓存已清除
+[2025-09-05T02:39:00.205Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:39:00.205Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:39:00.205Z] [INFO] 钱包索引: 0
+[2025-09-05T02:39:00.206Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:39:00.208Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:39:00.208Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:39:00.208Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:39:00.215Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:39:00.215Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:39:00.215Z] [INFO] 程序对象存在: true
+[2025-09-05T02:39:00.215Z] [INFO] 获取代币当前价格...
+[2025-09-05T02:39:00.220Z] [INFO] 当前价格: 564895363080684326544
+[2025-09-05T02:39:00.220Z] [INFO] 计算买入代币数量...
+[2025-09-05T02:39:00.220Z] [INFO] 计算买入数量: 33818646 个代币
+[2025-09-05T02:39:00.220Z] [INFO] 预期价格变化: 564895363080684326544 -> 619126714667698261308
+[2025-09-05T02:39:00.220Z] [INFO] 模拟买入交易验证流动性...
+[2025-09-05T02:39:00.228Z] [INFO] 买入模拟结果:
+[2025-09-05T02:39:00.228Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:39:00.228Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:39:00.228Z] [INFO]   - 建议买入: 33818646.24 个代币
+[2025-09-05T02:39:00.229Z] [INFO]   - 需要SOL: 2.000000 SOL
+[2025-09-05T02:39:00.229Z] [INFO] 计算止损价格...
+[2025-09-05T02:39:00.229Z] [INFO] 预期止损价格 (下跌 20.0%): 451916290464547461235
+[2025-09-05T02:39:00.229Z] [INFO] 调用止损模拟器...
+[2025-09-05T02:39:00.237Z] [INFO] 止损模拟结果:
+[2025-09-05T02:39:00.237Z] [INFO]   - 可执行止损价格: 438460482915965560578
+[2025-09-05T02:39:00.237Z] [INFO]   - 止损百分比: 22.38%
+[2025-09-05T02:39:00.237Z] [INFO]   - 杠杆倍数: 4.47x
+[2025-09-05T02:39:00.237Z] [INFO]   - 预期SOL输出: 1.426510 SOL
+[2025-09-05T02:39:00.237Z] [INFO]   - 价格调整次数: 3
+[2025-09-05T02:39:00.237Z] [INFO] 订单链表位置:
+[2025-09-05T02:39:00.237Z] [INFO]   - 前一个订单: CS6UqEB2qy74ftbjVbwQKc2GVg6RmbPsMP9m19wJqGeR
+[2025-09-05T02:39:00.237Z] [INFO]   - 下一个订单: null
+[2025-09-05T02:39:00.237Z] [INFO] 交易参数:
+[2025-09-05T02:39:00.237Z] [INFO]   - 买入代币数量: 33818646 个
+[2025-09-05T02:39:00.237Z] [INFO]   - 最大SOL花费: 4.0000 SOL
+[2025-09-05T02:39:00.237Z] [INFO]   - 保证金: 10.0000 SOL
+[2025-09-05T02:39:00.237Z] [INFO]   - 平仓价格: 438460482915965560578
+[2025-09-05T02:39:00.237Z] [INFO] 钱包SOL余额: 99868.1935 SOL
+[2025-09-05T02:39:00.237Z] [INFO] 开始构建做多交易...
+[2025-09-05T02:39:00.246Z] [INFO] 做多交易已构建
+[2025-09-05T02:39:00.246Z] [INFO] 交易详情:
+[2025-09-05T02:39:00.246Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:39:00.246Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:39:00.246Z] [INFO]   - 自建订单: 2vqfyRRgT9zQKnM9vVdDcQdvRTJb2ZNifgVKq3agmbT8
+[2025-09-05T02:39:00.246Z] [INFO] 开始签名和发送做多交易...
+[2025-09-05T02:39:00.256Z] [INFO] 做多交易已发送，签名: Q5f1PbXj6QbJXxR7Ze5Mho65dWyG5ATGG8KYCsG9dMDjtM3fosXSenPrp3bCnZ8q6JFnBLfnG1dU93fEcfVe4YJ
+[2025-09-05T02:39:00.256Z] [INFO] 等待交易确认...
+[2025-09-05T02:39:00.651Z] [INFO] ✅ 代币做多成功！耗时 0.45 秒
+[2025-09-05T02:39:00.651Z] [INFO] 交易签名: Q5f1PbXj6QbJXxR7Ze5Mho65dWyG5ATGG8KYCsG9dMDjtM3fosXSenPrp3bCnZ8q6JFnBLfnG1dU93fEcfVe4YJ
+[2025-09-05T02:39:00.651Z] [INFO] 订单PDA: 2vqfyRRgT9zQKnM9vVdDcQdvRTJb2ZNifgVKq3agmbT8
+[2025-09-05T02:39:00.653Z] [INFO] 花费SOL: 0.617104 SOL
+[2025-09-05T02:39:00.653Z] [INFO] 剩余SOL余额: 99867.5764 SOL
+[2025-09-05T02:39:00.654Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:39:00.654Z] [INFO] === 代币做多完成 ===
+[2025-09-05T02:39:00.654Z] [INFO] 步骤 5: [long] 做多交易 2 SOL，止损 20% - 执行成功
+[2025-09-05T02:39:00.654Z] [INFO] 
+=== 执行完成 ===
+[2025-09-05T02:39:00.654Z] [INFO] 总用时: 10.28 秒
+[2025-09-05T02:39:00.654Z] [INFO] 成功步骤: 5
+[2025-09-05T02:39:00.654Z] [INFO] 失败步骤: 0
+[2025-09-05T02:39:00.654Z] [INFO] 跳过步骤: 0
+[2025-09-05T02:39:00.654Z] [INFO] 
+=== 详细结果 ===
+[2025-09-05T02:39:00.654Z] [INFO]   1. [create-token] 创建测试代币 - 成功
+[2025-09-05T02:39:00.655Z] [INFO]   2. [buy] 买入100,000个代币 - 成功
+[2025-09-05T02:39:00.655Z] [INFO]   3. [sell] 卖出50,000个代币 - 成功
+[2025-09-05T02:39:00.655Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 成功
+[2025-09-05T02:39:00.655Z] [INFO]   5. [long] 做多交易 2 SOL，止损 20% - 成功
+[2025-09-05T02:39:00.655Z] [INFO] 
+=== 最终状态 ===
+[2025-09-05T02:39:00.656Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:39:00.656Z] [INFO] 🎉 交易计划执行完成！
+[2025-09-05T02:39:03.829Z] [INFO] === SpinPet 交易机器人开始执行 ===
+[2025-09-05T02:39:03.830Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:39:03.830Z] [INFO] 钱包索引: 0
+[2025-09-05T02:39:03.830Z] [INFO] 代币: TestBot Token (TBT)
+[2025-09-05T02:39:03.830Z] [INFO] 交易计划总步骤: 5
+[2025-09-05T02:39:03.830Z] [INFO] 启用的步骤: 5
+[2025-09-05T02:39:03.830Z] [INFO] 
+执行计划:
+[2025-09-05T02:39:03.830Z] [INFO]   1. [create-token] 创建测试代币 - 启用
+[2025-09-05T02:39:03.830Z] [INFO]   2. [buy] 买入100,000个代币 - 启用
+[2025-09-05T02:39:03.830Z] [INFO]   3. [sell] 卖出50,000个代币 - 启用
+[2025-09-05T02:39:03.830Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 启用
+[2025-09-05T02:39:03.830Z] [INFO]   5. [long] 做多交易 2 SOL，止损 20% - 启用
+[2025-09-05T02:39:03.830Z] [INFO] 
+[2025-09-05T02:39:03.831Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 开始执行
+[2025-09-05T02:39:03.831Z] [INFO] === 开始创建代币 ===
+[2025-09-05T02:39:03.831Z] [INFO] 代币信息: TestBot Token (TBT)
+[2025-09-05T02:39:03.831Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:39:03.831Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:39:03.831Z] [INFO] 钱包索引: 0
+[2025-09-05T02:39:03.832Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:39:03.863Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:39:03.863Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:39:03.863Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:39:03.867Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:39:03.868Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:39:03.868Z] [INFO] 程序对象存在: true
+[2025-09-05T02:39:03.870Z] [INFO] 生成代币 mint 地址: 7bzheCdAEfqRi5G6inR1zv1oZvv3BrihjCoLGnQ1mhpE
+[2025-09-05T02:39:03.870Z] [INFO] 开始构建代币创建交易...
+[2025-09-05T02:39:03.874Z] [INFO] 代币创建交易已构建
+[2025-09-05T02:39:03.874Z] [INFO] 相关账户:
+[2025-09-05T02:39:03.874Z] [INFO]   - 支付者: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:39:03.874Z] [INFO]   - 代币 Mint: 7bzheCdAEfqRi5G6inR1zv1oZvv3BrihjCoLGnQ1mhpE
+[2025-09-05T02:39:03.874Z] [INFO]   - 借贷流动池: FegiCXRtZcyapyGeKtFHXhZgUzJyXeBxvpcrPuSq6obX
+[2025-09-05T02:39:03.874Z] [INFO]   - 流动池代币账户: 999HYmsbU4PmmaRHKe1wMYLSzYbxnYoyu3S8NriqfWVf
+[2025-09-05T02:39:03.874Z] [INFO]   - 流动池SOL账户: 9wmaiU1PA5wKHQZ8EM8zHe3NZ5jB5rZdsaur8myNbDge
+[2025-09-05T02:39:03.874Z] [INFO] 开始签名和发送交易...
+[2025-09-05T02:39:03.918Z] [INFO] 交易已发送，签名: 49J9kzRAPSdCgLiMxdgswAgyjGTTn1tRQP11uXHxzWVgFjpP5rvwiH5SYQk3k4KkFmuFqggvWog8J94GZrzvF32e
+[2025-09-05T02:39:03.918Z] [INFO] 等待交易确认...
+[2025-09-05T02:39:04.340Z] [INFO] ✅ 代币创建成功！耗时 0.51 秒
+[2025-09-05T02:39:04.341Z] [INFO] 交易签名: 49J9kzRAPSdCgLiMxdgswAgyjGTTn1tRQP11uXHxzWVgFjpP5rvwiH5SYQk3k4KkFmuFqggvWog8J94GZrzvF32e
+[2025-09-05T02:39:04.341Z] [INFO] 代币 Mint 地址: 7bzheCdAEfqRi5G6inR1zv1oZvv3BrihjCoLGnQ1mhpE
+[2025-09-05T02:39:04.342Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:39:04.342Z] [INFO] === 代币创建完成 ===
+[2025-09-05T02:39:04.342Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 执行成功
+[2025-09-05T02:39:04.343Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:39:06.345Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 开始执行
+[2025-09-05T02:39:06.346Z] [INFO] === 开始买入代币 ===
+[2025-09-05T02:39:06.346Z] [INFO] 使用代币地址: 7bzheCdAEfqRi5G6inR1zv1oZvv3BrihjCoLGnQ1mhpE
+[2025-09-05T02:39:06.346Z] [INFO] 使用自定义买入参数
+[2025-09-05T02:39:06.347Z] [INFO] 买入数量: 300000000 个代币
+[2025-09-05T02:39:06.347Z] [INFO] 最大花费: 50.0000 SOL
+[2025-09-05T02:39:06.347Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:39:06.347Z] [INFO] SDK缓存已清除
+[2025-09-05T02:39:06.347Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:39:06.347Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:39:06.347Z] [INFO] 钱包索引: 0
+[2025-09-05T02:39:06.348Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:39:06.350Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:39:06.350Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:39:06.350Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:39:06.356Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:39:06.357Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:39:06.357Z] [INFO] 程序对象存在: true
+[2025-09-05T02:39:06.360Z] [INFO] 钱包SOL余额: 99867.5695 SOL
+[2025-09-05T02:39:06.360Z] [INFO] 正在模拟买入交易...
+[2025-09-05T02:39:06.380Z] [INFO] 模拟结果:
+[2025-09-05T02:39:06.380Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:39:06.380Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:39:06.381Z] [INFO]   - 建议买入: 300000000.00 个代币
+[2025-09-05T02:39:06.381Z] [INFO]   - 需要SOL: 11.642950 SOL
+[2025-09-05T02:39:06.381Z] [INFO] 开始构建买入交易...
+[2025-09-05T02:39:06.392Z] [INFO] 买入交易已构建
+[2025-09-05T02:39:06.392Z] [INFO] 交易详情:
+[2025-09-05T02:39:06.392Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:39:06.392Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:39:06.392Z] [INFO]   - 用户代币账户: 3oTSf3m48dAfJQhteRN72nPZcj1jhfqvgypz7jtMNrmg
+[2025-09-05T02:39:06.392Z] [INFO] 开始签名和发送买入交易...
+[2025-09-05T02:39:06.405Z] [INFO] 买入交易已发送，签名: 3VNAxGELyMHsCjo4SAnd56gUdYuDfpd1HosQS6Pp6VUiXpfAq4mofmGuuYAkoWBQUoeCWDM1u8BLaR3cMgWTXqEh
+[2025-09-05T02:39:06.405Z] [INFO] 等待交易确认...
+[2025-09-05T02:39:06.763Z] [INFO] ✅ 代币买入成功！耗时 0.42 秒
+[2025-09-05T02:39:06.763Z] [INFO] 交易签名: 3VNAxGELyMHsCjo4SAnd56gUdYuDfpd1HosQS6Pp6VUiXpfAq4mofmGuuYAkoWBQUoeCWDM1u8BLaR3cMgWTXqEh
+[2025-09-05T02:39:06.766Z] [INFO] 买入后代币余额: 300000000.00 个代币
+[2025-09-05T02:39:06.768Z] [INFO] 花费SOL: 11.761423 SOL
+[2025-09-05T02:39:06.768Z] [INFO] 剩余SOL余额: 99855.8081 SOL
+[2025-09-05T02:39:06.768Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:39:06.768Z] [INFO] === 代币买入完成 ===
+[2025-09-05T02:39:06.769Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 执行成功
+[2025-09-05T02:39:06.769Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:39:08.770Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 开始执行
+[2025-09-05T02:39:08.771Z] [INFO] === 开始卖出代币 ===
+[2025-09-05T02:39:08.771Z] [INFO] 使用代币地址: 7bzheCdAEfqRi5G6inR1zv1oZvv3BrihjCoLGnQ1mhpE
+[2025-09-05T02:39:08.771Z] [INFO] 当前代币余额: 300000000.00 个代币
+[2025-09-05T02:39:08.771Z] [INFO] 使用自定义卖出参数
+[2025-09-05T02:39:08.771Z] [INFO] 卖出数量: 5000 个代币
+[2025-09-05T02:39:08.771Z] [INFO] 最少获得: 0.0000 SOL
+[2025-09-05T02:39:08.771Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:39:08.771Z] [INFO] SDK缓存已清除
+[2025-09-05T02:39:08.771Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:39:08.771Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:39:08.771Z] [INFO] 钱包索引: 0
+[2025-09-05T02:39:08.772Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:39:08.773Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:39:08.773Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:39:08.773Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:39:08.777Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:39:08.778Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:39:08.778Z] [INFO] 程序对象存在: true
+[2025-09-05T02:39:08.780Z] [INFO] 钱包SOL余额: 99855.8081 SOL
+[2025-09-05T02:39:08.780Z] [INFO] 正在模拟卖出交易...
+[2025-09-05T02:39:08.791Z] [INFO] 模拟结果:
+[2025-09-05T02:39:08.791Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:39:08.791Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:39:08.792Z] [INFO]   - 建议卖出: 5000.00 个代币
+[2025-09-05T02:39:08.792Z] [INFO]   - 预期获得: 0.000269 SOL
+[2025-09-05T02:39:08.792Z] [INFO] 开始构建卖出交易...
+[2025-09-05T02:39:08.801Z] [INFO] 卖出交易已构建
+[2025-09-05T02:39:08.801Z] [INFO] 交易详情:
+[2025-09-05T02:39:08.801Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:39:08.801Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:39:08.801Z] [INFO]   - 用户代币账户: 3oTSf3m48dAfJQhteRN72nPZcj1jhfqvgypz7jtMNrmg
+[2025-09-05T02:39:08.801Z] [INFO] 开始签名和发送卖出交易...
+[2025-09-05T02:39:08.810Z] [INFO] 卖出交易已发送，签名: Umyc3cg6WzRwPQdrVRbLvte4GR9Wsg1tNU9HFt766REGhWNFoxkAwcNT2vupma1bBafEVTecoeRpgyEVDNqg4VH
+[2025-09-05T02:39:08.810Z] [INFO] 等待交易确认...
+[2025-09-05T02:39:09.249Z] [INFO] ✅ 代币卖出成功！耗时 0.48 秒
+[2025-09-05T02:39:09.249Z] [INFO] 交易签名: Umyc3cg6WzRwPQdrVRbLvte4GR9Wsg1tNU9HFt766REGhWNFoxkAwcNT2vupma1bBafEVTecoeRpgyEVDNqg4VH
+[2025-09-05T02:39:09.253Z] [INFO] 卖出后代币余额: 299995000.00 个代币
+[2025-09-05T02:39:09.255Z] [INFO] 获得SOL: 0.000262 SOL
+[2025-09-05T02:39:09.255Z] [INFO] 总SOL余额: 99855.8083 SOL
+[2025-09-05T02:39:09.255Z] [INFO] 实际卖出: 5000.00 个代币
+[2025-09-05T02:39:09.255Z] [INFO] 平均价格: 0.052333000 SOL/千代币
+[2025-09-05T02:39:09.256Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:39:09.256Z] [INFO] === 代币卖出完成 ===
+[2025-09-05T02:39:09.256Z] [INFO] 步骤 3: [sell] 卖出50,000个代币 - 执行成功
+[2025-09-05T02:39:09.256Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:39:11.257Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 开始执行
+[2025-09-05T02:39:11.258Z] [INFO] === 开始执行做多交易 ===
+[2025-09-05T02:39:11.258Z] [INFO] 使用代币地址: 7bzheCdAEfqRi5G6inR1zv1oZvv3BrihjCoLGnQ1mhpE
+[2025-09-05T02:39:11.258Z] [INFO] 使用自定义做多参数
+[2025-09-05T02:39:11.258Z] [INFO] 使用SOL: 1.0000 SOL
+[2025-09-05T02:39:11.258Z] [INFO] 止损百分比: 10.0%
+[2025-09-05T02:39:11.258Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:39:11.258Z] [INFO] SDK缓存已清除
+[2025-09-05T02:39:11.258Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:39:11.258Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:39:11.258Z] [INFO] 钱包索引: 0
+[2025-09-05T02:39:11.258Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:39:11.259Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:39:11.259Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:39:11.259Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:39:11.262Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:39:11.262Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:39:11.262Z] [INFO] 程序对象存在: true
+[2025-09-05T02:39:11.263Z] [INFO] 获取代币当前价格...
+[2025-09-05T02:39:11.265Z] [INFO] 当前价格: 538711653736385725873
+[2025-09-05T02:39:11.265Z] [INFO] 计算买入代币数量...
+[2025-09-05T02:39:11.265Z] [INFO] 计算买入数量: 18127496 个代币
+[2025-09-05T02:39:11.265Z] [INFO] 预期价格变化: 538711653736385725873 -> 564895363080684877661
+[2025-09-05T02:39:11.265Z] [INFO] 模拟买入交易验证流动性...
+[2025-09-05T02:39:11.277Z] [INFO] 买入模拟结果:
+[2025-09-05T02:39:11.277Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:39:11.277Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:39:11.277Z] [INFO]   - 建议买入: 18127495.66 个代币
+[2025-09-05T02:39:11.277Z] [INFO]   - 需要SOL: 1.000000 SOL
+[2025-09-05T02:39:11.277Z] [INFO] 计算止损价格...
+[2025-09-05T02:39:11.277Z] [INFO] 预期止损价格 (下跌 10.0%): 484840488362747153285
+[2025-09-05T02:39:11.277Z] [INFO] 调用止损模拟器...
+[2025-09-05T02:39:11.283Z] [INFO] 止损模拟结果:
+[2025-09-05T02:39:11.283Z] [INFO]   - 可执行止损价格: 484840488362747153285
+[2025-09-05T02:39:11.283Z] [INFO]   - 止损百分比: 10.00%
+[2025-09-05T02:39:11.283Z] [INFO]   - 杠杆倍数: 10.00x
+[2025-09-05T02:39:11.283Z] [INFO]   - 预期SOL输出: 0.859767 SOL
+[2025-09-05T02:39:11.283Z] [INFO]   - 价格调整次数: 1
+[2025-09-05T02:39:11.283Z] [INFO] 订单链表位置:
+[2025-09-05T02:39:11.283Z] [INFO]   - 前一个订单: null
+[2025-09-05T02:39:11.283Z] [INFO]   - 下一个订单: null
+[2025-09-05T02:39:11.283Z] [INFO] 交易参数:
+[2025-09-05T02:39:11.283Z] [INFO]   - 买入代币数量: 18127496 个
+[2025-09-05T02:39:11.283Z] [INFO]   - 最大SOL花费: 2.0000 SOL
+[2025-09-05T02:39:11.283Z] [INFO]   - 保证金: 5.0000 SOL
+[2025-09-05T02:39:11.283Z] [INFO]   - 平仓价格: 484840488362747153285
+[2025-09-05T02:39:11.284Z] [INFO] 钱包SOL余额: 99855.8083 SOL
+[2025-09-05T02:39:11.284Z] [INFO] 开始构建做多交易...
+[2025-09-05T02:39:11.290Z] [INFO] 做多交易已构建
+[2025-09-05T02:39:11.290Z] [INFO] 交易详情:
+[2025-09-05T02:39:11.290Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:39:11.290Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:39:11.290Z] [INFO]   - 自建订单: 3stywELAWtmcz5846Q2rSPZeiCfpJ5GCQmyP127VqcKD
+[2025-09-05T02:39:11.290Z] [INFO] 开始签名和发送做多交易...
+[2025-09-05T02:39:11.298Z] [INFO] 做多交易已发送，签名: 3YG73LBjVamYvWUt7AnuBZ4cznpcDjbDgj1FKjNYaNBbSE5dZbVydfnMwsHSsfjnUPxVwbQn1k8UA3QJ9t46ESss
+[2025-09-05T02:39:11.298Z] [INFO] 等待交易确认...
+[2025-09-05T02:39:11.754Z] [INFO] ✅ 代币做多成功！耗时 0.49 秒
+[2025-09-05T02:39:11.754Z] [INFO] 交易签名: 3YG73LBjVamYvWUt7AnuBZ4cznpcDjbDgj1FKjNYaNBbSE5dZbVydfnMwsHSsfjnUPxVwbQn1k8UA3QJ9t46ESss
+[2025-09-05T02:39:11.754Z] [INFO] 订单PDA: 3stywELAWtmcz5846Q2rSPZeiCfpJ5GCQmyP127VqcKD
+[2025-09-05T02:39:11.756Z] [INFO] 花费SOL: 0.165047 SOL
+[2025-09-05T02:39:11.756Z] [INFO] 剩余SOL余额: 99855.6433 SOL
+[2025-09-05T02:39:11.757Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:39:11.757Z] [INFO] === 代币做多完成 ===
+[2025-09-05T02:39:11.757Z] [INFO] 步骤 4: [long] 做多交易 1 SOL，止损 10% - 执行成功
+[2025-09-05T02:39:11.757Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T02:39:13.758Z] [INFO] 步骤 5: [long] 做多交易 2 SOL，止损 20% - 开始执行
+[2025-09-05T02:39:13.759Z] [INFO] === 开始执行做多交易 ===
+[2025-09-05T02:39:13.760Z] [INFO] 使用代币地址: 7bzheCdAEfqRi5G6inR1zv1oZvv3BrihjCoLGnQ1mhpE
+[2025-09-05T02:39:13.760Z] [INFO] 使用自定义做多参数
+[2025-09-05T02:39:13.760Z] [INFO] 使用SOL: 2.0000 SOL
+[2025-09-05T02:39:13.760Z] [INFO] 止损百分比: 20.0%
+[2025-09-05T02:39:13.760Z] [INFO] 配置变化，清除旧的SDK缓存
+[2025-09-05T02:39:13.761Z] [INFO] SDK缓存已清除
+[2025-09-05T02:39:13.761Z] [INFO] 正在初始化SpinPet SDK...
+[2025-09-05T02:39:13.761Z] [INFO] 网络: LOCALNET
+[2025-09-05T02:39:13.761Z] [INFO] 钱包索引: 0
+[2025-09-05T02:39:13.762Z] [INFO] 已创建Solana连接: http://192.168.18.5:8899
+[2025-09-05T02:39:13.764Z] [INFO] 已创建钱包实例: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T02:39:13.764Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T02:39:13.764Z] [INFO] 网络选项: {"name":"localnet","defaultDataSource":"chain","solanaEndpoint":"http://192.168.18.5:8899","spin_fast_api_url":"http://192.168.18.5:8080","fee_recipient":"XRsWSBV3NzoHDgUsQseVFtb1AjujfWWZcPf8YvziXEn","base_fee_recipient":"8EChFjmUxENLoAZt7uvD6JUmZqqkXBBqYNiZLaQEZdsL","params_account":"8JJkzkuR9Bx6RndGJQCoSg3AmX4jikaSU1qdh5qiaQbS"}
+[2025-09-05T02:39:13.771Z] [INFO] SpinPet SDK 初始化完成
+[2025-09-05T02:39:13.771Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T02:39:13.771Z] [INFO] 程序对象存在: true
+[2025-09-05T02:39:13.771Z] [INFO] 获取代币当前价格...
+[2025-09-05T02:39:13.778Z] [INFO] 当前价格: 564895363080684326544
+[2025-09-05T02:39:13.778Z] [INFO] 计算买入代币数量...
+[2025-09-05T02:39:13.779Z] [INFO] 计算买入数量: 33818646 个代币
+[2025-09-05T02:39:13.779Z] [INFO] 预期价格变化: 564895363080684326544 -> 619126714667698261308
+[2025-09-05T02:39:13.779Z] [INFO] 模拟买入交易验证流动性...
+[2025-09-05T02:39:13.793Z] [INFO] 买入模拟结果:
+[2025-09-05T02:39:13.793Z] [INFO]   - 完成度: 100.0%
+[2025-09-05T02:39:13.793Z] [INFO]   - 价格滑点: 0.0%
+[2025-09-05T02:39:13.793Z] [INFO]   - 建议买入: 33818646.24 个代币
+[2025-09-05T02:39:13.793Z] [INFO]   - 需要SOL: 2.000000 SOL
+[2025-09-05T02:39:13.794Z] [INFO] 计算止损价格...
+[2025-09-05T02:39:13.794Z] [INFO] 预期止损价格 (下跌 20.0%): 451916290464547461235
+[2025-09-05T02:39:13.794Z] [INFO] 调用止损模拟器...
+[2025-09-05T02:39:13.807Z] [INFO] 止损模拟结果:
+[2025-09-05T02:39:13.807Z] [INFO]   - 可执行止损价格: 438460482915965560578
+[2025-09-05T02:39:13.807Z] [INFO]   - 止损百分比: 22.38%
+[2025-09-05T02:39:13.807Z] [INFO]   - 杠杆倍数: 4.47x
+[2025-09-05T02:39:13.807Z] [INFO]   - 预期SOL输出: 1.426510 SOL
+[2025-09-05T02:39:13.807Z] [INFO]   - 价格调整次数: 3
+[2025-09-05T02:39:13.807Z] [INFO] 订单链表位置:
+[2025-09-05T02:39:13.807Z] [INFO]   - 前一个订单: 3stywELAWtmcz5846Q2rSPZeiCfpJ5GCQmyP127VqcKD
+[2025-09-05T02:39:13.807Z] [INFO]   - 下一个订单: null
+[2025-09-05T02:39:13.807Z] [INFO] 交易参数:
+[2025-09-05T02:39:13.807Z] [INFO]   - 买入代币数量: 33818646 个
+[2025-09-05T02:39:13.807Z] [INFO]   - 最大SOL花费: 4.0000 SOL
+[2025-09-05T02:39:13.807Z] [INFO]   - 保证金: 10.0000 SOL
+[2025-09-05T02:39:13.807Z] [INFO]   - 平仓价格: 438460482915965560578
+[2025-09-05T02:39:13.809Z] [INFO] 钱包SOL余额: 99855.6433 SOL
+[2025-09-05T02:39:13.809Z] [INFO] 开始构建做多交易...
+[2025-09-05T02:39:13.822Z] [INFO] 做多交易已构建
+[2025-09-05T02:39:13.822Z] [INFO] 交易详情:
+[2025-09-05T02:39:13.822Z] [INFO]   - 使用订单数: 0
+[2025-09-05T02:39:13.822Z] [INFO]   - LP配对数: 1
+[2025-09-05T02:39:13.822Z] [INFO]   - 自建订单: FZkNk8bw6qkV8m2JVt3gmURgdNuqJwvNJkBedL5k2Sfx
+[2025-09-05T02:39:13.822Z] [INFO] 开始签名和发送做多交易...
+[2025-09-05T02:39:13.841Z] [INFO] 做多交易已发送，签名: 4Ju1oCjudiqRF5ErX2Wvis2RQyJA8918GeEZ6dun7ELrip36YKsNFRgqYZRJhB5d7zwPK7bQNWE8cYs8ghNvM6nP
+[2025-09-05T02:39:13.841Z] [INFO] 等待交易确认...
+[2025-09-05T02:39:14.160Z] [INFO] ✅ 代币做多成功！耗时 0.40 秒
+[2025-09-05T02:39:14.160Z] [INFO] 交易签名: 4Ju1oCjudiqRF5ErX2Wvis2RQyJA8918GeEZ6dun7ELrip36YKsNFRgqYZRJhB5d7zwPK7bQNWE8cYs8ghNvM6nP
+[2025-09-05T02:39:14.160Z] [INFO] 订单PDA: FZkNk8bw6qkV8m2JVt3gmURgdNuqJwvNJkBedL5k2Sfx
+[2025-09-05T02:39:14.162Z] [INFO] 花费SOL: 0.617104 SOL
+[2025-09-05T02:39:14.162Z] [INFO] 剩余SOL余额: 99855.0262 SOL
+[2025-09-05T02:39:14.163Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:39:14.163Z] [INFO] === 代币做多完成 ===
+[2025-09-05T02:39:14.163Z] [INFO] 步骤 5: [long] 做多交易 2 SOL，止损 20% - 执行成功
+[2025-09-05T02:39:14.163Z] [INFO] 
+=== 执行完成 ===
+[2025-09-05T02:39:14.164Z] [INFO] 总用时: 10.33 秒
+[2025-09-05T02:39:14.164Z] [INFO] 成功步骤: 5
+[2025-09-05T02:39:14.164Z] [INFO] 失败步骤: 0
+[2025-09-05T02:39:14.164Z] [INFO] 跳过步骤: 0
+[2025-09-05T02:39:14.164Z] [INFO] 
+=== 详细结果 ===
+[2025-09-05T02:39:14.164Z] [INFO]   1. [create-token] 创建测试代币 - 成功
+[2025-09-05T02:39:14.164Z] [INFO]   2. [buy] 买入100,000个代币 - 成功
+[2025-09-05T02:39:14.164Z] [INFO]   3. [sell] 卖出50,000个代币 - 成功
+[2025-09-05T02:39:14.164Z] [INFO]   4. [long] 做多交易 1 SOL，止损 10% - 成功
+[2025-09-05T02:39:14.165Z] [INFO]   5. [long] 做多交易 2 SOL，止损 20% - 成功
+[2025-09-05T02:39:14.165Z] [INFO] 
+=== 最终状态 ===
+[2025-09-05T02:39:14.166Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T02:39:14.166Z] [INFO] 🎉 交易计划执行完成！
