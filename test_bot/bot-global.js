@@ -52,31 +52,62 @@ const CONFIG = {
     { 
       type: 'long', 
       enabled: true,  // 启用做多交易测试
-      description: '做多交易 1 SOL，止损 10%',
+      description: '做多交易 1 SOL，止损 20%',
       params: {
         useSol: 1000000000,    // 使用 1 SOL (lamports)
-        downPercentage: 0.1    // 止损 10%
+        downPercentage: 0.2    // 止损 20%
       }
     },
     // 步骤5：做多交易
     { 
       type: 'long', 
       enabled: true,  // 启用做多交易测试
-      description: '做多交易 2 SOL，止损 20%',
+      description: '做多交易 2 SOL，止损 30%',
       params: {
         useSol: 2000000000,    // 使用 2 SOL (lamports)
-        downPercentage: 0.20    // 止损 20%
+        downPercentage: 0.30    // 止损 30%
       }
     },
     // 步骤6：做空交易（1 SOL，止损15%）
     { 
       type: 'short', 
       enabled: true,  // 启用做空交易测试
-      description: '做空交易 1 SOL，止损 15%',
+      description: '做空交易 1 SOL，止损 25%',
       params: {
         useSol: 1000000000,    // 使用 1 SOL (lamports)
-        upPercentage: 0.15     // 止损 15%
+        upPercentage: 0.25     // 止损 25%
       }
+    },
+    // 步骤7：做空交易
+    { 
+      type: 'short', 
+      enabled: true,  // 启用做空交易测试
+      description: '做空交易 0.5 SOL，止损 10%',
+      params: {
+        useSol: 500000000,    
+        upPercentage: 0.15     // 止损 10%
+      }
+    },
+    // 步骤8：平仓做多交易
+    { 
+      type: 'closeLong', 
+      enabled: true,  // 启用平仓做多测试
+      description: '平仓做多交易（自动查找订单）',
+      params: {}  // 无需参数，自动查找并平仓做多订单
+    },
+    // 步骤9：平仓做多交易
+    { 
+      type: 'closeLong', 
+      enabled: true,  // 启用平仓做多测试
+      description: '平仓做多交易（自动查找订单）',
+      params: {}  // 无需参数，自动查找并平仓做多订单
+    },
+    // 步骤10：平仓做多交易
+    { 
+      type: 'closeLong', 
+      enabled: true,  // 启用平仓做多测试
+      description: '平仓做多交易（自动查找订单）',
+      params: {}  // 无需参数，自动查找并平仓做多订单
     },
 
   ],

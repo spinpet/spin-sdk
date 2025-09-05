@@ -11,8 +11,8 @@ const { buyTokens } = require('./buy');
 const { sellTokens } = require('./sell');
 const { longTokens } = require('./long');
 const { shortTokens } = require('./short');
+const { closeLongTokens } = require('./closeLong');
 // TODO: 未来添加其他保证金交易模块
-// const { closeLongPosition } = require('./close-long');
 // const { closeShortPosition } = require('./close-short');
 
 // 交易类型映射
@@ -22,8 +22,8 @@ const TRADE_HANDLERS = {
   'sell': sellTokens,
   'long': longTokens,    // 做多交易
   'short': shortTokens,  // 做空交易 ✅ 已实现
+  'closeLong': closeLongTokens, // 平仓做多 ✅ 已实现
   // TODO: 添加其他保证金交易处理器
-  'closeLong': null, // 待实现
   'closeShort': null // 待实现
 };
 
