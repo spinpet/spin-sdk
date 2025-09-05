@@ -64,11 +64,20 @@ const CONFIG = {
       enabled: true,  // 启用做多交易测试
       description: '做多交易 2 SOL，止损 20%',
       params: {
-        useSol: 2000000000,    // 使用 1 SOL (lamports)
-        downPercentage: 0.20    // 止损 10%
+        useSol: 2000000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.20    // 止损 20%
       }
     },
-
+    // 步骤6：做空交易（1 SOL，止损15%）
+    { 
+      type: 'short', 
+      enabled: true,  // 启用做空交易测试
+      description: '做空交易 1 SOL，止损 15%',
+      params: {
+        useSol: 1000000000,    // 使用 1 SOL (lamports)
+        upPercentage: 0.15     // 止损 15%
+      }
+    },
 
   ],
   

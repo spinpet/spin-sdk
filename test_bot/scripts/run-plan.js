@@ -10,8 +10,8 @@ const { createToken } = require('./create-token');
 const { buyTokens } = require('./buy');
 const { sellTokens } = require('./sell');
 const { longTokens } = require('./long');
+const { shortTokens } = require('./short');
 // TODO: 未来添加其他保证金交易模块
-// const { shortPosition } = require('./short');
 // const { closeLongPosition } = require('./close-long');
 // const { closeShortPosition } = require('./close-short');
 
@@ -21,8 +21,8 @@ const TRADE_HANDLERS = {
   'buy': buyTokens,
   'sell': sellTokens,
   'long': longTokens,    // 做多交易
+  'short': shortTokens,  // 做空交易 ✅ 已实现
   // TODO: 添加其他保证金交易处理器
-  'short': null,     // 待实现
   'closeLong': null, // 待实现
   'closeShort': null // 待实现
 };
