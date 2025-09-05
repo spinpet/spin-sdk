@@ -103,37 +103,37 @@
   },
   "state": {
     "token": {
-      "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
-      "mintKeypair": "3XU9ePzPqWheFwFdFZiLGTK69mo4Dze1h11E8dfuWkpXSVeMMJEhbUUNwfUx4CK77KRammreJZKR1wGXvyzoHrRZ",
-      "curveAccount": "AmQFU7Mvbay1F44qTnfW8yjvr98ZJcrr9PqsSuRemnv6",
-      "poolTokenAccount": "9x5WZ1tPBd6MoZ6woHb9Qmv4rtTjHa1sGok3QSRcLz8X",
-      "poolSolAccount": "Dgiyim9GaSdMhdwXspooT1PAo69qNnTvHBmmm8sz45eo",
-      "createdAt": "2025-09-05T03:37:07.225Z",
-      "createTxSignature": "4wKhPJBFUDLGtwnkg38SntRZhtoc3mNK9VA1pT9fMfWAe4By9RHPcSe4vZyizS1hJvzEbDWrARJKfzX4ifBYenSQ"
+      "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+      "mintKeypair": "3jgqn9h4sk64CqzvJM6XY1E2mdsJrQ2ZbEmsZefAyKehZRoS1jba9K7RB1RRG1Y16tYApPUxobE4iLp4eDHmC9GA",
+      "curveAccount": "3K7U8ZbDSXi3tNJhaGqMC5MaGeDCEPBHivxMeokMK6JY",
+      "poolTokenAccount": "GWCXGwqPZz7pBnwS85L4p9VWTh5mKhgNdbW4tfGwdbwy",
+      "poolSolAccount": "CazZ2mEnNY7AApAJhw4S8ZNf5STsJpdT6FuvKUXZujKD",
+      "createdAt": "2025-09-05T03:41:22.573Z",
+      "createTxSignature": "5g2MeQ6YWyQ47SY4Awu395tRyVbv1VZfvd53yeBYpiTK3xfgTG5qPs5FfMNGXSCWZz8cYbGtimMUxgM7cG73yW1K"
     },
     "tradingHistory": [
       {
         "type": "create-token",
         "description": "创建代币 TestBot Token (TBT)",
         "status": "completed",
-        "txSignature": "4wKhPJBFUDLGtwnkg38SntRZhtoc3mNK9VA1pT9fMfWAe4By9RHPcSe4vZyizS1hJvzEbDWrARJKfzX4ifBYenSQ",
-        "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+        "txSignature": "5g2MeQ6YWyQ47SY4Awu395tRyVbv1VZfvd53yeBYpiTK3xfgTG5qPs5FfMNGXSCWZz8cYbGtimMUxgM7cG73yW1K",
+        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
         "accounts": {
-          "mint": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
-          "curveAccount": "AmQFU7Mvbay1F44qTnfW8yjvr98ZJcrr9PqsSuRemnv6",
-          "poolTokenAccount": "9x5WZ1tPBd6MoZ6woHb9Qmv4rtTjHa1sGok3QSRcLz8X",
-          "poolSolAccount": "Dgiyim9GaSdMhdwXspooT1PAo69qNnTvHBmmm8sz45eo"
+          "mint": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+          "curveAccount": "3K7U8ZbDSXi3tNJhaGqMC5MaGeDCEPBHivxMeokMK6JY",
+          "poolTokenAccount": "GWCXGwqPZz7pBnwS85L4p9VWTh5mKhgNdbW4tfGwdbwy",
+          "poolSolAccount": "CazZ2mEnNY7AApAJhw4S8ZNf5STsJpdT6FuvKUXZujKD"
         },
-        "duration": "0.39s",
-        "timestamp": "2025-09-05T03:37:07.226Z",
+        "duration": "0.49s",
+        "timestamp": "2025-09-05T03:41:22.573Z",
         "index": 0
       },
       {
         "type": "buy",
         "description": "买入 300000000 个代币",
         "status": "completed",
-        "txSignature": "j6BFVhfff8vGj6jrJ6Z8MeJya3CbCKQFR3bUV6f4gTXqEZ3xmpauQKjteYx4bSTjjTr6NeRFwrrUe4zywGESzZi",
-        "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+        "txSignature": "eoB7H9SQhrxFHqvBUeEi2vRVk5kRX7PkP2nz4k1e4KitEdKAD2ZJzS5du8gr4gx9a8Vvu198wraYy846bn74LsA",
+        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
         "params": {
           "buyTokenAmount": "300000000000000",
           "maxSolAmount": "50000000000"
@@ -141,18 +141,18 @@
         "results": {
           "actualTokenBalance": "300000000000000",
           "solSpent": "11761423323",
-          "userTokenAccount": "ErxG2EKKn6po1eF2VfVMNjrhoHA8rLEcdDyMYRaSAxcQ"
+          "userTokenAccount": "9FfCDCfvotq6cYKnt1t8SFWpPMzqeuacP6xHhhf4k9a7"
         },
-        "duration": "0.45s",
-        "timestamp": "2025-09-05T03:37:09.686Z",
+        "duration": "0.50s",
+        "timestamp": "2025-09-05T03:41:25.085Z",
         "index": 1
       },
       {
         "type": "sell",
         "description": "卖出 5000.00 个代币",
         "status": "completed",
-        "txSignature": "2DyKBRgnDij61Fa2TpV9AcAv9wMKa6hfDQwUjqao3WZqcRX9shvfW8tSv7i4tYmyxGeWRg6oM8by6MWD4ZTdLoCL",
-        "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+        "txSignature": "3r2Nn64SPyEyJPbCkNiWgGLrRRC4wHzzLvQsF4mL2rto67Mg6RuKTgPh3EGNjELwnVgsnKYwLiwBrybRXebeLG1d",
+        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
         "params": {
           "sellTokenAmount": "5000000000",
           "minSolOutput": "10"
@@ -162,18 +162,18 @@
           "solReceived": "261665",
           "newTokenBalance": "299995000000000",
           "avgPrice": "0.052333000",
-          "userTokenAccount": "ErxG2EKKn6po1eF2VfVMNjrhoHA8rLEcdDyMYRaSAxcQ"
+          "userTokenAccount": "9FfCDCfvotq6cYKnt1t8SFWpPMzqeuacP6xHhhf4k9a7"
         },
-        "duration": "0.45s",
-        "timestamp": "2025-09-05T03:37:12.146Z",
+        "duration": "0.36s",
+        "timestamp": "2025-09-05T03:41:27.453Z",
         "index": 2
       },
       {
         "type": "long",
         "description": "做多 18127496 个代币，止损 20.0%",
         "status": "completed",
-        "txSignature": "4WtxL4VnKqLHKi958dFnRc35Xxz7jEkYRGqQoiZC7U2nz8cjvSPFH3CLUvBjgPW4qmiGGRpxzFvYCXZkdjiHb41p",
-        "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+        "txSignature": "2ydz776uRFNu8jmNb8ZuXhmNiTKE1gp9Qfoi6hapaxpSqWuEKUvyjPWRENqe7uyJsRnzDcsuGxji2GJp9h3Xiitq",
+        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
         "params": {
           "useSol": 1000000000,
           "downPercentage": 0.2,
@@ -183,23 +183,23 @@
           "closePrice": "430969322989108580698"
         },
         "results": {
-          "orderPda": "BBv1cXyYhL98pdLzNGWgkp3kd4RHHjcNXH6rZuckSiAM",
+          "orderPda": "84BTG5WppigppMhkHsiSmz67s4g9FdVt8FD8hEoAWKrS",
           "solSpent": "258489301",
           "leverage": "5.00x",
           "stopLossPercentage": "20.00%",
           "prevOrder": null,
           "nextOrder": null
         },
-        "duration": "0.42s",
-        "timestamp": "2025-09-05T03:37:14.577Z",
+        "duration": "0.44s",
+        "timestamp": "2025-09-05T03:41:29.898Z",
         "index": 3
       },
       {
         "type": "long",
         "description": "做多 33818646 个代币，止损 30.0%",
         "status": "completed",
-        "txSignature": "3EdKPgAVz8QRdW6kMUZjUKQ7274rY8mTkGUY34wDZst23rJeNqqFxgekWqN97P3dmaW44ydXWVY3UqSrUfknb1za",
-        "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+        "txSignature": "588DcgdjiVx7wxq6cD3myj1UFT2RYAwLa5qNBp9RN5Gkm2keFna2ZgR6MtvMvRJV1jN6BNLYH98jjbozem7fTezt",
+        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
         "params": {
           "useSol": 2000000000,
           "downPercentage": 0.3,
@@ -209,23 +209,23 @@
           "closePrice": "395426754156479028580"
         },
         "results": {
-          "orderPda": "7vVMnt3KRRyj4pNvrTXMRqwzmY7R968KB2W5Bqr8XpqT",
+          "orderPda": "8RoWuBqWYsJPxe96HZN4QmCyXv6Cd3mHeHYSLVNAMD5J",
           "solSpent": "752998214",
           "leverage": "3.33x",
           "stopLossPercentage": "30.00%",
-          "prevOrder": "BBv1cXyYhL98pdLzNGWgkp3kd4RHHjcNXH6rZuckSiAM",
+          "prevOrder": "84BTG5WppigppMhkHsiSmz67s4g9FdVt8FD8hEoAWKrS",
           "nextOrder": null
         },
-        "duration": "0.47s",
-        "timestamp": "2025-09-05T03:37:17.058Z",
+        "duration": "0.50s",
+        "timestamp": "2025-09-05T03:41:32.403Z",
         "index": 4
       },
       {
         "type": "short",
         "description": "做空 16521874 个代币，止损 25.0%",
         "status": "completed",
-        "txSignature": "4qjrmdSxkVAyAyFW5ajcipSxnUJowWZ7JPFmrFmQnBFXE2A6L7WMaRp8iGQuukMiqcHMXToLdxexDoAe3yUTeGfF",
-        "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+        "txSignature": "53w11SfbnMePLoHpr9GPgjPfaRSokTjYs44UMCt9TeAoyCdULCbTVjHYFZ4vHU7t2Ai2UT6RPHvWL92wSVknLX8L",
+        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
         "params": {
           "useSol": 1000000000,
           "upPercentage": 0.25,
@@ -235,23 +235,23 @@
           "closePrice": "773908393334621094478"
         },
         "results": {
-          "orderPda": "CPjNAVDEp55TFnzX6cf2kDf6qyaWTsab5V7HPt5Yz9Ta",
+          "orderPda": "FxEgtnTCjvimCHHajhP85CuWv2psPkdxk2iPVAjEpc3v",
           "solSpent": "354502802",
           "leverage": "4.00x",
           "stopLossPercentage": "24.99%",
           "prevOrder": null,
           "nextOrder": null
         },
-        "duration": "0.50s",
-        "timestamp": "2025-09-05T03:37:19.563Z",
+        "duration": "0.40s",
+        "timestamp": "2025-09-05T03:41:34.811Z",
         "index": 5
       },
       {
         "type": "short",
         "description": "做空 8548156 个代币，止损 15.0%",
         "status": "completed",
-        "txSignature": "yrGoBiYSQgshSD2h6wiaaq8wFZuEFoYJ1rTmKb7k9DAbwUzqBEn4owEqBBzcWvhwjPxibCP5YkJDr2FtX5PvTKb",
-        "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+        "txSignature": "5J2SPWCj8FYyxPWCn1aqRFPsztxnGGwJSB4cuJPck6EY3mYLu2ketea3j65T8gUB2WwWhQ8bmWBFPFTrqZgwGiKK",
+        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
         "params": {
           "useSol": 500000000,
           "upPercentage": 0.15,
@@ -261,84 +261,84 @@
           "closePrice": "674538437065877334600"
         },
         "results": {
-          "orderPda": "BSM7A7PBjKQNv8DrtdfMP3PZCTyP8RySDzZfmbDfTYzq",
+          "orderPda": "37JWRqN9jDodbTe4XvueiZ9hCamRgNXHVWvYQZJTjGAf",
           "solSpent": "105333036",
           "leverage": "7.14x",
           "stopLossPercentage": "13.99%",
           "prevOrder": null,
-          "nextOrder": "CPjNAVDEp55TFnzX6cf2kDf6qyaWTsab5V7HPt5Yz9Ta"
+          "nextOrder": "FxEgtnTCjvimCHHajhP85CuWv2psPkdxk2iPVAjEpc3v"
         },
-        "duration": "0.36s",
-        "timestamp": "2025-09-05T03:37:21.928Z",
+        "duration": "0.46s",
+        "timestamp": "2025-09-05T03:41:37.272Z",
         "index": 6
       },
       {
         "type": "closeLong",
         "description": "平仓做多 33818646 个代币",
         "status": "completed",
-        "txSignature": "5WMtvSY2yR7qYcqhHQAg4sBHGyrcWMd2J5zFCrE2ohco3dx2Y2W7Pgc7yB77ZtLBuZERdE6XMGPWhM8okBZv6zc5",
-        "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+        "txSignature": "2ejor7XEz7Nf7sNdf5QCgTkEakwZ1wqZwtC9VnvJZsAgadLmjuH4ijRTiiqjzrJDFSpf97yqdWeuN7gGKgjbxjQr",
+        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
         "params": {
-          "closeOrder": "7vVMnt3KRRyj4pNvrTXMRqwzmY7R968KB2W5Bqr8XpqT",
+          "closeOrder": "8RoWuBqWYsJPxe96HZN4QmCyXv6Cd3mHeHYSLVNAMD5J",
           "sellTokenAmount": "33818646243225",
           "minSolOutput": "1000"
         },
         "results": {
-          "orderClosed": "7vVMnt3KRRyj4pNvrTXMRqwzmY7R968KB2W5Bqr8XpqT",
+          "orderClosed": "8RoWuBqWYsJPxe96HZN4QmCyXv6Cd3mHeHYSLVNAMD5J",
           "solGained": "1137186294",
           "marginRecovered": "726501534"
         },
-        "duration": "0.45s",
-        "timestamp": "2025-09-05T03:37:24.381Z",
+        "duration": "0.46s",
+        "timestamp": "2025-09-05T03:41:39.733Z",
         "index": 7
       },
       {
         "type": "closeLong",
         "description": "平仓做多 18127496 个代币",
         "status": "completed",
-        "txSignature": "4MmYVPJihRyTmRxrdgiHP5vqXhZiHKSWCxKiWZkWjvhN3RcrCKotfamxdkHMaQvX2yewfHhoHyN7huUfimtQbmHS",
-        "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+        "txSignature": "r4rxE8jJiozm36Ho7G8KECdtPXW7vvmRULVfiYCqKPr9ueZxwrQiqd2mxfUSwpH3MxAa8x67DPBZaTLEBrwXNV6",
+        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
         "params": {
-          "closeOrder": "BBv1cXyYhL98pdLzNGWgkp3kd4RHHjcNXH6rZuckSiAM",
+          "closeOrder": "84BTG5WppigppMhkHsiSmz67s4g9FdVt8FD8hEoAWKrS",
           "sellTokenAmount": "18127495658390",
           "minSolOutput": "1000"
         },
         "results": {
-          "orderClosed": "BBv1cXyYhL98pdLzNGWgkp3kd4RHHjcNXH6rZuckSiAM",
+          "orderClosed": "84BTG5WppigppMhkHsiSmz67s4g9FdVt8FD8hEoAWKrS",
           "solGained": "691388583",
           "marginRecovered": "243992621"
         },
-        "duration": "0.45s",
-        "timestamp": "2025-09-05T03:37:26.838Z",
+        "duration": "0.49s",
+        "timestamp": "2025-09-05T03:41:42.232Z",
         "index": 8
       },
       {
         "type": "closeShort",
         "description": "平仓做空 8548156 个代币",
         "status": "completed",
-        "txSignature": "5XirwyqmzxK65BtKmoMJsvrwN5VjAYDxuS4hxAthnmGAuCXvuUtouMQ8eaRz4FHP3bZYcFxXDhpFrPcBB22bfv89",
-        "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+        "txSignature": "4mDkg3qjua5Wjx3pae6GMDqhnaoeesyJ6brkCHgvqS9QUi6LxQqXunS71admtigy3ZH6UtU53ep8PgHMRvsYbkrX",
+        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
         "params": {
-          "closeOrder": "BSM7A7PBjKQNv8DrtdfMP3PZCTyP8RySDzZfmbDfTYzq",
+          "closeOrder": "37JWRqN9jDodbTe4XvueiZ9hCamRgNXHVWvYQZJTjGAf",
           "buyTokenAmount": "8548156126847",
           "maxSolAmount": "100000000000"
         },
         "results": {
-          "orderClosed": "BSM7A7PBjKQNv8DrtdfMP3PZCTyP8RySDzZfmbDfTYzq",
+          "orderClosed": "37JWRqN9jDodbTe4XvueiZ9hCamRgNXHVWvYQZJTjGAf",
           "solSpent": "-155897337",
           "marginRecovered": "96836356"
         },
-        "duration": "0.54s",
-        "timestamp": "2025-09-05T03:37:31.397Z",
+        "duration": "0.49s",
+        "timestamp": "2025-09-05T03:41:46.742Z",
         "index": 9
       },
       {
         "type": "closeShort",
         "description": "平仓做空失败",
         "status": "error",
-        "error": "查找或处理用户订单失败: Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 1: custom program error: 0x1776. \nLogs: \n[\n  \"Program log: 手续费率: 1200\",\n  \"Program log: 手续费金额: 10457126 SOL\",\n  \"Program log:   总金额(含手续费): 881884221 SOL 用户输入最大SOL 100000000000\",\n  \"Program log: 交易条件验证通过，可以执行交易\",\n  \"Program log: 开始删除订单: CPjNAVDEp55TFnzX6cf2kDf6qyaWTsab5V7HPt5Yz9Ta\",\n  \"Program log: 🔄 执行 Box 专用的节点删除操作\",\n  \"Program log: 错误：删除单节点时，当前节点前后链接必须为空\",\n  \"Program log: AnchorError occurred. Error Code: InvalidLinkedListOperation. Error Number: 6006. Error Message: 链表操作无效.\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ consumed 273127 of 1399850 compute units\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ failed: custom program error: 0x1776\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
-        "duration": "0.04s",
-        "timestamp": "2025-09-05T03:37:33.438Z",
+        "error": "查找或处理用户订单失败: Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 1: custom program error: 0x1776. \nLogs: \n[\n  \"Program log: 手续费率: 1200\",\n  \"Program log: 手续费金额: 10457126 SOL\",\n  \"Program log:   总金额(含手续费): 881884221 SOL 用户输入最大SOL 100000000000\",\n  \"Program log: 交易条件验证通过，可以执行交易\",\n  \"Program log: 开始删除订单: FxEgtnTCjvimCHHajhP85CuWv2psPkdxk2iPVAjEpc3v\",\n  \"Program log: 🔄 执行 Box 专用的节点删除操作\",\n  \"Program log: 错误：删除单节点时，当前节点前后链接必须为空\",\n  \"Program log: AnchorError occurred. Error Code: InvalidLinkedListOperation. Error Number: 6006. Error Message: 链表操作无效.\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ consumed 273205 of 1399850 compute units\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ failed: custom program error: 0x1776\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
+        "duration": "0.05s",
+        "timestamp": "2025-09-05T03:41:48.791Z",
         "index": 10
       }
     ],
@@ -347,12 +347,12 @@
       "longPositions": [],
       "shortPositions": [
         {
-          "orderPda": "CPjNAVDEp55TFnzX6cf2kDf6qyaWTsab5V7HPt5Yz9Ta",
-          "mintAddress": "AmC3APvc9NeRfMHAE57EZSmz1m7Af2qVQbqcD5XUn8GT",
+          "orderPda": "FxEgtnTCjvimCHHajhP85CuWv2psPkdxk2iPVAjEpc3v",
+          "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
           "borrowSellTokenAmount": "16521873885037",
           "marginSol": "5000000000",
           "closePrice": "773908393334621094478",
-          "openTime": "2025-09-05T03:37:19.563Z",
+          "openTime": "2025-09-05T03:41:34.811Z",
           "leverage": "4.00x",
           "stopLossPercentage": "24.99%"
         }
@@ -385,13 +385,13 @@
       "errors": [
         {
           "step": "closeShort",
-          "error": "查找或处理用户订单失败: Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 1: custom program error: 0x1776. \nLogs: \n[\n  \"Program log: 手续费率: 1200\",\n  \"Program log: 手续费金额: 10457126 SOL\",\n  \"Program log:   总金额(含手续费): 881884221 SOL 用户输入最大SOL 100000000000\",\n  \"Program log: 交易条件验证通过，可以执行交易\",\n  \"Program log: 开始删除订单: CPjNAVDEp55TFnzX6cf2kDf6qyaWTsab5V7HPt5Yz9Ta\",\n  \"Program log: 🔄 执行 Box 专用的节点删除操作\",\n  \"Program log: 错误：删除单节点时，当前节点前后链接必须为空\",\n  \"Program log: AnchorError occurred. Error Code: InvalidLinkedListOperation. Error Number: 6006. Error Message: 链表操作无效.\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ consumed 273127 of 1399850 compute units\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ failed: custom program error: 0x1776\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
-          "timestamp": "2025-09-05T03:37:33.439Z"
+          "error": "查找或处理用户订单失败: Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 1: custom program error: 0x1776. \nLogs: \n[\n  \"Program log: 手续费率: 1200\",\n  \"Program log: 手续费金额: 10457126 SOL\",\n  \"Program log:   总金额(含手续费): 881884221 SOL 用户输入最大SOL 100000000000\",\n  \"Program log: 交易条件验证通过，可以执行交易\",\n  \"Program log: 开始删除订单: FxEgtnTCjvimCHHajhP85CuWv2psPkdxk2iPVAjEpc3v\",\n  \"Program log: 🔄 执行 Box 专用的节点删除操作\",\n  \"Program log: 错误：删除单节点时，当前节点前后链接必须为空\",\n  \"Program log: AnchorError occurred. Error Code: InvalidLinkedListOperation. Error Number: 6006. Error Message: 链表操作无效.\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ consumed 273205 of 1399850 compute units\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ failed: custom program error: 0x1776\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
+          "timestamp": "2025-09-05T03:41:48.791Z"
         }
       ],
-      "startTime": "2025-09-05T03:37:06.832Z",
+      "startTime": "2025-09-05T03:41:22.083Z",
       "endTime": null
     }
   },
-  "savedAt": "2025-09-05T03:37:33.447Z"
+  "savedAt": "2025-09-05T03:41:48.800Z"
 }

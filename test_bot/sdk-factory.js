@@ -21,11 +21,16 @@ let cachedWallet = null;
  * @returns {Connection} Solana连接实例
  */
 function getConnection(network = 'LOCALNET') {
-  if (!cachedConnection) {
-    const options = getDefaultOptions(network);
-    cachedConnection = new Connection(options.solanaEndpoint, 'confirmed');
-    BotGlobal.logMessage('info', `已创建Solana连接: ${options.solanaEndpoint}`);
+  const options = getDefaultOptions(network);
+  
+  // 检查缓存的连接是否匹配当前网络
+  if (cachedConnection && cachedConnection.rpcEndpoint === options.solanaEndpoint) {
+    return cachedConnection;
   }
+  
+  // 需要创建新连接
+  cachedConnection = new Connection(options.solanaEndpoint, 'confirmed');
+  BotGlobal.logMessage('info', `已创建Solana连接: ${options.solanaEndpoint}`);
   return cachedConnection;
 }
 
@@ -35,27 +40,32 @@ function getConnection(network = 'LOCALNET') {
  * @returns {Object} 包含keypair和wallet的对象
  */
 function getWallet(walletIndex = 0) {
-  if (!cachedWallet) {
-    const walletInfo = getWalletByIndex(walletIndex);
-    if (!walletInfo) {
-      throw new Error(`无法获取钱包索引 ${walletIndex} 的信息`);
-    }
-
-    const walletKeypair = Keypair.fromSecretKey(
-      bs58.decode(walletInfo.privateKey)
-    );
-
-    const wallet = new anchor.Wallet(walletKeypair);
-
-    cachedWallet = {
-      keypair: walletKeypair,
-      wallet: wallet,
-      info: walletInfo
-    };
-
-    BotGlobal.logMessage('info', `已创建钱包实例: ${walletKeypair.publicKey.toString()}`);
-    BotGlobal.logMessage('info', `钱包余额: ${walletInfo.balance} SOL`);
+  // 检查缓存的钱包是否匹配当前索引
+  if (cachedWallet && cachedWallet.index === walletIndex) {
+    return cachedWallet;
   }
+  
+  // 需要创建新钱包
+  const walletInfo = getWalletByIndex(walletIndex);
+  if (!walletInfo) {
+    throw new Error(`无法获取钱包索引 ${walletIndex} 的信息`);
+  }
+
+  const walletKeypair = Keypair.fromSecretKey(
+    bs58.decode(walletInfo.privateKey)
+  );
+
+  const wallet = new anchor.Wallet(walletKeypair);
+
+  cachedWallet = {
+    keypair: walletKeypair,
+    wallet: wallet,
+    info: walletInfo,
+    index: walletIndex  // 添加索引信息用于缓存判断
+  };
+
+  BotGlobal.logMessage('info', `已创建钱包实例: ${walletKeypair.publicKey.toString()}`);
+  BotGlobal.logMessage('info', `钱包余额: ${walletInfo.balance} SOL`);
 
   return cachedWallet;
 }
@@ -67,49 +77,52 @@ function getWallet(walletIndex = 0) {
  */
 function getSdk(options = {}) {
   const config = BotGlobal.getConfig();
+  
+  // 确定当前请求的网络和钱包索引
+  const currentNetwork = options.network || config.network;
+  const currentWalletIndex = options.walletIndex !== undefined ? options.walletIndex : config.walletIndex;
 
-  // 如果配置没有变化且SDK已存在，直接返回缓存的实例
-  if (cachedSdk &&
-    options.network === config.network &&
-    options.walletIndex === config.walletIndex) {
-    BotGlobal.logMessage('info', 'SDK实例已存在，使用缓存');
-    return {
-      sdk: cachedSdk,
-      connection: cachedConnection,
-      wallet: cachedWallet
-    };
+  // 如果SDK已存在且配置没有变化，直接返回缓存的实例
+  if (cachedSdk && cachedConnection && cachedWallet) {
+    // 检查是否需要重新创建（配置变化）
+    const needRecreate = (
+      cachedConnection.rpcEndpoint !== getDefaultOptions(currentNetwork).solanaEndpoint ||
+      cachedWallet.info.index !== currentWalletIndex
+    );
+    
+    if (!needRecreate) {
+      BotGlobal.logMessage('debug', 'SDK实例已存在，使用缓存');
+      return {
+        sdk: cachedSdk,
+        connection: cachedConnection,
+        wallet: cachedWallet
+      };
+    } else {
+      BotGlobal.logMessage('info', '配置变化，清除旧的SDK缓存');
+      clearCache();
+    }
   }
-
-  // 清除旧的缓存
-  if (cachedSdk) {
-    BotGlobal.logMessage('info', '配置变化，清除旧的SDK缓存');
-    clearCache();
-  }
-
-  // 获取网络配置
-  const network = options.network || config.network;
-  const walletIndex = options.walletIndex !== undefined ? options.walletIndex : config.walletIndex;
 
   BotGlobal.logMessage('info', '正在初始化SpinPet SDK...');
-  BotGlobal.logMessage('info', `网络: ${network}`);
-  BotGlobal.logMessage('info', `钱包索引: ${walletIndex}`);
+  BotGlobal.logMessage('info', `网络: ${currentNetwork}`);
+  BotGlobal.logMessage('info', `钱包索引: ${currentWalletIndex}`);
 
   try {
     // 获取连接和钱包
-    const connection = getConnection(network);
-    const walletObj = getWallet(walletIndex);
+    const connection = getConnection(currentNetwork);
+    const walletObj = getWallet(currentWalletIndex);
 
     // 获取网络选项
-    let networkOptions = getDefaultOptions(network);
+    let networkOptions = getDefaultOptions(currentNetwork);
     BotGlobal.logMessage('info', `网络选项: ${JSON.stringify(networkOptions)}`);
     networkOptions.defaultDataSource = 'chain'; // 强制使用链上数据源
     // 设置调试目录
     networkOptions.debugLogPath = '/root/code/spin-bot'
 
-
-    // 创建SDK实例
+    // 创建SDK实例 - 修复参数顺序，添加wallet参数
     const sdk = new SpinPetSdk(
       connection,
+      walletObj.wallet,      // 添加wallet参数
       new PublicKey(SPINPET_PROGRAM_ID),
       networkOptions
     );
