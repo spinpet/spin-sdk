@@ -25,6 +25,7 @@ class SpinPetSdk {
    * @param {Object} options - Configuration options (optional)
    */
   constructor(connection, programId, options = {}) {
+    //console.log("SpinPetSdk options=",options)
     // Save configuration options
     this.options = options;
     
@@ -32,6 +33,8 @@ class SpinPetSdk {
     if (options.defaultDataSource && !['fast', 'chain'].includes(options.defaultDataSource)) {
       throw new Error('defaultDataSource must be "fast" or "chain"');
     }
+
+   //console.log("options.defaultDataSource",options.defaultDataSource)
     this.defaultDataSource = options.defaultDataSource || 'fast';
     console.log('Data source method:', this.defaultDataSource);
     
@@ -67,7 +70,18 @@ class SpinPetSdk {
       } catch (error) {
         console.warn('Warning: Failed to delete orderPda.txt:', error.message);
       }
+      const orderOpenFilePath = path.join(this.debugLogPath, 'orderOpen.txt');
+      try {
+        if (fs.existsSync(orderOpenFilePath)) {
+          fs.unlinkSync(orderOpenFilePath);
+        }
+      } catch (error) {
+        console.warn('Warning: Failed to delete orderOpen.txt:', error.message);
+      }
+
+
     }
+
 
     // Initialize Anchor program
     this.program = this._initProgram(this.options);

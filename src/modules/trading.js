@@ -338,7 +338,7 @@ class TradingModule {
         const orderOpenFilePath = path.join(this.sdk.debugLogPath, 'orderOpen.txt');
         const prevOrderStr = prevOrder ? prevOrder.toString() : 'null';
         const nextOrderStr = nextOrder ? nextOrder.toString() : 'null';
-        fs.appendFileSync(orderOpenFilePath, `${prevOrderStr} -> ${selfOrderAddress.toString()} -> ${nextOrderStr}\n`);
+        fs.appendFileSync(orderOpenFilePath, `long ${prevOrderStr} -> ${selfOrderAddress.toString()} -> ${nextOrderStr}\n`);
       } catch (error) {
         console.warn('Warning: Failed to write order chain to file:', error.message);
       }
@@ -495,7 +495,7 @@ class TradingModule {
         const orderOpenFilePath = path.join(this.sdk.debugLogPath, 'orderOpen.txt');
         const prevOrderStr = prevOrder ? prevOrder.toString() : 'null';
         const nextOrderStr = nextOrder ? nextOrder.toString() : 'null';
-        fs.appendFileSync(orderOpenFilePath, `${prevOrderStr} -> ${selfOrderAddress.toString()} -> ${nextOrderStr}\n`);
+        fs.appendFileSync(orderOpenFilePath, `short ${prevOrderStr} -> ${selfOrderAddress.toString()} -> ${nextOrderStr}\n`);
       } catch (error) {
         console.warn('Warning: Failed to write order chain to file:', error.message);
       }
@@ -603,19 +603,43 @@ class TradingModule {
       throw new Error('sellTokenAmount 和 minSolOutput 必须是 anchor.BN 类型 / sellTokenAmount and minSolOutput must be anchor.BN type');
     }
 
-    // 2. 获取订单数据以便查找前后节点 / Get orders data to find prev/next nodes
-    const ordersData = await this.sdk.data.orders(mint.toString(), {
+
+
+    // 我的关闭损订单数据以便查找前后节点 / Get orders data to find prev/next nodes
+    const ordersStopData = await this.sdk.data.orders(mint.toString(), {
       type: 'down_orders',
-      limit: this.sdk.FIND_MAX_ORDERS_COUNT
+      page: 1,
+      limit: this.FIND_MAX_ORDERS_COUNT
     });
 
     // 3. 使用 findPrevNext 查找前后订单 / Use findPrevNext to find prev/next orders
-    const prevNext = this.sdk.findPrevNext(ordersData.data.orders, closeOrderPubkey.toString());
+    const prevNext = this.sdk.findPrevNext(ordersStopData.data.orders, closeOrderPubkey.toString());
     const prevOrder = prevNext.prevOrder ? new PublicKey(prevNext.prevOrder.order_pda) : null;
     const nextOrder = prevNext.nextOrder ? new PublicKey(prevNext.nextOrder.order_pda) : null;
 
     console.log(`closeLong: Found previous order: ${prevOrder ? prevOrder.toString() : 'null'}`);
     console.log(`closeLong: Found next order: ${nextOrder ? nextOrder.toString() : 'null'}`);
+
+
+    // 如果设置了调试日志路径，将订单地址写入 orderPda.txt 文件
+    if (this.sdk.debugLogPath && typeof this.sdk.debugLogPath === 'string') {
+      try {
+        const orderOpenFilePath = path.join(this.sdk.debugLogPath, 'orderOpen.txt');
+        const prevOrderStr = prevOrder ? prevOrder.toString() : 'null';
+        const nextOrderStr = nextOrder ? nextOrder.toString() : 'null';
+        fs.appendFileSync(orderOpenFilePath, `closeLong ${prevOrderStr} -> ${closeOrderPubkey.toString()} -> ${nextOrderStr}\n`);
+      } catch (error) {
+        console.warn('Warning: Failed to write order chain to file:', error.message);
+      }
+    }
+
+
+    // 获取止损订单数据以便查找前后节点 / Get orders data to find prev/next nodes
+    const ordersData = await this.sdk.data.orders(mint.toString(), {
+      type: 'down_orders',
+      limit: this.sdk.MAX_ORDERS_COUNT + 1
+    });
+
 
     // 4. 获取当前价格并构建 lpPairs / Get current price and build lpPairs
     const currentPrice = await this.sdk.data.price(mintAccount);
@@ -723,19 +747,37 @@ class TradingModule {
       throw new Error('buyTokenAmount 和 maxSolAmount 必须是 anchor.BN 类型 buyTokenAmount and maxSolAmount must be anchor.BN type');
     }
 
-    // 2. 获取订单数据以便查找前后节点 Get orders data to find prev/next nodes
-    const ordersData = await this.sdk.data.orders(mint.toString(), {
+    // 我的关闭损订单数据以便查找前后节点 / Get orders data to find prev/next nodes
+    const ordersStopData = await this.sdk.data.orders(mint.toString(), {
       type: 'up_orders',
-      limit: this.sdk.FIND_MAX_ORDERS_COUNT
+      limit: this.FIND_MAX_ORDERS_COUNT
     });
 
     // 3. 使用 findPrevNext 查找前后订单 Use findPrevNext to find prev/next orders
-    const prevNext = this.sdk.findPrevNext(ordersData.data.orders, closeOrderPubkey.toString());
+    const prevNext = this.sdk.findPrevNext(ordersStopData.data.orders, closeOrderPubkey.toString());
     const prevOrder = prevNext.prevOrder ? new PublicKey(prevNext.prevOrder.order_pda) : null;
     const nextOrder = prevNext.nextOrder ? new PublicKey(prevNext.nextOrder.order_pda) : null;
 
     console.log(`closeShort: Found previous order: ${prevOrder ? prevOrder.toString() : 'null'}`);
     console.log(`closeShort: Found next order: ${nextOrder ? nextOrder.toString() : 'null'}`);
+
+    // 如果设置了调试日志路径，将订单地址写入 orderPda.txt 文件
+    if (this.sdk.debugLogPath && typeof this.sdk.debugLogPath === 'string') {
+      try {
+        const orderOpenFilePath = path.join(this.sdk.debugLogPath, 'orderOpen.txt');
+        const prevOrderStr = prevOrder ? prevOrder.toString() : 'null';
+        const nextOrderStr = nextOrder ? nextOrder.toString() : 'null';
+        fs.appendFileSync(orderOpenFilePath, `closeShort ${prevOrderStr} -> ${closeOrderPubkey.toString()} -> ${nextOrderStr}\n`);
+      } catch (error) {
+        console.warn('Warning: Failed to write order chain to file:', error.message);
+      }
+    }
+
+    // 2. 获取订单数据以便查找前后节点 Get orders data to find prev/next nodes
+    const ordersData = await this.sdk.data.orders(mint.toString(), {
+      type: 'up_orders',
+      limit: this.sdk.MAX_ORDERS_COUNT+1
+    });
 
     // 4. 获取当前价格并构建 lpPairs / Get current price and build lpPairs
     const currentPrice = await this.sdk.data.price(mintAccount);

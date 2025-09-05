@@ -2177,7 +2177,7 @@
     {
       "code": 6016,
       "name": "ExceedsMaxSolAmount",
-      "msg": "超出最大SOL金额限制"
+      "msg": "用户设置的最大SOL可使用金额不足"
     },
     {
       "code": 6017,
@@ -2353,6 +2353,16 @@
       "code": 6051,
       "name": "InvalidStopLossPrice",
       "msg": "止损价格不满足最小间隔要求"
+    },
+    {
+      "code": 6052,
+      "name": "InvalidOrderChainSequence",
+      "msg": "ctx带入的链表顺序错乱"
+    },
+    {
+      "code": 6053,
+      "name": "PartialCloseNotSupport",
+      "msg": "暂时不支持部份平仓"
     }
   ],
   "types": [
@@ -2724,6 +2734,10 @@
           {
             "name": "borrow_fee",
             "type": "u16"
+          },
+          {
+            "name": "debug_num",
+            "type": "u64"
           },
           {
             "name": "bump",

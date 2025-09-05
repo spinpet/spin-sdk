@@ -142,12 +142,12 @@ class ChainModule {
     try {
       // Parameter validation and conversion
       const mintPubkey = typeof mint === 'string' ? new PublicKey(mint) : mint;
-      
+
       // Calculate curve_account PDA address
       // Use the same seeds as in the contract: [b"borrowing_curve", mint_account.key().as_ref()]
       const [curveAccountPDA] = PublicKey.findProgramAddressSync(
         [
-          Buffer.from("borrowing_curve"), 
+          Buffer.from("borrowing_curve"),
           mintPubkey.toBuffer()
         ],
         this.sdk.programId
@@ -164,10 +164,10 @@ class ChainModule {
         if (!accountInfo) {
           throw new Error(`curve_account does not exist`);
         }
-        
+
         // Manually decode with BorshAccountsCoder
         const accountsCoder = new anchor.BorshAccountsCoder(this.sdk.program.idl);
-        
+
         // Try different account names
         try {
           decodedData = accountsCoder.decode('BorrowingBondingCurve', accountInfo.data);
@@ -220,7 +220,7 @@ class ChainModule {
         price: BigInt(decodedData.price.toString()),
         borrowTokenReserve: BigInt(decodedData.borrowTokenReserve.toString()),
         borrowSolReserve: BigInt(decodedData.borrowSolReserve.toString()),
-        
+
         // Numeric types remain unchanged
         swapFee: decodedData.swapFee,
         borrowFee: decodedData.borrowFee,
@@ -228,31 +228,31 @@ class ChainModule {
         feeSplit: decodedData.feeSplit,
         borrowDuration: decodedData.borrowDuration,
         bump: decodedData.bump,
-        
+
         // PublicKey types convert to string
         baseFeeRecipient: decodedData.baseFeeRecipient.toString(),
         feeRecipient: decodedData.feeRecipient.toString(),
         mint: decodedData.mint.toString(),
         upHead: decodedData.upHead ? decodedData.upHead.toString() : null,
         downHead: decodedData.downHead ? decodedData.downHead.toString() : null,
-        
+
         // SOL balance information
         baseFeeRecipientBalance: baseFeeRecipientBalance,  // Unit: lamports
         feeRecipientBalance: feeRecipientBalance,          // Unit: lamports
-        
+
         // Pool account information
         poolTokenAccount: poolTokenAccountPDA.toString(),           // Pool token account address
         poolSolAccount: poolSolAccountPDA.toString(),               // Pool SOL account address
         poolTokenBalance: BigInt(poolTokenBalance.value.amount),    // Pool token balance
         poolSolBalance: poolSolBalance,                             // Pool SOL balance (lamports)
-        
+
         // Additional metadata
         _metadata: {
           accountAddress: curveAccountPDA.toString(),
           mintAddress: mintPubkey.toString()
         }
       };
-      
+
       // Return converted data
       return convertedData;
 
@@ -301,19 +301,19 @@ class ChainModule {
     // Process results
     for (let i = 0; i < settled.length; i++) {
       const result = settled[i];
-      
+
       if (result.status === 'fulfilled') {
         const { success, data, error, mint } = result.value;
-        
+
         if (success) {
           results.push(data);
         } else {
           errors.push({ mint, error });
         }
       } else {
-        errors.push({ 
-          mint: mints[i].toString(), 
-          error: result.reason?.message || 'Unknown error' 
+        errors.push({
+          mint: mints[i].toString(),
+          error: result.reason?.message || 'Unknown error'
         });
       }
     }
@@ -339,10 +339,10 @@ class ChainModule {
    */
   getCurveAccountAddress(mint) {
     const mintPubkey = typeof mint === 'string' ? new PublicKey(mint) : mint;
-    
+
     const [curveAccountPDA] = PublicKey.findProgramAddressSync(
       [
-        Buffer.from("borrowing_curve"), 
+        Buffer.from("borrowing_curve"),
         mintPubkey.toBuffer()
       ],
       this.sdk.programId
@@ -366,7 +366,7 @@ class ChainModule {
     if (!mint || typeof mint !== 'string') {
       throw new Error('price: mint address must be a valid string');
     }
-    
+
     try {
       // Parameter validation and conversion
       let mintPubkey;
@@ -375,16 +375,16 @@ class ChainModule {
       } catch (pubkeyError) {
         throw new Error(`Invalid mint address: ${mint}`);
       }
-      
+
       // Validate mintPubkey
       if (!mintPubkey || typeof mintPubkey.toBuffer !== 'function') {
         throw new Error(`Invalid mintPubkey`);
       }
-      
+
       // Calculate curve_account PDA address
       const [curveAccountPDA] = PublicKey.findProgramAddressSync(
         [
-          Buffer.from("borrowing_curve"), 
+          Buffer.from("borrowing_curve"),
           mintPubkey.toBuffer()
         ],
         this.sdk.programId
@@ -400,10 +400,10 @@ class ChainModule {
         if (!accountInfo) {
           throw new Error(`curve_account does not exist`);
         }
-        
+
         // Manually decode with BorshAccountsCoder
         const accountsCoder = new anchor.BorshAccountsCoder(this.sdk.program.idl);
-        
+
         try {
           decodedData = accountsCoder.decode('BorrowingBondingCurve', accountInfo.data);
         } catch (decodeError1) {
@@ -430,7 +430,7 @@ class ChainModule {
     } catch (error) {
       // If getting fails, return initial price
       console.warn(`price: Failed to get chain price, using initial price: ${error.message}`);
-      
+
       const initialPrice = CurveAMM.getInitialPrice();
       if (initialPrice === null) {
         throw new Error('price: Unable to calculate initial price');
@@ -548,7 +548,7 @@ class ChainModule {
       while (currentAddress && count < limit) {
         try {
           //console.log(`chain.orders: 遍历 Traversing [${count}] ${currentAddress.toString()}`);
-          
+
           // Get raw account data
           const accountInfo = await this.sdk.connection.getAccountInfo(currentAddress);
           if (!accountInfo) {
@@ -558,16 +558,42 @@ class ChainModule {
           // Manually decode with BorshAccountsCoder
           const accountsCoder = new anchor.BorshAccountsCoder(this.sdk.program.idl);
           let orderData;
-          
+
           try {
             orderData = accountsCoder.decode('MarginOrder', accountInfo.data);
           } catch (decodeError1) {
             try {
               orderData = accountsCoder.decode('marginOrder', accountInfo.data);
             } catch (decodeError2) {
-              throw new Error(`Cannot decode order account data: ${decodeError1.message}`);
+              console.log("orders 报错时的 accountInfo=", accountInfo);
+              console.log("decodeError1=", decodeError1);
+              throw new Error(`Cannot decode order account data: ${decodeError2.message}`);
             }
           }
+
+
+
+          // try {
+          //   // 尝试不同的账户类型名称
+          //   orderData = accountsCoder.decode('MarginOrder', accountInfo.data);
+          // } catch (decodeError1) {
+          //   try {
+          //     orderData = accountsCoder.decode('marginOrder', accountInfo.data);
+          //   } catch (decodeError2) {
+          //     try {
+          //       // 使用 program.account 直接解码
+          //       console.log(`使用 program.account 直接解码 PDA: ${pdaAddress}`);
+          //       orderData = this.sdk.program.account.marginOrder.fetch(currentAddress);
+          //     } catch (decodeError3) {
+          //       error = `解码失败: MarginOrder[${decodeError1.message}] marginOrder[${decodeError2.message}] fetch[${decodeError3.message}]`;
+          //       throw error
+          //     }
+          //   }
+          // }
+
+
+
+
 
           // Data transformation
           const convertedOrder = {
@@ -605,9 +631,12 @@ class ChainModule {
             break;
           }
 
+          // Add 50ms delay to avoid calling too fast
+          await new Promise(resolve => setTimeout(resolve, 50));
+
         } catch (error) {
           // If order account doesn't exist or read fails, throw error
-          console.log("A_chain.orders() err:",error);
+          console.log("A_chain.orders() err:", error);
           throw new Error(`Failed to read order: ${error.message}`);
         }
       }
@@ -636,7 +665,7 @@ class ChainModule {
 
     } catch (error) {
       // Error handling
-      console.log("chain.orders() err:",error);
+      console.log("chain.orders() err:", error);
       console.error('chain.orders: Failed to get orders', error.message);
       throw new Error(`Failed to get orders: ${error.message}`);
     }
