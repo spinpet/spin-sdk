@@ -4,6 +4,7 @@
  */
 
 const BotGlobal = require('../bot-global');
+const SdkFactory = require('../sdk-factory');
 
 // 导入所有交易模块
 const { createToken } = require('./create-token');
@@ -12,8 +13,7 @@ const { sellTokens } = require('./sell');
 const { longTokens } = require('./long');
 const { shortTokens } = require('./short');
 const { closeLongTokens } = require('./closeLong');
-// TODO: 未来添加其他保证金交易模块
-// const { closeShortPosition } = require('./close-short');
+const { closeShortTokens } = require('./closeShort');
 
 // 交易类型映射
 const TRADE_HANDLERS = {
@@ -23,8 +23,7 @@ const TRADE_HANDLERS = {
   'long': longTokens,    // 做多交易
   'short': shortTokens,  // 做空交易 ✅ 已实现
   'closeLong': closeLongTokens, // 平仓做多 ✅ 已实现
-  // TODO: 添加其他保证金交易处理器
-  'closeShort': null // 待实现
+  'closeShort': closeShortTokens // 平仓做空 ✅ 已实现
 };
 
 /**
@@ -60,14 +59,26 @@ async function executeStep(planStep, stepIndex) {
     // 更新执行步骤，包含步骤索引
     BotGlobal.updateExecutionStep(type, 'completed', { stepIndex });
     
-    BotGlobal.logMessage('info', `步骤 ${stepIndex + 1}: [${type}] ${description} - 执行成功`);
-    
-    return {
-      success: true,
-      type: type,
-      description: description,
-      result: result
-    };
+    // 检查是否是跳过的操作
+    if (result && result.skipped) {
+      BotGlobal.logMessage('info', `步骤 ${stepIndex + 1}: [${type}] ${description} - 跳过执行`);
+      return {
+        success: true,
+        skipped: true,
+        type: type,
+        description: description,
+        message: result.message,
+        result: result
+      };
+    } else {
+      BotGlobal.logMessage('info', `步骤 ${stepIndex + 1}: [${type}] ${description} - 执行成功`);
+      return {
+        success: true,
+        type: type,
+        description: description,
+        result: result
+      };
+    }
     
   } catch (error) {
     // 更新执行步骤错误状态
@@ -225,7 +236,7 @@ async function runTradingPlan(options = {}) {
       if (result.alreadyCompleted) {
         statusMsg = '已完成（跳过）';
       } else if (result.skipped) {
-        statusMsg = '跳过';
+        statusMsg = result.message ? `跳过: ${result.message}` : '跳过';
       } else if (result.success) {
         statusMsg = '成功';
       } else {
@@ -238,6 +249,27 @@ async function runTradingPlan(options = {}) {
     // 最终状态报告
     BotGlobal.logMessage('info', '\n=== 最终状态 ===');
     BotGlobal.printStatusReport();
+    
+    // 调用 getCurveAccount 并打印数据
+    try {
+      const state = BotGlobal.getState();
+      if (state.state.token.mintAddress) {
+        BotGlobal.logMessage('info', '\n=== 获取 CurveAccount 数据 ===');
+        const { sdk } = SdkFactory.getSdk();
+        const curveAccountData = await sdk.chain.getCurveAccount(state.state.token.mintAddress);
+        
+        BotGlobal.logMessage('info', 'CurveAccount 数据:');
+        // 使用 BigInt replacer 来序列化 BigInt 字段
+        BotGlobal.logMessage('info', JSON.stringify(curveAccountData, (key, value) => {
+          return typeof value === 'bigint' ? value.toString() : value;
+        }, 2));
+      } else {
+        BotGlobal.logMessage('info', '\n=== 跳过 CurveAccount 查询 ===');
+        BotGlobal.logMessage('info', '原因: 未找到代币地址');
+      }
+    } catch (error) {
+      BotGlobal.logMessage('error', `获取 CurveAccount 数据失败: ${error.message}`);
+    }
     
     // 保存状态
     BotGlobal.saveState();

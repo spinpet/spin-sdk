@@ -109,6 +109,20 @@ const CONFIG = {
       description: '平仓做多交易（自动查找订单）',
       params: {}  // 无需参数，自动查找并平仓做多订单
     },
+    // 步骤11：平仓做空交易
+    { 
+      type: 'closeShort', 
+      enabled: true,  // 启用平仓做空测试
+      description: '平仓做空交易（自动查找订单）',
+      params: {}  // 无需参数，自动查找并平仓做空订单
+    },
+    // 步骤12：平仓做空交易
+    { 
+      type: 'closeShort', 
+      enabled: true,  // 启用平仓做空测试
+      description: '平仓做空交易（自动查找订单）',
+      params: {}  // 无需参数，自动查找并平仓做空订单
+    },
 
   ],
   
