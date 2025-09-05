@@ -1,0 +1,97 @@
+{
+  "config": {
+    "network": "LOCALNET",
+    "walletIndex": 0,
+    "tokenInfo": {
+      "name": "TestBot Token",
+      "symbol": "TBT",
+      "uri": "https://example.com/testbot-token.json"
+    },
+    "tradingPlan": [
+      {
+        "type": "create-token",
+        "enabled": true,
+        "description": "创建测试代币",
+        "params": {}
+      },
+      {
+        "type": "buy",
+        "enabled": true,
+        "description": "买入100,000个代币",
+        "params": {
+          "buyTokenAmount": "100000000000",
+          "maxSolAmount": "5000000000"
+        }
+      },
+      {
+        "type": "sell",
+        "enabled": true,
+        "description": "卖出50,000个代币",
+        "params": {
+          "sellTokenAmount": "50000000000",
+          "minSolOutput": "1000000000"
+        }
+      }
+    ],
+    "logFile": "logs/trading.log"
+  },
+  "state": {
+    "token": {
+      "mintAddress": "BVcByrkqQppjHAqHM1ytnBKijsTQthdDkEDqg9iSctiY",
+      "mintKeypair": "56ygc9Vk7o7kPHYKyxN9QkvKedxcKLeGvjzA8W9kGpxMcihyVRyKD1izXTnTggnRVyNSduLg27ixzeZCVZUeTdVN",
+      "curveAccount": "EngzxT8fFwkuSmtdMkxWt2qynit4hZ6qd8VtiDbtNaS1",
+      "poolTokenAccount": "z2RHJsSw3pVWp7EMNdMeuNeBnwqi5uo6xN4t5cen4Xe",
+      "poolSolAccount": "3GfwYVRi1KQa5dvgxQsZjxHsKyhNoQ9zRMwxgQDsg35M",
+      "createdAt": "2025-09-05T01:53:03.606Z",
+      "createTxSignature": "4xzHukDHXJFK3kGLNpntu6boB4MsheLY1e3Mqxsv4ooR5CFXgx5v2V642jeTJHhWRFQvCASuRMXuKt5r8mR4HGk2"
+    },
+    "tradingHistory": [
+      {
+        "type": "create-token",
+        "description": "创建代币 TestBot Token (TBT)",
+        "status": "completed",
+        "txSignature": "4xzHukDHXJFK3kGLNpntu6boB4MsheLY1e3Mqxsv4ooR5CFXgx5v2V642jeTJHhWRFQvCASuRMXuKt5r8mR4HGk2",
+        "mintAddress": "BVcByrkqQppjHAqHM1ytnBKijsTQthdDkEDqg9iSctiY",
+        "accounts": {
+          "mint": "BVcByrkqQppjHAqHM1ytnBKijsTQthdDkEDqg9iSctiY",
+          "curveAccount": "EngzxT8fFwkuSmtdMkxWt2qynit4hZ6qd8VtiDbtNaS1",
+          "poolTokenAccount": "z2RHJsSw3pVWp7EMNdMeuNeBnwqi5uo6xN4t5cen4Xe",
+          "poolSolAccount": "3GfwYVRi1KQa5dvgxQsZjxHsKyhNoQ9zRMwxgQDsg35M"
+        },
+        "duration": "0.42s",
+        "timestamp": "2025-09-05T01:53:03.607Z",
+        "index": 0
+      },
+      {
+        "type": "buy",
+        "description": "代币买入失败",
+        "status": "error",
+        "error": "FastModule requires spinFastApiUrl configuration",
+        "duration": "0.01s",
+        "timestamp": "2025-09-05T01:53:05.620Z",
+        "index": 1
+      }
+    ],
+    "positions": {
+      "spotBalance": "0",
+      "longPositions": [],
+      "shortPositions": []
+    },
+    "execution": {
+      "currentStep": "buy",
+      "completedSteps": [
+        "create-token"
+      ],
+      "errors": [
+        {
+          "step": "buy",
+          "error": "FastModule requires spinFastApiUrl configuration",
+          "timestamp": "2025-09-05T01:53:05.620Z"
+        }
+      ],
+      "startTime": "2025-09-05T01:53:03.186Z",
+      "endTime": null
+    }
+  },
+  "savedAt": "2025-09-05T01:53:05.621Z"
+}

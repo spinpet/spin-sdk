@@ -1,0 +1,69 @@
+[2025-09-05T01:53:03.184Z] [INFO] === SpinPet 交易机器人开始执行 ===
+[2025-09-05T01:53:03.185Z] [INFO] 网络: LOCALNET
+[2025-09-05T01:53:03.185Z] [INFO] 钱包索引: 0
+[2025-09-05T01:53:03.185Z] [INFO] 代币: TestBot Token (TBT)
+[2025-09-05T01:53:03.185Z] [INFO] 交易计划总步骤: 3
+[2025-09-05T01:53:03.185Z] [INFO] 启用的步骤: 3
+[2025-09-05T01:53:03.185Z] [INFO] 
+执行计划:
+[2025-09-05T01:53:03.185Z] [INFO]   1. [create-token] 创建测试代币 - 启用
+[2025-09-05T01:53:03.185Z] [INFO]   2. [buy] 买入100,000个代币 - 启用
+[2025-09-05T01:53:03.185Z] [INFO]   3. [sell] 卖出50,000个代币 - 启用
+[2025-09-05T01:53:03.186Z] [INFO] 
+[2025-09-05T01:53:03.186Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 开始执行
+[2025-09-05T01:53:03.186Z] [INFO] === 开始创建代币 ===
+[2025-09-05T01:53:03.186Z] [INFO] 使用网络配置: LOCALNET
+[2025-09-05T01:53:03.186Z] [INFO] 代币信息: TestBot Token (TBT)
+[2025-09-05T01:53:03.186Z] [INFO] Solana 端点: http://192.168.18.5:8899
+[2025-09-05T01:53:03.186Z] [INFO] 参数账户地址: undefined
+[2025-09-05T01:53:03.187Z] [INFO] 已连接到 Solana 网络
+[2025-09-05T01:53:03.218Z] [INFO] 使用钱包地址: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T01:53:03.218Z] [INFO] 钱包余额: 20000 SOL
+[2025-09-05T01:53:03.222Z] [INFO] SDK 初始化完成
+[2025-09-05T01:53:03.223Z] [INFO] 程序 ID: JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ
+[2025-09-05T01:53:03.224Z] [INFO] 生成代币 mint 地址: BVcByrkqQppjHAqHM1ytnBKijsTQthdDkEDqg9iSctiY
+[2025-09-05T01:53:03.224Z] [INFO] 开始构建代币创建交易...
+[2025-09-05T01:53:03.227Z] [INFO] 代币创建交易已构建
+[2025-09-05T01:53:03.227Z] [INFO] 相关账户:
+[2025-09-05T01:53:03.227Z] [INFO]   - 支付者: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T01:53:03.227Z] [INFO]   - 代币 Mint: BVcByrkqQppjHAqHM1ytnBKijsTQthdDkEDqg9iSctiY
+[2025-09-05T01:53:03.227Z] [INFO]   - 借贷流动池: EngzxT8fFwkuSmtdMkxWt2qynit4hZ6qd8VtiDbtNaS1
+[2025-09-05T01:53:03.227Z] [INFO]   - 流动池代币账户: z2RHJsSw3pVWp7EMNdMeuNeBnwqi5uo6xN4t5cen4Xe
+[2025-09-05T01:53:03.227Z] [INFO]   - 流动池SOL账户: 3GfwYVRi1KQa5dvgxQsZjxHsKyhNoQ9zRMwxgQDsg35M
+[2025-09-05T01:53:03.227Z] [INFO] 开始签名和发送交易...
+[2025-09-05T01:53:03.265Z] [INFO] 交易已发送，签名: 4xzHukDHXJFK3kGLNpntu6boB4MsheLY1e3Mqxsv4ooR5CFXgx5v2V642jeTJHhWRFQvCASuRMXuKt5r8mR4HGk2
+[2025-09-05T01:53:03.265Z] [INFO] 等待交易确认...
+[2025-09-05T01:53:03.605Z] [INFO] ✅ 代币创建成功！耗时 0.42 秒
+[2025-09-05T01:53:03.606Z] [INFO] 交易签名: 4xzHukDHXJFK3kGLNpntu6boB4MsheLY1e3Mqxsv4ooR5CFXgx5v2V642jeTJHhWRFQvCASuRMXuKt5r8mR4HGk2
+[2025-09-05T01:53:03.606Z] [INFO] 代币 Mint 地址: BVcByrkqQppjHAqHM1ytnBKijsTQthdDkEDqg9iSctiY
+[2025-09-05T01:53:03.608Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T01:53:03.608Z] [INFO] === 代币创建完成 ===
+[2025-09-05T01:53:03.608Z] [INFO] 步骤 1: [create-token] 创建测试代币 - 执行成功
+[2025-09-05T01:53:03.608Z] [INFO] 等待 2 秒后执行下一步骤...
+[2025-09-05T01:53:05.609Z] [INFO] 步骤 2: [buy] 买入100,000个代币 - 开始执行
+[2025-09-05T01:53:05.610Z] [INFO] === 开始买入代币 ===
+[2025-09-05T01:53:05.611Z] [INFO] 使用代币地址: BVcByrkqQppjHAqHM1ytnBKijsTQthdDkEDqg9iSctiY
+[2025-09-05T01:53:05.611Z] [INFO] 使用自定义买入参数
+[2025-09-05T01:53:05.612Z] [INFO] 买入数量: 100000 个代币
+[2025-09-05T01:53:05.612Z] [INFO] 最大花费: 5.0000 SOL
+[2025-09-05T01:53:05.612Z] [INFO] 已连接到网络: LOCALNET
+[2025-09-05T01:53:05.614Z] [INFO] 使用钱包地址: 8iGFeUkRpyRx8w5uoUMbfZepUr6BfTdPuJmqGoNBntdb
+[2025-09-05T01:53:05.617Z] [INFO] 钱包SOL余额: 99975.6281 SOL
+[2025-09-05T01:53:05.620Z] [ERROR] ❌ 代币买入失败 (耗时 0.01 秒): FastModule requires spinFastApiUrl configuration
+[2025-09-05T01:53:05.620Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T01:53:05.620Z] [ERROR] 步骤 2: [buy] 买入100,000个代币 - 执行失败: FastModule requires spinFastApiUrl configuration
+[2025-09-05T01:53:05.620Z] [ERROR] 遇到错误，停止执行剩余步骤
+[2025-09-05T01:53:05.620Z] [INFO] 
+=== 执行完成 ===
+[2025-09-05T01:53:05.620Z] [INFO] 总用时: 2.44 秒
+[2025-09-05T01:53:05.620Z] [INFO] 成功步骤: 1
+[2025-09-05T01:53:05.620Z] [INFO] 失败步骤: 1
+[2025-09-05T01:53:05.620Z] [INFO] 跳过步骤: 0
+[2025-09-05T01:53:05.620Z] [INFO] 
+=== 详细结果 ===
+[2025-09-05T01:53:05.620Z] [INFO]   1. [create-token] 创建测试代币 - 成功
+[2025-09-05T01:53:05.620Z] [INFO]   2. [buy] 买入100,000个代币 - 失败: FastModule requires spinFastApiUrl configuration
+[2025-09-05T01:53:05.620Z] [INFO] 
+=== 最终状态 ===
+[2025-09-05T01:53:05.621Z] [INFO] 状态已保存到文件: test_bot/bot-state-backup.json
+[2025-09-05T01:53:05.621Z] [WARN] ⚠️ 交易计划执行完成，但有错误发生
