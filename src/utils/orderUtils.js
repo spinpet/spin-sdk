@@ -330,6 +330,65 @@ class OrderUtils {
   }
 
   /**
+   * 获取 PDA 地址在订单数组中的位置
+   * Get PDA Address Position in Orders Array
+   * 
+   * @param {Array} orders - 订单数组 Order array
+   * @param {string|PublicKey} targetOrderPda - 目标订单PDA地址 Target order PDA address
+   * @returns {number} PDA地址在数组中的索引位置，如果没有找到返回200
+   *                   Index position of PDA address in array, returns 200 if not found
+   * 
+   * @example
+   * // 在 closeLong 或 closeShort 中使用 Usage in closeLong or closeShort:
+   * const ordersData = await sdk.data.orders(mint.toString(), {
+   *   type: 'down_orders',
+   *   limit: sdk.MAX_ORDERS_COUNT + 1
+   * });
+   * 
+   * const closeOrderPubkey = new PublicKey("E2T72D4wZdxHRjELN5VnRdcCvS4FPcYBBT3UBEoaC5cA");
+   * const orderIndex = OrderUtils.findOrderIndex(ordersData.data.orders, closeOrderPubkey);
+   * 
+   * if (orderIndex !== 200) {
+   *   console.log(`订单在数组中的位置：${orderIndex} Order position in array: ${orderIndex}`);
+   * } else {
+   *   console.log('订单未找到 Order not found');
+   * }
+   * 
+   * // 也支持字符串格式的PDA地址 Also supports string format PDA address:
+   * const orderIndex2 = OrderUtils.findOrderIndex(ordersData.data.orders, "E2T72D4wZdxHRjELN5VnRdcCvS4FPcYBBT3UBEoaC5cA");
+   */
+  static findOrderIndex(orders, targetOrderPda) {
+    // 参数验证 Parameter validation
+    if (!Array.isArray(orders)) {
+      throw new Error('findOrderIndex: orders 参数必须是数组 orders parameter must be an array');
+    }
+    
+    if (!targetOrderPda) {
+      throw new Error('findOrderIndex: targetOrderPda 参数不能为空 targetOrderPda parameter cannot be empty');
+    }
+    
+    // 将 PublicKey 类型转换为字符串，如果已经是字符串则保持不变
+    // Convert PublicKey type to string, keep unchanged if already string
+    const targetPdaString = typeof targetOrderPda === 'string' 
+      ? targetOrderPda 
+      : targetOrderPda.toString();
+    
+    // 遍历订单数组查找目标PDA地址
+    // Iterate through orders array to find target PDA address
+    for (let i = 0; i < orders.length; i++) {
+      if (orders[i] && orders[i].order_pda === targetPdaString) {
+        console.log(`findOrderIndex: 找到订单位置 Found order at position ${i} for PDA: ${targetPdaString}`);
+        return i;
+      }
+    }
+    
+    // 没有找到时返回200
+    // Return 200 when not found
+    console.log(`findOrderIndex: 订单未找到 Order not found for PDA: ${targetPdaString}`);
+    return 200;
+  }
+
+  /**
    * 验证订单数组格式
    * Validate Orders Array Format
    * 

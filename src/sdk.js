@@ -201,6 +201,59 @@ class SpinPetSdk {
     return OrderUtils.findPrevNext(orders, findOrderPda);
   }
 
+  /**
+   * Get PDA Address Position in Orders Array
+   * 
+   * 获取指定 PDA 地址在订单数组中的索引位置，主要用于 closeLong 和 closeShort 方法中
+   * Gets the index position of specified PDA address in orders array, mainly used in closeLong and closeShort methods
+   * 
+   * @param {Array} orders - 订单数组 Order array  
+   * @param {string|PublicKey} targetOrderPda - 目标订单PDA地址 Target order PDA address
+   * @returns {number} PDA地址在数组中的索引位置，如果没有找到返回200
+   *                   Index position of PDA address in array, returns 200 if not found
+   * 
+   * @example
+   * // 在 closeLong 或 closeShort 中使用 Usage in closeLong or closeShort:
+   * const ordersData = await sdk.data.orders(mint.toString(), {
+   *   type: 'down_orders',
+   *   limit: sdk.MAX_ORDERS_COUNT + 1
+   * });
+   * 
+   * const closeOrderPubkey = new PublicKey("E2T72D4wZdxHRjELN5VnRdcCvS4FPcYBBT3UBEoaC5cA");
+   * const orderIndex = sdk.findOrderIndex(ordersData.data.orders, closeOrderPubkey);
+   * 
+   * if (orderIndex !== 200) {
+   *   console.log(`订单在数组中的位置：${orderIndex} Order position in array: ${orderIndex}`);
+   * } else {
+   *   console.log('订单未找到 Order not found');
+   * }
+   * 
+   * // 也支持字符串格式的PDA地址 Also supports string format PDA address:
+   * const orderIndex2 = sdk.findOrderIndex(ordersData.data.orders, "E2T72D4wZdxHRjELN5VnRdcCvS4FPcYBBT3UBEoaC5cA");
+   * 
+   * // 实际业务场景使用示例 Real business scenario usage example:
+   * async function processCloseOrder(mintAccount, closeOrderPubkey) {
+   *   // 获取订单数据
+   *   const ordersData = await sdk.data.orders(mintAccount.toString(), {
+   *     type: 'down_orders',
+   *     limit: sdk.MAX_ORDERS_COUNT + 1
+   *   });
+   *   
+   *   // 查找订单位置用于后续处理逻辑
+   *   const orderIndex = sdk.findOrderIndex(ordersData.data.orders, closeOrderPubkey);
+   *   
+   *   if (orderIndex !== 200) {
+   *     console.log(`找到目标订单，位置: ${orderIndex}`);
+   *     // 继续处理订单相关逻辑...
+   *   } else {
+   *     throw new Error('目标订单不存在于当前订单列表中');
+   *   }
+   * }
+   */
+  findOrderIndex(orders, targetOrderPda) {
+    return OrderUtils.findOrderIndex(orders, targetOrderPda);
+  }
+
   // ========== Unified Data Interface Routing Method ==========
 
   /**
