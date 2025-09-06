@@ -762,7 +762,7 @@ class TradingModule {
     console.log(`closeShort: Found next order: ${nextOrder ? nextOrder.toString() : 'null'}`);
 
     // 如果设置了调试日志路径，将订单地址写入 orderPda.txt 文件
-    if (this.sdk.debugLogPath && typeof this.sdk.debugLogPath === 'string') {
+    if (this.sdk.debugLogPath && typeof this.sdk.debugLogPath === 'string') { 
       try {
         const orderOpenFilePath = path.join(this.sdk.debugLogPath, 'orderOpen.txt');
         const prevOrderStr = prevOrder ? prevOrder.toString() : 'null';
