@@ -82,28 +82,17 @@ function getSdk(options = {}) {
   const currentNetwork = options.network || config.network;
   const currentWalletIndex = options.walletIndex !== undefined ? options.walletIndex : config.walletIndex;
 
-  // 如果SDK已存在且配置没有变化，直接返回缓存的实例
+  // 如果SDK已存在，强制复用同一个实例（不检查配置变化）
   if (cachedSdk && cachedConnection && cachedWallet) {
-    // 检查是否需要重新创建（配置变化）
-    const needRecreate = (
-      cachedConnection.rpcEndpoint !== getDefaultOptions(currentNetwork).solanaEndpoint ||
-      cachedWallet.info.index !== currentWalletIndex
-    );
-    
-    if (!needRecreate) {
-      BotGlobal.logMessage('debug', 'SDK实例已存在，使用缓存');
-      return {
-        sdk: cachedSdk,
-        connection: cachedConnection,
-        wallet: cachedWallet
-      };
-    } else {
-      BotGlobal.logMessage('info', '配置变化，清除旧的SDK缓存');
-      clearCache();
-    }
+    BotGlobal.logMessage('debug', `📌 复用全局 SDK 实例 (${cachedSdk.programId.toString()})`);
+    return {
+      sdk: cachedSdk,
+      connection: cachedConnection,
+      wallet: cachedWallet
+    };
   }
 
-  BotGlobal.logMessage('info', '正在初始化SpinPet SDK...');
+  BotGlobal.logMessage('info', '🔄 创建全局 SpinPet SDK 实例...');
   BotGlobal.logMessage('info', `网络: ${currentNetwork}`);
   BotGlobal.logMessage('info', `钱包索引: ${currentWalletIndex}`);
 
@@ -115,14 +104,13 @@ function getSdk(options = {}) {
     // 获取网络选项
     let networkOptions = getDefaultOptions(currentNetwork);
     BotGlobal.logMessage('info', `网络选项: ${JSON.stringify(networkOptions)}`);
-    networkOptions.defaultDataSource = 'chain'; // 强制使用链上数据源
+    networkOptions.defaultDataSource = 'chain' // 'chain'; // 强制使用链上数据源
     // 设置调试目录
     networkOptions.debugLogPath = '/root/code/spin-bot'
 
-    // 创建SDK实例 - 修复参数顺序，添加wallet参数
+    // 创建SDK实例 - 修复构造函数调用
     const sdk = new SpinPetSdk(
       connection,
-      walletObj.wallet,      // 添加wallet参数
       new PublicKey(SPINPET_PROGRAM_ID),
       networkOptions
     );
@@ -130,9 +118,10 @@ function getSdk(options = {}) {
     // 缓存实例
     cachedSdk = sdk;
 
-    BotGlobal.logMessage('info', 'SpinPet SDK 初始化完成');
+    BotGlobal.logMessage('info', '✅ SpinPet SDK 全局实例创建完成');
     BotGlobal.logMessage('info', `程序 ID: ${sdk.programId.toString()}`);
     BotGlobal.logMessage('info', `程序对象存在: ${!!sdk.program}`);
+    BotGlobal.logMessage('info', '📌 后续所有操作将复用此实例');
 
     return {
       sdk: sdk,

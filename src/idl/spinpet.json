@@ -2357,12 +2357,17 @@
     {
       "code": 6052,
       "name": "InvalidOrderChainSequence",
-      "msg": "ctx带入的链表顺序错乱"
+      "msg": "ctx带入的,或强平时,链表顺序错乱"
     },
     {
       "code": 6053,
       "name": "PartialCloseNotSupport",
       "msg": "暂时不支持部份平仓"
+    },
+    {
+      "code": 6054,
+      "name": "OrderNotFound",
+      "msg": "订单未找到"
     }
   ],
   "types": [

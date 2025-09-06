@@ -38,7 +38,7 @@
         "description": "做多交易 1 SOL，止损 20%",
         "params": {
           "useSol": 1000000000,
-          "downPercentage": 0.2
+          "downPercentage": 0.1
         }
       },
       {
@@ -47,25 +47,178 @@
         "description": "做多交易 2 SOL，止损 30%",
         "params": {
           "useSol": 2000000000,
-          "downPercentage": 0.3
+          "downPercentage": 0.12
         }
       },
       {
-        "type": "short",
+        "type": "long",
         "enabled": true,
-        "description": "做空交易 1 SOL，止损 25%",
+        "description": "做多交易 2 SOL，止损 30%",
         "params": {
-          "useSol": 1000000000,
-          "upPercentage": 0.25
+          "useSol": 200000000,
+          "downPercentage": 0.15
         }
       },
       {
-        "type": "short",
+        "type": "long",
         "enabled": true,
-        "description": "做空交易 0.5 SOL，止损 10%",
+        "description": "做多交易 2 SOL，止损 30%",
         "params": {
-          "useSol": 500000000,
-          "upPercentage": 0.15
+          "useSol": 200000000,
+          "downPercentage": 0.15
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.15
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.15
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.15
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.25
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.25
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.25
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.25
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.25
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.45
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.45
+        }
+      },
+      {
+        "type": "long",
+        "enabled": true,
+        "description": "做多交易 2 SOL，止损 30%",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.45
         }
       },
       {
@@ -87,15 +240,9 @@
         "params": {}
       },
       {
-        "type": "closeShort",
+        "type": "closeLong",
         "enabled": true,
-        "description": "平仓做空交易（自动查找订单）",
-        "params": {}
-      },
-      {
-        "type": "closeShort",
-        "enabled": true,
-        "description": "平仓做空交易（自动查找订单）",
+        "description": "平仓做多交易（自动查找订单）",
         "params": {}
       }
     ],
@@ -103,37 +250,37 @@
   },
   "state": {
     "token": {
-      "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
-      "mintKeypair": "3jgqn9h4sk64CqzvJM6XY1E2mdsJrQ2ZbEmsZefAyKehZRoS1jba9K7RB1RRG1Y16tYApPUxobE4iLp4eDHmC9GA",
-      "curveAccount": "3K7U8ZbDSXi3tNJhaGqMC5MaGeDCEPBHivxMeokMK6JY",
-      "poolTokenAccount": "GWCXGwqPZz7pBnwS85L4p9VWTh5mKhgNdbW4tfGwdbwy",
-      "poolSolAccount": "CazZ2mEnNY7AApAJhw4S8ZNf5STsJpdT6FuvKUXZujKD",
-      "createdAt": "2025-09-05T03:41:22.573Z",
-      "createTxSignature": "5g2MeQ6YWyQ47SY4Awu395tRyVbv1VZfvd53yeBYpiTK3xfgTG5qPs5FfMNGXSCWZz8cYbGtimMUxgM7cG73yW1K"
+      "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+      "mintKeypair": "2qtavBdvuzeT7cuPYWtHSsVKDMEPnYehpsZvgWBrrW4YomHVnfX4MrZHA436eb1spCvbjKeYfZTALcNdCGq16i7V",
+      "curveAccount": "BvB6ocpom7TsXABxAsRfixSjceSwHu2sh33FhBc6pXbC",
+      "poolTokenAccount": "BbZbukXTe5sYKVUkLT3UnmFHUk1by4wTKjiTqBKoo66T",
+      "poolSolAccount": "Ga84Mn69mvFzsbyBQUKaZfjSLtaSHpsSQG1aDK8k1BA6",
+      "createdAt": "2025-09-05T10:52:25.947Z",
+      "createTxSignature": "2MU6zspP8fYFJmCjXU3VYkrQMAaSUv2sBTJEyovwyiYKKTeGX6RiuYkDKgt47z7AYrWUS6G55nLMBPcKxo44qA1q"
     },
     "tradingHistory": [
       {
         "type": "create-token",
         "description": "创建代币 TestBot Token (TBT)",
         "status": "completed",
-        "txSignature": "5g2MeQ6YWyQ47SY4Awu395tRyVbv1VZfvd53yeBYpiTK3xfgTG5qPs5FfMNGXSCWZz8cYbGtimMUxgM7cG73yW1K",
-        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+        "txSignature": "2MU6zspP8fYFJmCjXU3VYkrQMAaSUv2sBTJEyovwyiYKKTeGX6RiuYkDKgt47z7AYrWUS6G55nLMBPcKxo44qA1q",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
         "accounts": {
-          "mint": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
-          "curveAccount": "3K7U8ZbDSXi3tNJhaGqMC5MaGeDCEPBHivxMeokMK6JY",
-          "poolTokenAccount": "GWCXGwqPZz7pBnwS85L4p9VWTh5mKhgNdbW4tfGwdbwy",
-          "poolSolAccount": "CazZ2mEnNY7AApAJhw4S8ZNf5STsJpdT6FuvKUXZujKD"
+          "mint": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "curveAccount": "BvB6ocpom7TsXABxAsRfixSjceSwHu2sh33FhBc6pXbC",
+          "poolTokenAccount": "BbZbukXTe5sYKVUkLT3UnmFHUk1by4wTKjiTqBKoo66T",
+          "poolSolAccount": "Ga84Mn69mvFzsbyBQUKaZfjSLtaSHpsSQG1aDK8k1BA6"
         },
-        "duration": "0.49s",
-        "timestamp": "2025-09-05T03:41:22.573Z",
+        "duration": "0.29s",
+        "timestamp": "2025-09-05T10:52:25.947Z",
         "index": 0
       },
       {
         "type": "buy",
         "description": "买入 300000000 个代币",
         "status": "completed",
-        "txSignature": "eoB7H9SQhrxFHqvBUeEi2vRVk5kRX7PkP2nz4k1e4KitEdKAD2ZJzS5du8gr4gx9a8Vvu198wraYy846bn74LsA",
-        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+        "txSignature": "5YTpyazJ6nK8w71G3er5y3Nvk12zd3rXSvCkMhoS5Ajw4xooXNvtQykZ1w33Vzxs5FenEEug4rVDpucm5Dmc85Wb",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
         "params": {
           "buyTokenAmount": "300000000000000",
           "maxSolAmount": "50000000000"
@@ -141,18 +288,18 @@
         "results": {
           "actualTokenBalance": "300000000000000",
           "solSpent": "11761423323",
-          "userTokenAccount": "9FfCDCfvotq6cYKnt1t8SFWpPMzqeuacP6xHhhf4k9a7"
+          "userTokenAccount": "2VHkA2LTuJnhRQHsim8nzVVtBJwAsDFQSgS3dYnBpK8i"
         },
-        "duration": "0.50s",
-        "timestamp": "2025-09-05T03:41:25.085Z",
+        "duration": "0.45s",
+        "timestamp": "2025-09-05T10:52:28.405Z",
         "index": 1
       },
       {
         "type": "sell",
         "description": "卖出 5000.00 个代币",
         "status": "completed",
-        "txSignature": "3r2Nn64SPyEyJPbCkNiWgGLrRRC4wHzzLvQsF4mL2rto67Mg6RuKTgPh3EGNjELwnVgsnKYwLiwBrybRXebeLG1d",
-        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+        "txSignature": "24L9Pfo5LFmB4UwCWvMjhPKD3fzBhgxAwJ7CXphmDKDKBcwGxcAsSTVgFxGad2JhFaa5jgxGUfsyyq8v6xDMmkzx",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
         "params": {
           "sellTokenAmount": "5000000000",
           "minSolOutput": "10"
@@ -162,212 +309,823 @@
           "solReceived": "261665",
           "newTokenBalance": "299995000000000",
           "avgPrice": "0.052333000",
-          "userTokenAccount": "9FfCDCfvotq6cYKnt1t8SFWpPMzqeuacP6xHhhf4k9a7"
+          "userTokenAccount": "2VHkA2LTuJnhRQHsim8nzVVtBJwAsDFQSgS3dYnBpK8i"
         },
-        "duration": "0.36s",
-        "timestamp": "2025-09-05T03:41:27.453Z",
+        "duration": "0.45s",
+        "timestamp": "2025-09-05T10:52:30.861Z",
         "index": 2
       },
       {
         "type": "long",
-        "description": "做多 18127496 个代币，止损 20.0%",
+        "description": "做多 18127496 个代币，止损 10.0%",
         "status": "completed",
-        "txSignature": "2ydz776uRFNu8jmNb8ZuXhmNiTKE1gp9Qfoi6hapaxpSqWuEKUvyjPWRENqe7uyJsRnzDcsuGxji2GJp9h3Xiitq",
-        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+        "txSignature": "2QSCKbmNWU8d9eqmKV2sAP5AUGXUeZk4FRW1xQgUZYYsRkbaETdyjc1E1j7qX27w2Ae86jLtaibfFregj5tUTK4y",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
         "params": {
           "useSol": 1000000000,
-          "downPercentage": 0.2,
+          "downPercentage": 0.1,
           "buyTokenAmount": "18127495658390",
           "maxSolAmount": "2000000000",
           "marginSol": "5000000000",
-          "closePrice": "430969322989108580698"
+          "closePrice": "484840488362747153285"
         },
         "results": {
-          "orderPda": "84BTG5WppigppMhkHsiSmz67s4g9FdVt8FD8hEoAWKrS",
-          "solSpent": "258489301",
-          "leverage": "5.00x",
-          "stopLossPercentage": "20.00%",
+          "orderPda": "39FcN7hsoMivoua3WZEPLD8kW13pJf1pTi5w1KHjN9dk",
+          "solSpent": "165046966",
+          "leverage": "10.00x",
+          "stopLossPercentage": "10.00%",
           "prevOrder": null,
           "nextOrder": null
         },
-        "duration": "0.44s",
-        "timestamp": "2025-09-05T03:41:29.898Z",
+        "duration": "0.54s",
+        "timestamp": "2025-09-05T10:52:33.407Z",
         "index": 3
       },
       {
         "type": "long",
-        "description": "做多 33818646 个代币，止损 30.0%",
+        "description": "做多 33818646 个代币，止损 12.0%",
         "status": "completed",
-        "txSignature": "588DcgdjiVx7wxq6cD3myj1UFT2RYAwLa5qNBp9RN5Gkm2keFna2ZgR6MtvMvRJV1jN6BNLYH98jjbozem7fTezt",
-        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+        "txSignature": "4V2FaBZtqbqiRSXza7Gv7xN5bZBxdqzv6MLC5tNsM47U3MBhTCaJVQtYa2qJw1D8gcfMA9PYnwggVZff3uN8LY6A",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
         "params": {
           "useSol": 2000000000,
-          "downPercentage": 0.3,
+          "downPercentage": 0.12,
           "buyTokenAmount": "33818646243225",
           "maxSolAmount": "4000000000",
           "marginSol": "10000000000",
-          "closePrice": "395426754156479028580"
+          "closePrice": "440494536310357313601"
         },
         "results": {
-          "orderPda": "8RoWuBqWYsJPxe96HZN4QmCyXv6Cd3mHeHYSLVNAMD5J",
-          "solSpent": "752998214",
-          "leverage": "3.33x",
-          "stopLossPercentage": "30.00%",
-          "prevOrder": "84BTG5WppigppMhkHsiSmz67s4g9FdVt8FD8hEoAWKrS",
-          "nextOrder": null
-        },
-        "duration": "0.50s",
-        "timestamp": "2025-09-05T03:41:32.403Z",
-        "index": 4
-      },
-      {
-        "type": "short",
-        "description": "做空 16521874 个代币，止损 25.0%",
-        "status": "completed",
-        "txSignature": "53w11SfbnMePLoHpr9GPgjPfaRSokTjYs44UMCt9TeAoyCdULCbTVjHYFZ4vHU7t2Ai2UT6RPHvWL92wSVknLX8L",
-        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
-        "params": {
-          "useSol": 1000000000,
-          "upPercentage": 0.25,
-          "borrowSellTokenAmount": "16521873885037",
-          "minSolOutput": "10000",
-          "marginSol": "5000000000",
-          "closePrice": "773908393334621094478"
-        },
-        "results": {
-          "orderPda": "FxEgtnTCjvimCHHajhP85CuWv2psPkdxk2iPVAjEpc3v",
-          "solSpent": "354502802",
-          "leverage": "4.00x",
-          "stopLossPercentage": "24.99%",
-          "prevOrder": null,
+          "orderPda": "J88HdqJoZG73yajE5hshb15RsWL8kUeRZSMcc8QEavck",
+          "solSpent": "610690644",
+          "leverage": "4.54x",
+          "stopLossPercentage": "22.02%",
+          "prevOrder": "39FcN7hsoMivoua3WZEPLD8kW13pJf1pTi5w1KHjN9dk",
           "nextOrder": null
         },
         "duration": "0.40s",
-        "timestamp": "2025-09-05T03:41:34.811Z",
+        "timestamp": "2025-09-05T10:52:35.811Z",
+        "index": 4
+      },
+      {
+        "type": "long",
+        "description": "做多 3215949 个代币，止损 15.0%",
+        "status": "completed",
+        "txSignature": "4WF8Ry2oC6VNojTQQPbyssdZwixscxxAtx5qXZYJkab3WiqtoTWnfhCkURqCS5kPMmsp3ETWmUrJ4zvNnH4cVEro",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.15,
+          "buyTokenAmount": "3215948980073",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "526257707467542344245"
+        },
+        "results": {
+          "orderPda": "7EkhfvJ3bx5BkSDFw7vDyuTFjGmfLr7Ffke4reHBZqst",
+          "solSpent": "38370534",
+          "leverage": "6.67x",
+          "stopLossPercentage": "15.00%",
+          "prevOrder": null,
+          "nextOrder": "39FcN7hsoMivoua3WZEPLD8kW13pJf1pTi5w1KHjN9dk"
+        },
+        "duration": "0.40s",
+        "timestamp": "2025-09-05T10:52:38.216Z",
         "index": 5
       },
       {
-        "type": "short",
-        "description": "做空 8548156 个代币，止损 15.0%",
+        "type": "long",
+        "description": "做多 3187390 个代币，止损 15.0%",
         "status": "completed",
-        "txSignature": "5J2SPWCj8FYyxPWCn1aqRFPsztxnGGwJSB4cuJPck6EY3mYLu2ketea3j65T8gUB2WwWhQ8bmWBFPFTrqZgwGiKK",
-        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+        "txSignature": "YMKx4U27E9Am4RMiXMu9U2diGkymqUbhtS4Vur4FL46NRVAV8N7UeFuvM8fhNb8UFJTyHPigYmUtgx1nVY46Xun",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
         "params": {
-          "useSol": 500000000,
-          "upPercentage": 0.15,
-          "borrowSellTokenAmount": "8548156126847",
-          "minSolOutput": "10000",
-          "marginSol": "2500000000",
-          "closePrice": "674538437065877334600"
+          "useSol": 200000000,
+          "downPercentage": 0.15,
+          "buyTokenAmount": "3187389853782",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "530983557503105302959"
         },
         "results": {
-          "orderPda": "37JWRqN9jDodbTe4XvueiZ9hCamRgNXHVWvYQZJTjGAf",
-          "solSpent": "105333036",
-          "leverage": "7.14x",
-          "stopLossPercentage": "13.99%",
+          "orderPda": "GKcwSvo6DBy5r5d1cWGHBF2AQr5Th8539FyF9ia9GPkV",
+          "solSpent": "38364194",
+          "leverage": "6.67x",
+          "stopLossPercentage": "15.00%",
           "prevOrder": null,
-          "nextOrder": "FxEgtnTCjvimCHHajhP85CuWv2psPkdxk2iPVAjEpc3v"
+          "nextOrder": "7EkhfvJ3bx5BkSDFw7vDyuTFjGmfLr7Ffke4reHBZqst"
         },
-        "duration": "0.46s",
-        "timestamp": "2025-09-05T03:41:37.272Z",
+        "duration": "0.51s",
+        "timestamp": "2025-09-05T10:52:40.728Z",
         "index": 6
       },
       {
-        "type": "closeLong",
-        "description": "平仓做多 33818646 个代币",
+        "type": "long",
+        "description": "做多 3159209 个代币，止损 15.0%",
         "status": "completed",
-        "txSignature": "2ejor7XEz7Nf7sNdf5QCgTkEakwZ1wqZwtC9VnvJZsAgadLmjuH4ijRTiiqjzrJDFSpf97yqdWeuN7gGKgjbxjQr",
-        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+        "txSignature": "2LA8jLmah4rfNDecvXpWqVwjr9VHSoZbxwGwDksDVrN3PWJnfbFJCsbvaKVVwwcZpG88VTwxJCWS5U6kJszgzs5e",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
         "params": {
-          "closeOrder": "8RoWuBqWYsJPxe96HZN4QmCyXv6Cd3mHeHYSLVNAMD5J",
-          "sellTokenAmount": "33818646243225",
-          "minSolOutput": "1000"
+          "useSol": 200000000,
+          "downPercentage": 0.15,
+          "buyTokenAmount": "3159209473306",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "535730532111517214494"
         },
         "results": {
-          "orderClosed": "8RoWuBqWYsJPxe96HZN4QmCyXv6Cd3mHeHYSLVNAMD5J",
-          "solGained": "1137186294",
-          "marginRecovered": "726501534"
+          "orderPda": "3rA5KZ8h8LB2CRjxJTfTPGaQgaW65i1e1TJFx1oc78t4",
+          "solSpent": "38357909",
+          "leverage": "6.67x",
+          "stopLossPercentage": "15.00%",
+          "prevOrder": null,
+          "nextOrder": "GKcwSvo6DBy5r5d1cWGHBF2AQr5Th8539FyF9ia9GPkV"
         },
-        "duration": "0.46s",
-        "timestamp": "2025-09-05T03:41:39.733Z",
+        "duration": "0.50s",
+        "timestamp": "2025-09-05T10:52:43.236Z",
         "index": 7
       },
       {
-        "type": "closeLong",
-        "description": "平仓做多 18127496 个代币",
+        "type": "long",
+        "description": "做多 3131401 个代币，止损 15.0%",
         "status": "completed",
-        "txSignature": "r4rxE8jJiozm36Ho7G8KECdtPXW7vvmRULVfiYCqKPr9ueZxwrQiqd2mxfUSwpH3MxAa8x67DPBZaTLEBrwXNV6",
-        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+        "txSignature": "54dD4Kw1Y9urjBeQ8Z9G1QYWqXT2eru66zB2GQ3mbwfiTHq6sb4Tg6SbV7N45DyFKwFUfdmyBUdk6KrSFPbFaMLZ",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
         "params": {
-          "closeOrder": "84BTG5WppigppMhkHsiSmz67s4g9FdVt8FD8hEoAWKrS",
-          "sellTokenAmount": "18127495658390",
-          "minSolOutput": "1000"
+          "useSol": 200000000,
+          "downPercentage": 0.15,
+          "buyTokenAmount": "3131401170977",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "540498631292778307798"
         },
         "results": {
-          "orderClosed": "84BTG5WppigppMhkHsiSmz67s4g9FdVt8FD8hEoAWKrS",
-          "solGained": "691388583",
-          "marginRecovered": "243992621"
+          "orderPda": "GmLf87sAUVFUMboyn3He4t4seJc9jyksXiF6YkyneKsa",
+          "solSpent": "38351679",
+          "leverage": "6.67x",
+          "stopLossPercentage": "15.00%",
+          "prevOrder": null,
+          "nextOrder": "3rA5KZ8h8LB2CRjxJTfTPGaQgaW65i1e1TJFx1oc78t4"
         },
-        "duration": "0.49s",
-        "timestamp": "2025-09-05T03:41:42.232Z",
+        "duration": "0.35s",
+        "timestamp": "2025-09-05T10:52:45.594Z",
         "index": 8
       },
       {
-        "type": "closeShort",
-        "description": "平仓做空 8548156 个代币",
+        "type": "long",
+        "description": "做多 3103958 个代币，止损 15.0%",
         "status": "completed",
-        "txSignature": "4mDkg3qjua5Wjx3pae6GMDqhnaoeesyJ6brkCHgvqS9QUi6LxQqXunS71admtigy3ZH6UtU53ep8PgHMRvsYbkrX",
-        "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
+        "txSignature": "4vLFaiMCZeirydZaBAPstSgiTmLMPh51JJ53MbxytjszdUAmgeuuEtNEBDZJHJMEd8HPLkjsCsDKzBVpvxxXhSfj",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
         "params": {
-          "closeOrder": "37JWRqN9jDodbTe4XvueiZ9hCamRgNXHVWvYQZJTjGAf",
-          "buyTokenAmount": "8548156126847",
-          "maxSolAmount": "100000000000"
+          "useSol": 200000000,
+          "downPercentage": 0.15,
+          "buyTokenAmount": "3103958425214",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "545287855046887039910"
         },
         "results": {
-          "orderClosed": "37JWRqN9jDodbTe4XvueiZ9hCamRgNXHVWvYQZJTjGAf",
-          "solSpent": "-155897337",
-          "marginRecovered": "96836356"
+          "orderPda": "3KAtpeBnNpKCjndwc82HHHt5BT4qtjRCKUPrgryhNGct",
+          "solSpent": "38345504",
+          "leverage": "6.67x",
+          "stopLossPercentage": "15.00%",
+          "prevOrder": null,
+          "nextOrder": "GmLf87sAUVFUMboyn3He4t4seJc9jyksXiF6YkyneKsa"
         },
-        "duration": "0.49s",
-        "timestamp": "2025-09-05T03:41:46.742Z",
+        "duration": "0.45s",
+        "timestamp": "2025-09-05T10:52:48.051Z",
         "index": 9
       },
       {
-        "type": "closeShort",
-        "description": "平仓做空失败",
-        "status": "error",
-        "error": "查找或处理用户订单失败: Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 1: custom program error: 0x1776. \nLogs: \n[\n  \"Program log: 手续费率: 1200\",\n  \"Program log: 手续费金额: 10457126 SOL\",\n  \"Program log:   总金额(含手续费): 881884221 SOL 用户输入最大SOL 100000000000\",\n  \"Program log: 交易条件验证通过，可以执行交易\",\n  \"Program log: 开始删除订单: FxEgtnTCjvimCHHajhP85CuWv2psPkdxk2iPVAjEpc3v\",\n  \"Program log: 🔄 执行 Box 专用的节点删除操作\",\n  \"Program log: 错误：删除单节点时，当前节点前后链接必须为空\",\n  \"Program log: AnchorError occurred. Error Code: InvalidLinkedListOperation. Error Number: 6006. Error Message: 链表操作无效.\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ consumed 273205 of 1399850 compute units\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ failed: custom program error: 0x1776\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
-        "duration": "0.05s",
-        "timestamp": "2025-09-05T03:41:48.791Z",
+        "type": "long",
+        "description": "做多 3076875 个代币，止损 25.0%",
+        "status": "completed",
+        "txSignature": "5Tv6UfKCyaBawF1s8TznwHW21STCqQmZkTDVhKMk2ca8WCeWGoTsxV759C2e1CV7fRszeWJWqZzt5A12dsE8jLp",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.25,
+          "buyTokenAmount": "3076874856694",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "369772588255658201930"
+        },
+        "results": {
+          "orderPda": "3aKdxh1VKUxUQzkEViMPjZQaJssAaBz8ujd7ojE3gVYo",
+          "solSpent": "92857052",
+          "leverage": "2.33x",
+          "stopLossPercentage": "42.86%",
+          "prevOrder": "J88HdqJoZG73yajE5hshb15RsWL8kUeRZSMcc8QEavck",
+          "nextOrder": null
+        },
+        "duration": "0.49s",
+        "timestamp": "2025-09-05T10:52:50.552Z",
         "index": 10
+      },
+      {
+        "type": "long",
+        "description": "做多 3050144 个代币，止损 25.0%",
+        "status": "completed",
+        "txSignature": "4wGwyXNnnP9u8aDBnwUQu4GXTuZkAtaSRLYQDnTANbg6irVATiGS9hjTM6pPVME9WGngHoZuJCx2Y5L6A4LAmTbN",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.25,
+          "buyTokenAmount": "3050144224645",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "489643832006163396763"
+        },
+        "results": {
+          "orderPda": "CApEECAMUGAi85FjRHEpRHatrZ3MTn1CBR6VB6bjc9DN",
+          "solSpent": "57893432",
+          "leverage": "4.00x",
+          "stopLossPercentage": "25.00%",
+          "prevOrder": "7EkhfvJ3bx5BkSDFw7vDyuTFjGmfLr7Ffke4reHBZqst",
+          "nextOrder": "39FcN7hsoMivoua3WZEPLD8kW13pJf1pTi5w1KHjN9dk"
+        },
+        "duration": "0.90s",
+        "timestamp": "2025-09-05T10:52:53.460Z",
+        "index": 11
+      },
+      {
+        "type": "long",
+        "description": "做多 3023760 个代币，止损 25.0%",
+        "status": "completed",
+        "txSignature": "2wZNm9MoMpm6R2gDYskKGRmNgWGsHy65Zg3UCr7y1eECB3M1mXJhnjCGaGVyapNAbJGZg91nkmUEdSkfd5pkvCmq",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.25,
+          "buyTokenAmount": "3023760423255",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "493925535658506215358"
+        },
+        "results": {
+          "orderPda": "BwmqYWG8mXGhVvGoPFLoM2R6qXjjCm2vHZ4QwoPa6Wsf",
+          "solSpent": "57888276",
+          "leverage": "4.00x",
+          "stopLossPercentage": "25.00%",
+          "prevOrder": "7EkhfvJ3bx5BkSDFw7vDyuTFjGmfLr7Ffke4reHBZqst",
+          "nextOrder": "CApEECAMUGAi85FjRHEpRHatrZ3MTn1CBR6VB6bjc9DN"
+        },
+        "duration": "0.80s",
+        "timestamp": "2025-09-05T10:52:56.264Z",
+        "index": 12
+      },
+      {
+        "type": "long",
+        "description": "做多 2997717 个代币，止损 25.0%",
+        "status": "completed",
+        "txSignature": "4a8deZg4kkPFSAQxYvtamrru91Ud89G7p4GWF2oaxXVoPKz3PQfvVGqJHH6GyKF8sVkmhSE7aVxVnRCwk9HrZmnL",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.25,
+          "buyTokenAmount": "2997717478181",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "498225878639832956677"
+        },
+        "results": {
+          "orderPda": "CNGmZD6CqXqpQAyW9uqiyDZhzka3bU6zQgwKpa8KQnGv",
+          "solSpent": "57883164",
+          "leverage": "4.00x",
+          "stopLossPercentage": "25.00%",
+          "prevOrder": "7EkhfvJ3bx5BkSDFw7vDyuTFjGmfLr7Ffke4reHBZqst",
+          "nextOrder": "BwmqYWG8mXGhVvGoPFLoM2R6qXjjCm2vHZ4QwoPa6Wsf"
+        },
+        "duration": "0.83s",
+        "timestamp": "2025-09-05T10:52:59.105Z",
+        "index": 13
+      },
+      {
+        "type": "long",
+        "description": "做多 2972010 个代币，止损 25.0%",
+        "status": "completed",
+        "txSignature": "376XptcABpRdYJfF7ZJUGR6ro3nkpHvHW3ZiezE1NCULvViC5q9eTBHAvNw7oy2wkMPtZonvT2ZHa54q7BNokuee",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.25,
+          "buyTokenAmount": "2972009543165",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "502544860950144882973"
+        },
+        "results": {
+          "orderPda": "EQsnwNPQ282DWVEdmSPVnMvzdir8MBTFjuXQC2GrXXZL",
+          "solSpent": "57878094",
+          "leverage": "4.00x",
+          "stopLossPercentage": "25.00%",
+          "prevOrder": "7EkhfvJ3bx5BkSDFw7vDyuTFjGmfLr7Ffke4reHBZqst",
+          "nextOrder": "CNGmZD6CqXqpQAyW9uqiyDZhzka3bU6zQgwKpa8KQnGv"
+        },
+        "duration": "0.86s",
+        "timestamp": "2025-09-05T10:53:01.966Z",
+        "index": 14
+      },
+      {
+        "type": "long",
+        "description": "做多 2946631 个代币，止损 35.0%",
+        "status": "completed",
+        "txSignature": "4nEbvSS47yF5A7n411uijBukMEbazLKFa4GKpakQch5DMyDgist9eBXb6uNitRxeSSg2jaNu4aJ2N6V4JtGkox92",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35,
+          "buyTokenAmount": "2946630896758",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "360936142385903713230"
+        },
+        "results": {
+          "orderPda": "fdaTpxdizmJsUq5VcTcnqeVzka916VzX8W7bYiBGFrD",
+          "solSpent": "100145219",
+          "leverage": "2.15x",
+          "stopLossPercentage": "46.59%",
+          "prevOrder": "3aKdxh1VKUxUQzkEViMPjZQaJssAaBz8ujd7ojE3gVYo",
+          "nextOrder": null
+        },
+        "duration": "0.87s",
+        "timestamp": "2025-09-05T10:53:04.836Z",
+        "index": 15
+      },
+      {
+        "type": "long",
+        "description": "做多 2921576 个代币，止损 35.0%",
+        "status": "completed",
+        "txSignature": "4Yc86gtsMyjwRo5CEgXnkp492j2d7SktcseMXoUqxAT1hjYi5gWcKrK8ZzrsxTn8pV4s63uPwcunyw5bPS6zpwU4",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35,
+          "buyTokenAmount": "2921575939134",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "364038107995534867023"
+        },
+        "results": {
+          "orderPda": "8Q9RWYKUvz3FHaarGZEb9CVD2QGRSdbFpML2xWNX4ibn",
+          "solSpent": "100141924",
+          "leverage": "2.15x",
+          "stopLossPercentage": "46.59%",
+          "prevOrder": "3aKdxh1VKUxUQzkEViMPjZQaJssAaBz8ujd7ojE3gVYo",
+          "nextOrder": "fdaTpxdizmJsUq5VcTcnqeVzka916VzX8W7bYiBGFrD"
+        },
+        "duration": "0.85s",
+        "timestamp": "2025-09-05T10:53:07.694Z",
+        "index": 16
+      },
+      {
+        "type": "long",
+        "description": "做多 2896839 个代币，止损 35.0%",
+        "status": "completed",
+        "txSignature": "5cmRZbEyWv5UXWtBoB8KNHuqoAiCbpPbFa2xJ2aGCjoQEv1bwxG4diKxtLr2VZJrKjhxxbotwonJQ186tBYcUtcf",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35,
+          "buyTokenAmount": "2896839188997",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "372744513831880237197"
+        },
+        "results": {
+          "orderPda": "2P2stEWVwFfJsXSjiavfJYcyEMgEdzEG2nZr2TBfEo45",
+          "solSpent": "98545846",
+          "leverage": "2.18x",
+          "stopLossPercentage": "45.78%",
+          "prevOrder": "J88HdqJoZG73yajE5hshb15RsWL8kUeRZSMcc8QEavck",
+          "nextOrder": "3aKdxh1VKUxUQzkEViMPjZQaJssAaBz8ujd7ojE3gVYo"
+        },
+        "duration": "0.86s",
+        "timestamp": "2025-09-05T10:53:10.555Z",
+        "index": 17
+      },
+      {
+        "type": "long",
+        "description": "做多 2872415 个代币，止损 35.0%",
+        "status": "completed",
+        "txSignature": "4HaHDFksGxmk9ETkm1K8byJf4hhZEBNbkGQ4N89FzZX2KoTNcTS67tgJrWtw6oNnfM6DfoqTRjfQi3QoJX8RCkLT",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35,
+          "buyTokenAmount": "2872415280588",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "353867863769796624213"
+        },
+        "results": {
+          "orderPda": "9SoVPVZe6yh56rjtmrosT3w8zb3WEisvMSZ6TA4GuguS",
+          "solSpent": "104772422",
+          "leverage": "2.04x",
+          "stopLossPercentage": "48.96%",
+          "prevOrder": "fdaTpxdizmJsUq5VcTcnqeVzka916VzX8W7bYiBGFrD",
+          "nextOrder": null
+        },
+        "duration": "0.86s",
+        "timestamp": "2025-09-05T10:53:13.423Z",
+        "index": 18
+      },
+      {
+        "type": "long",
+        "description": "做多 2848299 个代币，止损 35.0%",
+        "status": "completed",
+        "txSignature": "4t2UEFZLq5PoHAnABCfMG5kadjYVr9t7dF9joEeLqueVdULNJC7rmT2SxJWUPDpzrSJC8WJ2QyQNMuPJze2RBF87",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35,
+          "buyTokenAmount": "2848298960775",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "346244561325660374646"
+        },
+        "results": {
+          "orderPda": "599DF99DaPQhtSFhtQuYbEYznKzi8rYbp5k6Tuyph8te",
+          "solSpent": "107746312",
+          "leverage": "1.98x",
+          "stopLossPercentage": "50.48%",
+          "prevOrder": "9SoVPVZe6yh56rjtmrosT3w8zb3WEisvMSZ6TA4GuguS",
+          "nextOrder": null
+        },
+        "duration": "1.29s",
+        "timestamp": "2025-09-05T10:53:16.724Z",
+        "index": 19
+      },
+      {
+        "type": "long",
+        "description": "做多 2824485 个代币，止损 35.0%",
+        "status": "completed",
+        "txSignature": "3pJV5YvfofTbpdYWorAuF7oaiuSuNE1ja6itv5BQVBzrJb16Da2r1pFNPhrLJbxcgBcgQmdNPCa8kDmFafhPF9nk",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.35,
+          "buyTokenAmount": "2824485086222",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "349169981024133454991"
+        },
+        "results": {
+          "orderPda": "6i8rdVf3REkTVagh7ULWwoUuLkeMh6oW1J4QJQDJZpHY",
+          "solSpent": "107743405",
+          "leverage": "1.98x",
+          "stopLossPercentage": "50.48%",
+          "prevOrder": "9SoVPVZe6yh56rjtmrosT3w8zb3WEisvMSZ6TA4GuguS",
+          "nextOrder": "599DF99DaPQhtSFhtQuYbEYznKzi8rYbp5k6Tuyph8te"
+        },
+        "duration": "1.25s",
+        "timestamp": "2025-09-05T10:53:19.977Z",
+        "index": 20
+      },
+      {
+        "type": "long",
+        "description": "做多 2800969 个代币，止损 45.0%",
+        "status": "completed",
+        "txSignature": "2MnHPMZcAHgwKAaZo1KeDWBRvv31Lvf8Lye3EVQEhjFQ95svJXd6YrB1GRxttL22xuh2yavpYbxPi6yKoyuknphj",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.45,
+          "buyTokenAmount": "2800968620654",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "341349121701232644575"
+        },
+        "results": {
+          "orderPda": "B9XLaUxd3HShstjxCjn7KezyaQy2H9jmnQbHYWo5aX1a",
+          "solSpent": "110704874",
+          "leverage": "1.92x",
+          "stopLossPercentage": "51.99%",
+          "prevOrder": "599DF99DaPQhtSFhtQuYbEYznKzi8rYbp5k6Tuyph8te",
+          "nextOrder": null
+        },
+        "duration": "1.36s",
+        "timestamp": "2025-09-05T10:53:23.343Z",
+        "index": 21
+      },
+      {
+        "type": "long",
+        "description": "做多 2777745 个代币，止损 45.0%",
+        "status": "completed",
+        "txSignature": "4sXcSZRpnhmS9XeADseuMpxGuyJtZq4VQxzTZysXFmjbDzNReHgZVc2KDGftRizx96WBfJrxQCmsmdUz5tkY9u9L",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.45,
+          "buyTokenAmount": "2777744632188",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "333960193224801898855"
+        },
+        "results": {
+          "orderPda": "HyfbPGnyJnqCe3uMmMgNkC9uKVMo8ighDKbeCdP88iE4",
+          "solSpent": "113502834",
+          "leverage": "1.87x",
+          "stopLossPercentage": "53.42%",
+          "prevOrder": "B9XLaUxd3HShstjxCjn7KezyaQy2H9jmnQbHYWo5aX1a",
+          "nextOrder": null
+        },
+        "duration": "1.17s",
+        "timestamp": "2025-09-05T10:53:26.512Z",
+        "index": 22
+      },
+      {
+        "type": "long",
+        "description": "做多 2754808 个代币，止损 45.0%",
+        "status": "completed",
+        "txSignature": "AxrBoXwqK7qvDs8iu4JNL7XMGAa8yh6RKLtmgoAi5B3fMwS64X8Ezo3dW9WHgnH4vXfFiZQm9kZFDkVfYhV5K71",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "useSol": 200000000,
+          "downPercentage": 0.45,
+          "buyTokenAmount": "2754808290753",
+          "maxSolAmount": "400000000",
+          "marginSol": "1000000000",
+          "closePrice": "336746510093178002564"
+        },
+        "results": {
+          "orderPda": "4YjHV9XQW7FRRzbrtkEdvJPgE2X7GixXnir3PgJRLq4a",
+          "solSpent": "113500199",
+          "leverage": "1.87x",
+          "stopLossPercentage": "53.42%",
+          "prevOrder": "B9XLaUxd3HShstjxCjn7KezyaQy2H9jmnQbHYWo5aX1a",
+          "nextOrder": "HyfbPGnyJnqCe3uMmMgNkC9uKVMo8ighDKbeCdP88iE4"
+        },
+        "duration": "1.35s",
+        "timestamp": "2025-09-05T10:53:29.865Z",
+        "index": 23
+      },
+      {
+        "type": "closeLong",
+        "description": "平仓做多 2754808 个代币",
+        "status": "completed",
+        "txSignature": "3SZnhDRCdgBPdZEfgSx4W5QBBMTNLun13MdkdUJPEdFstnBhyvAF98QcaGkXoyerD9aoDVc1HxqKj13YARi6bmzt",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "closeOrder": "4YjHV9XQW7FRRzbrtkEdvJPgE2X7GixXnir3PgJRLq4a",
+          "sellTokenAmount": "2754808290753",
+          "minSolOutput": "1000"
+        },
+        "results": {
+          "orderClosed": "4YjHV9XQW7FRRzbrtkEdvJPgE2X7GixXnir3PgJRLq4a",
+          "solGained": "92593239",
+          "marginRecovered": "108603519"
+        },
+        "duration": "2.01s",
+        "timestamp": "2025-09-05T10:53:33.882Z",
+        "index": 24
+      },
+      {
+        "type": "closeLong",
+        "description": "平仓做多 2777745 个代币",
+        "status": "completed",
+        "txSignature": "29RSgDYU2nYEkJWDGjMSr6SNmQzvsgs5Bc1egfnGwvBY1WrujzqCKjYrXMyLcvc6Tk5e71Q5SGcXSWqbd9A5ik8b",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "closeOrder": "HyfbPGnyJnqCe3uMmMgNkC9uKVMo8ighDKbeCdP88iE4",
+          "sellTokenAmount": "2777744632188",
+          "minSolOutput": "1000"
+        },
+        "results": {
+          "orderClosed": "HyfbPGnyJnqCe3uMmMgNkC9uKVMo8ighDKbeCdP88iE4",
+          "solGained": "92590572",
+          "marginRecovered": "108606154"
+        },
+        "duration": "1.69s",
+        "timestamp": "2025-09-05T10:53:37.582Z",
+        "index": 25
+      },
+      {
+        "type": "closeLong",
+        "description": "平仓做多 2800969 个代币",
+        "status": "completed",
+        "txSignature": "vECLC1kXG4jFxuWrdoejVVFDq2Zym1nLQmALSf3fjLMD4kSKnqKf9etCXGW3j4DNAAtYBNoJbeCjo8zfmt2FoLa",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "closeOrder": "B9XLaUxd3HShstjxCjn7KezyaQy2H9jmnQbHYWo5aX1a",
+          "sellTokenAmount": "2800968620654",
+          "minSolOutput": "1000"
+        },
+        "results": {
+          "orderClosed": "B9XLaUxd3HShstjxCjn7KezyaQy2H9jmnQbHYWo5aX1a",
+          "solGained": "95422516",
+          "marginRecovered": "105808194"
+        },
+        "duration": "1.70s",
+        "timestamp": "2025-09-05T10:53:41.288Z",
+        "index": 26
+      },
+      {
+        "type": "closeLong",
+        "description": "平仓做多 2824485 个代币",
+        "status": "completed",
+        "txSignature": "SHxmGTftmP2fh9W1vpgjmRayrbzUu1rto9jWKwSrjg6zQxPzFvdwALFR9fHF41jbYzp9yDkq9Z4xV4CQUZESUFH",
+        "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+        "params": {
+          "closeOrder": "6i8rdVf3REkTVagh7ULWwoUuLkeMh6oW1J4QJQDJZpHY",
+          "sellTokenAmount": "2824485086222",
+          "minSolOutput": "1000"
+        },
+        "results": {
+          "orderClosed": "6i8rdVf3REkTVagh7ULWwoUuLkeMh6oW1J4QJQDJZpHY",
+          "solGained": "98419954",
+          "marginRecovered": "102846725"
+        },
+        "duration": "1.64s",
+        "timestamp": "2025-09-05T10:53:44.928Z",
+        "index": 27
       }
     ],
     "positions": {
       "spotBalance": "299995000000000",
-      "longPositions": [],
-      "shortPositions": [
+      "longPositions": [
         {
-          "orderPda": "FxEgtnTCjvimCHHajhP85CuWv2psPkdxk2iPVAjEpc3v",
-          "mintAddress": "8yT3RWawR41HkEnQLhQorugKG2QLBbrLL7w6Zgg27rGW",
-          "borrowSellTokenAmount": "16521873885037",
+          "orderPda": "39FcN7hsoMivoua3WZEPLD8kW13pJf1pTi5w1KHjN9dk",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "18127495658390",
           "marginSol": "5000000000",
-          "closePrice": "773908393334621094478",
-          "openTime": "2025-09-05T03:41:34.811Z",
+          "closePrice": "484840488362747153285",
+          "openTime": "2025-09-05T10:52:33.407Z",
+          "leverage": "10.00x",
+          "stopLossPercentage": "10.00%"
+        },
+        {
+          "orderPda": "J88HdqJoZG73yajE5hshb15RsWL8kUeRZSMcc8QEavck",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "33818646243225",
+          "marginSol": "10000000000",
+          "closePrice": "440494536310357313601",
+          "openTime": "2025-09-05T10:52:35.811Z",
+          "leverage": "4.54x",
+          "stopLossPercentage": "22.02%"
+        },
+        {
+          "orderPda": "7EkhfvJ3bx5BkSDFw7vDyuTFjGmfLr7Ffke4reHBZqst",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "3215948980073",
+          "marginSol": "1000000000",
+          "closePrice": "526257707467542344245",
+          "openTime": "2025-09-05T10:52:38.216Z",
+          "leverage": "6.67x",
+          "stopLossPercentage": "15.00%"
+        },
+        {
+          "orderPda": "GKcwSvo6DBy5r5d1cWGHBF2AQr5Th8539FyF9ia9GPkV",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "3187389853782",
+          "marginSol": "1000000000",
+          "closePrice": "530983557503105302959",
+          "openTime": "2025-09-05T10:52:40.728Z",
+          "leverage": "6.67x",
+          "stopLossPercentage": "15.00%"
+        },
+        {
+          "orderPda": "3rA5KZ8h8LB2CRjxJTfTPGaQgaW65i1e1TJFx1oc78t4",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "3159209473306",
+          "marginSol": "1000000000",
+          "closePrice": "535730532111517214494",
+          "openTime": "2025-09-05T10:52:43.236Z",
+          "leverage": "6.67x",
+          "stopLossPercentage": "15.00%"
+        },
+        {
+          "orderPda": "GmLf87sAUVFUMboyn3He4t4seJc9jyksXiF6YkyneKsa",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "3131401170977",
+          "marginSol": "1000000000",
+          "closePrice": "540498631292778307798",
+          "openTime": "2025-09-05T10:52:45.594Z",
+          "leverage": "6.67x",
+          "stopLossPercentage": "15.00%"
+        },
+        {
+          "orderPda": "3KAtpeBnNpKCjndwc82HHHt5BT4qtjRCKUPrgryhNGct",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "3103958425214",
+          "marginSol": "1000000000",
+          "closePrice": "545287855046887039910",
+          "openTime": "2025-09-05T10:52:48.051Z",
+          "leverage": "6.67x",
+          "stopLossPercentage": "15.00%"
+        },
+        {
+          "orderPda": "3aKdxh1VKUxUQzkEViMPjZQaJssAaBz8ujd7ojE3gVYo",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "3076874856694",
+          "marginSol": "1000000000",
+          "closePrice": "369772588255658201930",
+          "openTime": "2025-09-05T10:52:50.552Z",
+          "leverage": "2.33x",
+          "stopLossPercentage": "42.86%"
+        },
+        {
+          "orderPda": "CApEECAMUGAi85FjRHEpRHatrZ3MTn1CBR6VB6bjc9DN",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "3050144224645",
+          "marginSol": "1000000000",
+          "closePrice": "489643832006163396763",
+          "openTime": "2025-09-05T10:52:53.459Z",
           "leverage": "4.00x",
-          "stopLossPercentage": "24.99%"
+          "stopLossPercentage": "25.00%"
+        },
+        {
+          "orderPda": "BwmqYWG8mXGhVvGoPFLoM2R6qXjjCm2vHZ4QwoPa6Wsf",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "3023760423255",
+          "marginSol": "1000000000",
+          "closePrice": "493925535658506215358",
+          "openTime": "2025-09-05T10:52:56.264Z",
+          "leverage": "4.00x",
+          "stopLossPercentage": "25.00%"
+        },
+        {
+          "orderPda": "CNGmZD6CqXqpQAyW9uqiyDZhzka3bU6zQgwKpa8KQnGv",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "2997717478181",
+          "marginSol": "1000000000",
+          "closePrice": "498225878639832956677",
+          "openTime": "2025-09-05T10:52:59.105Z",
+          "leverage": "4.00x",
+          "stopLossPercentage": "25.00%"
+        },
+        {
+          "orderPda": "EQsnwNPQ282DWVEdmSPVnMvzdir8MBTFjuXQC2GrXXZL",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "2972009543165",
+          "marginSol": "1000000000",
+          "closePrice": "502544860950144882973",
+          "openTime": "2025-09-05T10:53:01.966Z",
+          "leverage": "4.00x",
+          "stopLossPercentage": "25.00%"
+        },
+        {
+          "orderPda": "fdaTpxdizmJsUq5VcTcnqeVzka916VzX8W7bYiBGFrD",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "2946630896758",
+          "marginSol": "1000000000",
+          "closePrice": "360936142385903713230",
+          "openTime": "2025-09-05T10:53:04.836Z",
+          "leverage": "2.15x",
+          "stopLossPercentage": "46.59%"
+        },
+        {
+          "orderPda": "8Q9RWYKUvz3FHaarGZEb9CVD2QGRSdbFpML2xWNX4ibn",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "2921575939134",
+          "marginSol": "1000000000",
+          "closePrice": "364038107995534867023",
+          "openTime": "2025-09-05T10:53:07.694Z",
+          "leverage": "2.15x",
+          "stopLossPercentage": "46.59%"
+        },
+        {
+          "orderPda": "2P2stEWVwFfJsXSjiavfJYcyEMgEdzEG2nZr2TBfEo45",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "2896839188997",
+          "marginSol": "1000000000",
+          "closePrice": "372744513831880237197",
+          "openTime": "2025-09-05T10:53:10.555Z",
+          "leverage": "2.18x",
+          "stopLossPercentage": "45.78%"
+        },
+        {
+          "orderPda": "9SoVPVZe6yh56rjtmrosT3w8zb3WEisvMSZ6TA4GuguS",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "2872415280588",
+          "marginSol": "1000000000",
+          "closePrice": "353867863769796624213",
+          "openTime": "2025-09-05T10:53:13.423Z",
+          "leverage": "2.04x",
+          "stopLossPercentage": "48.96%"
+        },
+        {
+          "orderPda": "599DF99DaPQhtSFhtQuYbEYznKzi8rYbp5k6Tuyph8te",
+          "mintAddress": "CFA4TR3mUZUfn8PEeETsi75V7cdv6w24qwLfMb32ASj5",
+          "buyTokenAmount": "2848298960775",
+          "marginSol": "1000000000",
+          "closePrice": "346244561325660374646",
+          "openTime": "2025-09-05T10:53:16.724Z",
+          "leverage": "1.98x",
+          "stopLossPercentage": "50.48%"
         }
-      ]
+      ],
+      "shortPositions": []
     },
     "execution": {
-      "currentStep": "sell",
+      "currentStep": "completed",
       "completedSteps": [
         "create-token",
         "buy",
         "sell",
         "long",
-        "short",
-        "closeLong",
-        "closeShort"
+        "closeLong"
       ],
       "completedStepIndexes": [
         0,
@@ -380,18 +1138,29 @@
         7,
         8,
         9,
-        10
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
       ],
-      "errors": [
-        {
-          "step": "closeShort",
-          "error": "查找或处理用户订单失败: Simulation failed. \nMessage: Transaction simulation failed: Error processing Instruction 1: custom program error: 0x1776. \nLogs: \n[\n  \"Program log: 手续费率: 1200\",\n  \"Program log: 手续费金额: 10457126 SOL\",\n  \"Program log:   总金额(含手续费): 881884221 SOL 用户输入最大SOL 100000000000\",\n  \"Program log: 交易条件验证通过，可以执行交易\",\n  \"Program log: 开始删除订单: FxEgtnTCjvimCHHajhP85CuWv2psPkdxk2iPVAjEpc3v\",\n  \"Program log: 🔄 执行 Box 专用的节点删除操作\",\n  \"Program log: 错误：删除单节点时，当前节点前后链接必须为空\",\n  \"Program log: AnchorError occurred. Error Code: InvalidLinkedListOperation. Error Number: 6006. Error Message: 链表操作无效.\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ consumed 273205 of 1399850 compute units\",\n  \"Program JBMmrp6jhksqnxDBskkmVvWHhJLaPBjgiMHEroJbUTBZ failed: custom program error: 0x1776\"\n]. \nCatch the `SendTransactionError` and call `getLogs()` on it for full details.",
-          "timestamp": "2025-09-05T03:41:48.791Z"
-        }
-      ],
-      "startTime": "2025-09-05T03:41:22.083Z",
-      "endTime": null
+      "errors": [],
+      "startTime": "2025-09-05T10:52:25.656Z",
+      "endTime": "2025-09-05T10:53:44.929Z"
     }
   },
-  "savedAt": "2025-09-05T03:41:48.800Z"
+  "savedAt": "2025-09-05T10:53:44.937Z"
 }

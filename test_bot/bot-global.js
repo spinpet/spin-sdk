@@ -55,7 +55,7 @@ const CONFIG = {
       description: '做多交易 1 SOL，止损 20%',
       params: {
         useSol: 1000000000,    // 使用 1 SOL (lamports)
-        downPercentage: 0.2    // 止损 20%
+        downPercentage: 0.1    // 止损 20%
       }
     },
     // 步骤5：做多交易
@@ -65,29 +65,182 @@ const CONFIG = {
       description: '做多交易 2 SOL，止损 30%',
       params: {
         useSol: 2000000000,    // 使用 2 SOL (lamports)
-        downPercentage: 0.30    // 止损 30%
+        downPercentage: 0.12    // 止损 30%
       }
     },
-    // 步骤6：做空交易（1 SOL，止损15%）
     { 
-      type: 'short', 
-      enabled: true,  // 启用做空交易测试
-      description: '做空交易 1 SOL，止损 25%',
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
       params: {
-        useSol: 1000000000,    // 使用 1 SOL (lamports)
-        upPercentage: 0.25     // 止损 25%
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.15    // 止损 30%
       }
     },
-    // 步骤7：做空交易
     { 
-      type: 'short', 
-      enabled: true,  // 启用做空交易测试
-      description: '做空交易 0.5 SOL，止损 10%',
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
       params: {
-        useSol: 500000000,    
-        upPercentage: 0.15     // 止损 10%
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.15    // 止损 30%
       }
     },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.15    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.15    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.15    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.25    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.25    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.25    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.25    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.25    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.35    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.35    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.35    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.35    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.35    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.35    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.45    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.45    // 止损 30%
+      }
+    },
+    { 
+      type: 'long', 
+      enabled: true,  // 启用做多交易测试
+      description: '做多交易 2 SOL，止损 30%',
+      params: {
+        useSol: 200000000,    // 使用 2 SOL (lamports)
+        downPercentage: 0.45    // 止损 30%
+      }
+    },
+
+
     // 步骤8：平仓做多交易
     { 
       type: 'closeLong', 
@@ -109,19 +262,12 @@ const CONFIG = {
       description: '平仓做多交易（自动查找订单）',
       params: {}  // 无需参数，自动查找并平仓做多订单
     },
-    // 步骤11：平仓做空交易
+    // 步骤10：平仓做多交易
     { 
-      type: 'closeShort', 
-      enabled: true,  // 启用平仓做空测试
-      description: '平仓做空交易（自动查找订单）',
-      params: {}  // 无需参数，自动查找并平仓做空订单
-    },
-    // 步骤12：平仓做空交易
-    { 
-      type: 'closeShort', 
-      enabled: true,  // 启用平仓做空测试
-      description: '平仓做空交易（自动查找订单）',
-      params: {}  // 无需参数，自动查找并平仓做空订单
+      type: 'closeLong', 
+      enabled: true,  // 启用平仓做多测试
+      description: '平仓做多交易（自动查找订单）',
+      params: {}  // 无需参数，自动查找并平仓做多订单
     },
 
   ],
